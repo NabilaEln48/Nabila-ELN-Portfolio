@@ -341,11 +341,6 @@ main {
   opacity: 1;
 }
 
-.card-hover h3 {
-  color: #fff;
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
-}
 
 .card-hover p {
   color: #bbb;
@@ -927,7 +922,7 @@ main {
 
   .card-hover {
     display: none;
-    padding: 1rem;
+    padding: 2.2rem;
     font-size: 0.95rem;
     color: white;
     background: #1a1a1a;
