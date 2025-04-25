@@ -1,48 +1,34 @@
-// Navigation Menu Toggle Functionality
+// ==========================
+// Mobile Navigation Menu
+// ==========================
+
 const toggleBtn = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
-// Create close (X) button only once
-let closeBtn = document.querySelector('.menu-close');
-if (!closeBtn) {
-  closeBtn = document.createElement('button');
-  closeBtn.innerHTML = '&times;';
-  closeBtn.classList.add('menu-close');
-  closeBtn.style.display = 'none'; // hide it by default
-  navMenu.appendChild(closeBtn);
-}
-
-// Show menu and toggle buttons
+// Open menu on ☰ click
 toggleBtn.addEventListener('click', () => {
   navMenu.classList.add('active');
-  toggleBtn.style.display = 'none';
-  closeBtn.style.display = 'block';
 });
 
-// Close menu with X button
-closeBtn.addEventListener('click', () => {
-  navMenu.classList.remove('active');
-  toggleBtn.style.display = 'block';
-  closeBtn.style.display = 'none';
-});
-
-// Auto-close menu on nav link click and delay scroll
+// Close menu on nav link click (with delay + smooth scroll)
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
     const target = link.getAttribute('href');
-
+    
     navMenu.classList.remove('active');
-    toggleBtn.style.display = 'block';
-    closeBtn.style.display = 'none';
 
     setTimeout(() => {
       window.location.href = target;
-    }, 200); // wait for menu to close smoothly
+    }, 200);
   });
 });
 
-// Intro Animation and Page Transition
+
+// ==========================
+// Intro Title Animation
+// ==========================
+
 const titles = [
   "Full-Stack Developer",
   "Python Developer",
@@ -52,26 +38,46 @@ const titles = [
 
 const titleText = document.getElementById("title-text");
 
+// Loop through titles every 3 seconds
 titles.forEach((title, i) => {
   setTimeout(() => {
     titleText.textContent = title;
-  }, i * 3000); // 3s per title
+  }, i * 3000);
 });
 
-// Hide loader and show main site after all titles shown
+// Hide intro loader and show main site after all titles
 setTimeout(() => {
   document.getElementById("intro-loader").style.display = "none";
   document.getElementById("main-site").style.display = "block";
-}, titles.length * 3000 + 500); // buffer at the end
+}, titles.length * 3000 + 500);
 
+
+// ==========================
 // Service Cards Interaction
+// ==========================
+
+// Toggle service card content (click = flip/reveal)
 document.querySelectorAll('.service-card').forEach(card => {
   card.addEventListener('click', () => {
     card.classList.toggle('show-content');
   });
 });
 
-// Mobile-specific Effects
+// Accordion-like effect on mobile
+document.querySelectorAll('.service-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.service-card').forEach(c => {
+      if (c !== card) c.classList.remove('active');
+    });
+    card.classList.toggle('active');
+  });
+});
+
+
+// ==========================
+// Mobile-Specific Scroll Effect
+// ==========================
+
 if (window.innerWidth <= 768) {
   const robot = document.querySelector('.robot-3d');
 
@@ -81,16 +87,3 @@ if (window.innerWidth <= 768) {
     robot.style.transform = `translateY(${translateValue}px)`;
   });
 }
-
-// Toggle service card content on mobile click
-document.querySelectorAll('.service-card').forEach(card => {
-  card.addEventListener('click', () => {
-    // Close all other cards first (optional, like accordion)
-    document.querySelectorAll('.service-card').forEach(c => {
-      if (c !== card) c.classList.remove('active');
-    });
-
-    // Toggle this card
-    card.classList.toggle('active');
-  });
-});

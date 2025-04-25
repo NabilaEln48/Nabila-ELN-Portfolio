@@ -118,7 +118,7 @@ header {
 
 /* Menu Toggle - Hidden on Desktop */
 .menu-toggle {
-  display: none;
+  display: none !important;
   font-size: 1.5rem;
   color: white;
   background: none;
@@ -816,7 +816,7 @@ main {
     position: fixed;
     right: 1rem;
     top: 0.5rem;
-    display: block;
+    display: block !important;
     z-index: 1002;
     font-size: 2rem;
     color: white;
@@ -825,19 +825,6 @@ main {
     cursor: pointer;
   }
   
-/* Close button inside nav menu (X) */
-.menu-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  color: white;
-  background: none;
-  border: none;
-  z-index: 1002;
-  cursor: pointer;
-  display: none;
-}
 
 
   /* Hero Section */
