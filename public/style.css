@@ -261,7 +261,7 @@ main {
 .about-text {
   flex: 1;
   color: #ccc;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   max-width: 1500px;
 }
