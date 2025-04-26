@@ -261,13 +261,22 @@ main {
 .about-text {
   flex: 1;
   color: #ccc;
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 1.6;
   max-width: 1500px;
 }
 
 .about-text p {
   margin-bottom: 1rem;
+}
+
+/* ==================== About Title Spacing ==================== */
+.about-text h2 {
+  align-items: center;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #fff;
 }
 
 
