@@ -13,14 +13,16 @@ toggleBtn.addEventListener('click', () => {
 // Close menu on nav link click (with delay + smooth scroll)
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const target = link.getAttribute('href');
-    
-    navMenu.classList.remove('active');
+    if (link.getAttribute('href').startsWith('#')) {
+      e.preventDefault(); // Only prevent for internal page links
+      const target = link.getAttribute('href');
 
-    setTimeout(() => {
-      window.location.href = target;
-    }, 200);
+      navMenu.classList.remove('active');
+
+      setTimeout(() => {
+        window.location.href = target;
+      }, 200);
+    }
   });
 });
 
@@ -84,6 +86,8 @@ if (window.innerWidth <= 768) {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     const translateValue = scrollY * 0.15;
-    robot.style.transform = `translateY(${translateValue}px)`;
+    if (robot) {
+      robot.style.transform = `translateY(${translateValue}px)`;
+    }
   });
 }
