@@ -34,8 +34,8 @@ document.querySelectorAll('.nav-link').forEach(link => {
 const titles = [
   "Full-Stack Developer",
   "Python Developer",
-  "Creative Designer",
-  "UI/UX Enthusiast"
+  "Database Designer & Developer",
+  "Creative Designer"
 ];
 
 const titleText = document.getElementById("title-text");
