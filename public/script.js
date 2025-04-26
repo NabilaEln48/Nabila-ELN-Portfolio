@@ -54,6 +54,16 @@ setTimeout(() => {
 }, titles.length * 3000 + 500);
 
 
+// Skip Text functionality
+const skipText = document.getElementById("skip-text");
+
+skipText.addEventListener("click", () => {
+  document.getElementById("intro-loader").style.display = "none";
+  document.getElementById("main-site").style.display = "block";
+});
+
+
+
 // ==========================
 // Service Cards Interaction
 // ==========================

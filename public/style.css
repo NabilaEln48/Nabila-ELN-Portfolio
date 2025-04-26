@@ -729,6 +729,13 @@ main {
   50% { opacity: 1; }
 }
 
+#skip-text {
+  color: #a259ff; /* Your purple color */
+  cursor: pointer;
+  margin-top: 20px; /* A little space under the titles */
+  font-size: 16px; /* Match your site's font size */
+  text-align: center;
+}
 
 
 
