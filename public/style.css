@@ -270,6 +270,16 @@ main {
   margin-bottom: 1rem;
 }
 
+/* ==================== About Title Spacing ==================== */
+.about-text h2 {
+  align-items: center;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+
 /* ==================== Services Section ==================== */
 #services {
   background: radial-gradient(ellipse at center, #0f0f1b 0%, #000 100%);
