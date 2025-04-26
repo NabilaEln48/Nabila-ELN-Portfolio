@@ -106,7 +106,7 @@ header {
   left: 0;
   width: 0%; /* Start with 0 width */
   height: 1.5px;
-  background: linear-gradient(to right, #facc15, #8b5cf6);
+  background: linear-gradient(to right, #00eaff, #ff0000);
   transition: width 0.3s ease;
   border-radius: 10px;
 }
