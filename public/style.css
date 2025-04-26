@@ -261,13 +261,13 @@ main {
 .about-text {
   flex: 1;
   color: #ccc;
-  font-size: 0.5rem;
-  line-height: 2;
+  font-size: 1rem;
+  line-height: 1.6;
   max-width: 1500px;
 }
 
 .about-text p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /* ==================== Services Section ==================== */
