@@ -161,16 +161,6 @@ main {
   margin: 1rem 0;
 }
 
-.content .wave {
-  display: inline-block;
-  animation: wave 2s infinite;
-}
-
-@keyframes wave {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(20deg); }
-  75% { transform: rotate(-10deg); }
-}
 
 .highlight-name {
   background: linear-gradient(to right, #8a2be2, #d63384);
