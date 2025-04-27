@@ -940,7 +940,7 @@ main {
     padding: 2.2rem;
     font-size: 0.95rem;
     color: white;
-    background: #1a1a1a;
+    background: linear-gradient(to right, #6b00ce, #000000);
     border-radius: 0 0 1rem 1rem;
     text-align: center;
   }
