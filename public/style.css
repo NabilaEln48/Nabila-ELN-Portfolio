@@ -954,7 +954,13 @@ main {
   }
 }
 
-
+.card-hover p {
+  color: #bbb;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.5;
+  max-width: 240px;
+}
 
 
 
