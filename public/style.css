@@ -299,7 +299,7 @@ main {
 .service-card {
   width: 350px;
   height: 500px;
-  background:linear-gradient(to right, #6b00ce, #000000);
+  background:linear-gradient(to right, #5b1998, #86164e);
   border-radius: 1.5rem;
   position: relative;
   overflow: hidden;
@@ -379,7 +379,7 @@ main {
 }
 
 .skill-card {
-  background-color: #45457b;
+  background-color: #5b1998;
   border-radius: 12px;
   padding: 3rem 2rem;
   min-width: 180px;
@@ -914,7 +914,7 @@ main {
     position: relative;
     overflow: hidden;
     border-radius: 1.5rem;
-    background:linear-gradient(to right, #6b00ce, #000000);
+    background:linear-gradient(to right, #5b1998, #86164e));
     cursor: pointer;
 
   }
@@ -934,7 +934,7 @@ main {
     padding: 2.2rem;
     font-size: 0.95rem;
     color: white;
-    background: linear-gradient(to right, #6b00ce, #000000);
+    background: linear-gradient(to right,  #5b1998, #86164e));
     border-radius: 0 0 1rem 1rem;
     text-align: center;
   }
