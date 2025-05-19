@@ -846,7 +846,7 @@ main {
 }
 
 .content h1 {
-  font-size: 1.6rem; /* Smaller than before */
+  font-size: 2rem; /* Smaller than before */
   margin: 0.5rem 0;
 }
 
@@ -858,7 +858,7 @@ main {
 }
 
 .description {
-  font-size: 1rem;
+  font-size: 1.6rem;
   margin: 1rem auto;
   padding: 0 1rem;
 }
