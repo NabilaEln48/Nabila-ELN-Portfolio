@@ -154,19 +154,40 @@ main {
   text-align: center;
 }
 
-.content h1 {
+/* Typing animation container */
+.typewriter-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #fff;
+  animation: 
+    typing 3.5s steps(35, end) forwards,
+    blink 1s step-end 3.5s 5; 
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.2;
-  margin: 1rem 0;
 }
 
 
+
+/* Typing animation keyframes */
+@keyframes typing {
+  from { max-width: 0; }
+  to { max-width: 100%; }
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Highlight styling (you already have this, but keep it) */
 .highlight-name {
   background: linear-gradient(to right, #8a2be2, #d63384);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 
 .role-title {
   font-size: 1.1rem;
@@ -197,25 +218,6 @@ main {
   box-shadow: 0 8px 20px rgba(198, 0, 255, 0.3);
 }
 
-/* Robot Styling */
-.robot-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0.2rem;
-  margin-bottom: 4rem;
-  overflow: visible;
-  z-index: 1;
-}
-
-.robot-3d {
-  width: 600px;
-  height: 580px;
-  max-width: 100%;
-  pointer-events: none;
-  display: block;
-}
 
 /* ==================== About Section ==================== */
 #about {
@@ -859,24 +861,8 @@ main {
     font-size: 0.9rem;
   }
 
-    .robot-wrapper {
-      margin: 1rem auto 2rem auto;
-      overflow: visible;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
   
-    .robot-3d {
-      width: 500px;           /* Responsive sizing */
-      height: 500px;
-      transform-origin: center top;
-      transition: transform 0.2s ease-out;
-    }
-  
-  
-  
+
 /* About Section */
 #about {
   padding: 3rem 0;
