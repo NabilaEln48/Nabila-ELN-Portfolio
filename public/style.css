@@ -839,27 +839,35 @@ main {
   
 
 
-  /* Hero Section */
-  #hero {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
+/* Hero Section - Mobile */
+#hero {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 
-  .content h1 {
-    font-size: 2rem;
-    margin: 0.5rem 0;
-  }
+.content h1 {
+  font-size: 1.6rem; /* Smaller than before */
+  margin: 0.5rem 0;
+}
 
-  .description {
-    font-size: 1rem;
-    margin: 1rem auto;
-    padding: 0 1rem;
-  }
+.typewriter-text {
+  font-size: 1.6rem; /* Match with h1 */
+  animation: 
+    typing 3.5s steps(35, end) forwards,
+    blink 0.7s step-end 3.5s 5;
+}
 
-  .btn-cta {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
-  }
+.description {
+  font-size: 1rem;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+.btn-cta {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+}
+
 
   
 
