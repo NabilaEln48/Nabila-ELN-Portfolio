@@ -32,10 +32,10 @@ document.querySelectorAll('.nav-link').forEach(link => {
 // ==========================
 
 const titles = [
+  "Software Developer",
   "Full-Stack Developer",
-  "Python Developer",
-  "Database Designer & Developer",
-  "Creative Designer"
+  "Database Manager & Designer",
+  "Welcome To My World",
 ];
 
 const titleText = document.getElementById("title-text");
