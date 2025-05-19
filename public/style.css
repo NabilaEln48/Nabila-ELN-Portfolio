@@ -882,11 +882,13 @@ main {
 }
 
 .about-img img {
-  width: 100%;
-  max-width: 280px;
-  margin: 0 auto;
-  display: block;
-}
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+  }
 
 .about-text {
   padding: 0 0.5rem;
