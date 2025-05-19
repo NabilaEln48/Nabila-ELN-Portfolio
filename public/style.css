@@ -846,19 +846,19 @@ main {
 }
 
 .content h1 {
-  font-size: 2rem; /* Smaller than before */
+  font-size: 1.6rem; /* Smaller than before */
   margin: 0.5rem 0;
 }
 
 .typewriter-text {
-  font-size: 1.6rem; /* Match with h1 */
+  font-size: 2rem; /* Match with h1 */
   animation: 
     typing 3.5s steps(35, end) forwards,
     blink 0.7s step-end 3.5s 5;
 }
 
 .description {
-  font-size: 1.6rem;
+  font-size: 1rem;
   margin: 1rem auto;
   padding: 0 1rem;
 }
