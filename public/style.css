@@ -7,8 +7,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(ellipse at center, #0f0f1b 0%, #000 100%);
-  color: lightgray;
+  background-color: #0a192f;
+  color: #ccd6f6;
   min-height: 100vh;
   line-height: 1.5;
 }
@@ -25,10 +25,10 @@ body {
 /* ==================== Typography & Common Elements ==================== */
 .section-title {
   font-size: 2.5rem;
-  color:#ffffff;
+  color: #64ffda;
   font-family: 'Courier New', monospace;
   margin-bottom: 3rem;
-  text-shadow: 0 0 10px #9f5afd;
+  text-shadow: 0 0 10px  #ffffff;
   text-align: center;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -40,7 +40,6 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: radial-gradient(ellipse at center, #0f0f1b 0%, #000 100%);
   z-index: 1000;
   padding: 0.5rem 0;
   border-bottom: none;
@@ -91,7 +90,7 @@ header {
 }
 
 .nav-link {
-  color: #fff;
+  color:  #64ffda;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
@@ -106,7 +105,7 @@ header {
   left: 0;
   width: 0%; /* Start with 0 width */
   height: 1.5px;
-  background: linear-gradient(to right, #8a2be2, #d63384);
+  background: white;
   transition: width 0.3s ease;
   border-radius: 10px;
 }
@@ -136,7 +135,6 @@ main {
 
 /* ==================== Hero Section ==================== */
 #hero {
-  background: radial-gradient(ellipse at center, #0f0f1b 0%, #000 100%);
   color: #fff;
   padding: 6rem 1rem 0;
   text-align: center;
@@ -181,13 +179,14 @@ main {
   50% { border-color: transparent; }
 }
 
-/* Highlight styling (you already have this, but keep it) */
+/* Highlight styling */
 .highlight-name {
-  background: linear-gradient(to right, #8a2be2, #d63384);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #64ffda;
+  font-weight: 800;
+  background: none; /* remove gradient if used before */
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
 }
-
 
 .role-title {
   font-size: 1.1rem;
@@ -205,23 +204,24 @@ main {
 .btn-cta {
   display: inline-block;
   padding: 0.75rem 2rem;
-  background: linear-gradient(to right, #6b00ce, #000000);
+  background-color: transparent;
+  color: #64ffda;
+  border: 1.5px solid #64ffda;
   border-radius: 8px;
-  color: white;
-  text-decoration: none;
   font-weight: 600;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .btn-cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(198, 0, 255, 0.3);
+  background-color: rgba(100, 255, 218, 0.1);
+  box-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
 }
+
 
 
 /* ==================== About Section ==================== */
 #about {
-  background: radial-gradient(ellipse at center, #0f0f1b 0%, #000 100%);
   padding: 8rem 0 5rem;
 }
 
@@ -278,13 +278,12 @@ main {
   font-size: 2.5rem;
   margin-top: 0;
   margin-bottom: 1rem;
-  color: #fff;
+  color: #64ffda;
 }
 
 
 /* ==================== Services Section ==================== */
 #services {
-  background: radial-gradient(ellipse at center, #0f0f1b 0%, #000 100%);
   padding: 6rem 2rem;
   text-align: center;
 }
@@ -299,7 +298,8 @@ main {
 .service-card {
   width: 350px;
   height: 500px;
-  background:linear-gradient(to right, #5b1998, #86164e);
+  background:linear-gradient(to bottom right, #112240, #0a192f);
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.05);
   border-radius: 1.5rem;
   position: relative;
   overflow: hidden;
@@ -359,7 +359,6 @@ main {
 
 /* ==================== Skills Section ==================== */
 #skills {
-  background: radial-gradient(ellipse at center, #0f0f1b 0%, #000 100%);
   margin-top: 0rem;
   padding: 1rem;
   overflow: hidden;
@@ -379,7 +378,7 @@ main {
 }
 
 .skill-card {
-  background-color: #5b1998;
+  background-color: #112240;
   border-radius: 12px;
   padding: 3rem 2rem;
   min-width: 180px;
@@ -415,7 +414,6 @@ main {
 
 /* ==================== Projects Section ==================== */
 #projects {
-  background: radial-gradient(ellipse at center, #0f0f1b 0%, #000 100%);
   padding: 6rem 2rem;
   color: #fff;
 }
@@ -429,6 +427,16 @@ main {
   padding: 2.5rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
+  background-color: #112240;  /* unified dark navy tone */
+  color: #ccd6f6;
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.05);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(100, 255, 218, 0.15);
 }
 
 .project-card .project-text {
@@ -488,14 +496,15 @@ main {
 }
 
 .visit-btn {
-  display: inline-block;
-  background:linear-gradient(to right, #250147, #000000);
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 0.6rem;
-  text-decoration: none;
-  transition: background 0.3s;
+  background-color: transparent;
+  border: transparent;
+  color: #64ffda;
   font-weight: bold;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .visit-btn:hover {
@@ -533,19 +542,16 @@ main {
 }
 
 /* Background themes */
-.project-card.purple {
-  background: linear-gradient(135deg, #ffffff, #000000);
-  color: #0b0b0f;
+.project-card.arise::before {
+  background: #64ffda; /* Teal */
 }
 
-.project-card.dark {
-  background: linear-gradient(135deg, #00a6a0, #00ab67);
-  color: #0b0b0f;
+.project-card.flappy::before {
+  background: #00ffb3; /* Bright green-teal */
 }
 
-.project-card.blue {
-  background: linear-gradient(135deg, #2b0041, #000000);
-  color: #fff;
+.project-card.portfolio::before {
+  background: #9f5afd; /* Purple accent */
 }
 
 .coming-soon {
@@ -569,7 +575,6 @@ main {
 
 /* ==================== Contact Section ==================== */
 #contact {
-  background: radial-gradient(ellipse at center, #0f0f1b 0%, #000 100%);
   padding: 6rem 2rem;
   text-align: center;
   color: #fff;
@@ -592,7 +597,7 @@ main {
 
 .contact-form input,
 .contact-form textarea {
-  background-color: #1a1a1f;
+  background-color: #dddddd;
   color: #fff;
   border: 1px solid #333;
   padding: 0.9rem 1.2rem;
@@ -603,24 +608,27 @@ main {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #777;
+  color: #555555;
 }
 
 .contact-form button {
-  background: linear-gradient(to right, #5a00af, #250147);
-  color: #fff;
+  background-color: transparent;
+  border: 1.5px solid #64ffda;
+  color: #64ffda;
   font-weight: bold;
   font-size: 1rem;
   padding: 1rem;
-  border: none;
   border-radius: 0.6rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .contact-form button:hover {
-  background-color: #7a39d9;
+  background-color: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  box-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
 }
+
 
 /* ==================== Social Sidebar ==================== */
 .social-sidebar {
@@ -635,9 +643,9 @@ main {
 }
 
 .social-sidebar a {
-  color: #ccc;
+  color: #ffffff;
   font-size: 1.3rem;
-  background-color: #1a1a1a;
+  background-color: #112240;
   padding: 0.7rem;
   border-radius: 50%;
   transition: background 0.3s ease, color 0.3s ease;
@@ -654,7 +662,7 @@ main {
 /* ==================== Footer Section ==================== */
 #footer {
   padding: 2rem;
-  background-color: #0b0b0f;
+  background-color: #112240;
   text-align: center;
   color: #888;
   font-size: 0.95rem;
@@ -691,7 +699,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  background: #0a192f;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -721,7 +729,7 @@ main {
 .progress-bar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(to right, #9333ea, #ec4899);
+  background: linear-gradient(to right, #00f4bb, #ffffff);
   animation: loadbar 12s forwards;
 }
 
@@ -742,7 +750,7 @@ main {
 }
 
 #skip-text {
-  color: #a259ff; /* Your purple color */
+  color: #00c597; /* Your purple color */
   cursor: pointer;
   margin-top: 20px; /* A little space under the titles */
   font-size: 16px; /* Match your site's font size */
