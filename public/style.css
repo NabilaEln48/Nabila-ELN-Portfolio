@@ -656,18 +656,18 @@ main {
 }
 
 .social-sidebar a:hover {
-  background-color: #9f5afd;
+  background-color: #00ffb3;
   color: #fff;
 }
 
 /* ==================== Footer Section ==================== */
 #footer {
   padding: 2rem;
-  background-color: #0a192f;
+  background-color: #000000;
   text-align: center;
-  color: #888;
+  color: #ffffff;
   font-size: 0.95rem;
-  border-top: 1px solid #222;
+  border-top: 1px solid #000000;
 }
 
 .footer-content {
@@ -690,7 +690,7 @@ main {
 }
 
 .footer-links a:hover {
-  color: #9f5afd;
+  color: #ffffff;
 }
 
 /* ==================== Intro Loader ==================== */
@@ -715,7 +715,7 @@ main {
   height: 120px;
   object-fit: contain;
   margin-bottom: 2rem;
-  filter: drop-shadow(0 0 8px #9333ea);
+  filter: drop-shadow(0 0 8px #00ffb3);
 }
 
 .progress-bar-wrapper {
