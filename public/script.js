@@ -32,7 +32,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 // ==========================
 
 const titles = [
-  "Software Developer",
+  "Software Engineer",
   "Full-Stack Developer",
   "Database Manager & Designer",
   "Welcome To My World",
@@ -122,3 +122,27 @@ const swiper = new Swiper('.projects-carousel', {
   },
   effect: 'slide' // Optional: 'fade', 'coverflow', etc.
 });
+// ==========================
+// Services  Swiper Carousel
+// ==========================
+let currentSlide = 0;
+const cardsPerView = 2;
+
+function scrollCarousel(direction) {
+  const track = document.querySelector('.services-track');
+  const cards = document.querySelectorAll('.service-card');
+  const totalCards = cards.length;
+  const cardWidth = 370; // 350 + 20 gap
+  const maxSlide = Math.ceil(totalCards / cardsPerView);
+
+  currentSlide += direction;
+
+  if (currentSlide >= maxSlide) {
+    currentSlide = 0; // loop to start
+  } else if (currentSlide < 0) {
+    currentSlide = maxSlide - 1; // loop to end
+  }
+
+  const offset = currentSlide * cardWidth * cardsPerView;
+  track.style.transform = `translateX(-${offset}px)`;
+}

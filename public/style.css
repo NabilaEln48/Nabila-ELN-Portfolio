@@ -283,19 +283,36 @@ main {
 }
 
 
-/* ==================== Services Section ==================== */
+/* ===================== Services Section Layout ============================== */
 #services {
   padding: 6rem 2rem;
   text-align: center;
 }
 
-.services-grid {
+.carousel-wrapper {
   display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  padding: 0 1rem;
 }
 
+.carousel {
+  overflow: hidden;
+  width: calc(2 * 350px + 20px); /* 2 cards + 1 gap */
+}
+
+.services-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
+/* === Service Card === */
 .service-card {
   width: 350px;
   height: 500px;
@@ -305,6 +322,7 @@ main {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  flex-shrink: 0;
   transition: box-shadow 0.3s ease;
   display: flex;
   align-items: center;
@@ -319,15 +337,35 @@ main {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-start;
+  padding-top: 3rem;
   transition: opacity 0.3s ease;
 }
 
-.service-card:hover .card-front {
-  opacity: 0;
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
 }
 
+.service-icon {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.card-front h5 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #e0e0e0;
+  margin: 0;
+  max-width: 90%;
+}
+
+/* === Hover Back === */
 .card-hover {
   position: absolute;
   inset: 0;
@@ -338,25 +376,42 @@ main {
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.card-hover p {
+  color: #bbb;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 240px;
+  text-align: center;
+}
+
+.service-card:hover .card-front {
+  opacity: 0;
 }
 
 .service-card:hover .card-hover {
   opacity: 1;
 }
 
-
-.card-hover p {
-  color: #bbb;
-  font-size: 1rem;
-  text-align: center;
-  line-height: 1.5;
-  max-width: 240px;
+/* === Carousel Buttons === */
+.carousel-btn {
+  background: #64ffda;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s ease;
 }
 
-.service-icon {
-  width: 70px;
-  height: 70px;
+.carousel-btn:hover {
+  background: #00c597;
 }
+
+
 
 /* ==================== Skills Section ==================== */
 #skills {
