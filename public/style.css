@@ -648,7 +648,7 @@ main {
 .social-sidebar a {
   color: #ffffff;
   font-size: 1.3rem;
-  background-color: #112240;
+  background-color: transparent;
   padding: 0.7rem;
   border-radius: 50%;
   transition: background 0.3s ease, color 0.3s ease;
