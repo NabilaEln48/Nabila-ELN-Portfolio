@@ -380,7 +380,6 @@ main {
 
 .skill-card {
   background-color: transparent;
-  border-color: #00c597;
   border-radius: 5px;
   padding: 3rem 2rem;
   min-width: 180px;
@@ -390,7 +389,6 @@ main {
 
 .skill-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 5px #ffffff88;
 }
 
 .skill-card img {
