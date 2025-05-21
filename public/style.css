@@ -296,7 +296,7 @@ main {
   gap: 1rem;
   max-width: 1000px;
   margin: auto;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0 1rem;
 }
@@ -330,8 +330,10 @@ main {
 }
 
 .service-card:hover {
-  box-shadow: 0 0 25px #00c597;
+  box-shadow: 0 0 40px rgba(100, 255, 218, 0.6);
+  z-index: 2;
 }
+
 
 .card-front {
   position: absolute;
@@ -727,33 +729,33 @@ main {
 
 
 /* ==================== Social Sidebar ==================== */
-.social-top :right{
-  position: fixed;
-  top: 50%;
-  left: 2rem;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.social-topright {
+  position: absolute;
+  top: -0.05cm;       
+  right: 2cm;       
   z-index: 1000;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
 }
 
-.social-sidebar a {
-  color: #ffffff;
-  font-size: 1.3rem;
-  background-color: transparent;
-  padding: 0.7rem;
+.social-topright a {
+  color: #64ffda;
+  font-size: 1.5rem;
+  padding: 0.6rem;
   border-radius: 50%;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.social-sidebar a:hover {
-  background-color: #00ffb3;
-  color: #fff;
+.social-topright a:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+  color: #ffffff;
+  transform: scale(1.2);
 }
+
 
 /* ==================== Footer Section ==================== */
 #footer {

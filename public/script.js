@@ -14,11 +14,9 @@ toggleBtn.addEventListener('click', () => {
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', (e) => {
     if (link.getAttribute('href').startsWith('#')) {
-      e.preventDefault(); // Only prevent for internal page links
+      e.preventDefault();
       const target = link.getAttribute('href');
-
       navMenu.classList.remove('active');
-
       setTimeout(() => {
         window.location.href = target;
       }, 200);
@@ -41,42 +39,33 @@ const titles = [
 
 const titleText = document.getElementById("title-text");
 
-// Loop through titles every 3 seconds
 titles.forEach((title, i) => {
   setTimeout(() => {
     titleText.textContent = title;
   }, i * 3000);
 });
 
-// Hide intro loader and show main site after all titles
 setTimeout(() => {
   document.getElementById("intro-loader").style.display = "none";
   document.getElementById("main-site").style.display = "block";
 }, titles.length * 3000 + 500);
 
 
-// Skip Text functionality
-const skipText = document.getElementById("skip-text");
+// ==========================
+// Skip Intro Text
+// ==========================
 
+const skipText = document.getElementById("skip-text");
 skipText.addEventListener("click", () => {
   document.getElementById("intro-loader").style.display = "none";
   document.getElementById("main-site").style.display = "block";
 });
 
 
-
 // ==========================
-// Service Cards Interaction
+// Service Cards - Flip on Click (Mobile Friendly)
 // ==========================
 
-// Toggle service card content (click = flip/reveal)
-document.querySelectorAll('.service-card').forEach(card => {
-  card.addEventListener('click', () => {
-    card.classList.toggle('show-content');
-  });
-});
-
-// Accordion-like effect on mobile
 document.querySelectorAll('.service-card').forEach(card => {
   card.addEventListener('click', () => {
     document.querySelectorAll('.service-card').forEach(c => {
@@ -88,7 +77,7 @@ document.querySelectorAll('.service-card').forEach(card => {
 
 
 // ==========================
-// Mobile-Specific Scroll Effect
+// Mobile-Specific Scroll Effect (Robot)
 // ==========================
 
 if (window.innerWidth <= 768) {
@@ -102,7 +91,6 @@ if (window.innerWidth <= 768) {
     }
   });
 }
-
 
 
 // ==========================
@@ -121,29 +109,42 @@ const swiper = new Swiper('.projects-carousel', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
   },
-  effect: 'slide' // Optional: 'fade', 'coverflow', etc.
+  effect: 'slide'
 });
+
+
 // ==========================
-// Services  Swiper Carousel
+// Services Carousel (Manual Scroll with Loop + Responsive)
 // ==========================
+
 let currentSlide = 0;
-const cardsPerView = 2;
+
+function getCardsPerView() {
+  return window.innerWidth <= 768 ? 1 : 2;
+}
 
 function scrollCarousel(direction) {
-  const track = document.querySelector('.services-track');
-  const cards = document.querySelectorAll('.service-card');
+  const track = document.querySelector(".services-track");
+  const cards = document.querySelectorAll(".service-card");
+  const cardWidth = 370; // 350px + 20px gap
+  const cardsPerView = getCardsPerView();
   const totalCards = cards.length;
-  const cardWidth = 370; // 350 + 20 gap
-  const maxSlide = Math.ceil(totalCards / cardsPerView);
+  const maxSlides = Math.ceil(totalCards / cardsPerView);
 
   currentSlide += direction;
 
-  if (currentSlide >= maxSlide) {
-    currentSlide = 0; // loop to start
+  if (currentSlide >= maxSlides) {
+    currentSlide = 0;
   } else if (currentSlide < 0) {
-    currentSlide = maxSlide - 1; // loop to end
+    currentSlide = maxSlides - 1;
   }
 
   const offset = currentSlide * cardWidth * cardsPerView;
   track.style.transform = `translateX(-${offset}px)`;
 }
+
+// Recalculate on screen resize
+window.addEventListener("resize", () => {
+  currentSlide = 0;
+  scrollCarousel(0);
+});
