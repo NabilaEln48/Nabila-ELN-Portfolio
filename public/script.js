@@ -35,6 +35,7 @@ const titles = [
   "Software Engineer",
   "Full-Stack Developer",
   "Database Manager & Designer",
+  "Mobile App Development",
   "Welcome To My World",
 ];
 
