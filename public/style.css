@@ -300,8 +300,7 @@ main {
   width: 350px;
   height: 500px;
   background: transparent;
-  border-color: #00c597;
-  box-shadow: 0 0 20px rgba(100, 255, 218, 0.05);
+  border: 1.5px solid #64ffda;
   border-radius: 2.5rem;
   position: relative;
   overflow: hidden;
@@ -391,7 +390,7 @@ main {
 
 .skill-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px #112240;
+  box-shadow: 0 0 5px #ffffff88;
 }
 
 .skill-card img {
