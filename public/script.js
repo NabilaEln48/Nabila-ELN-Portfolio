@@ -101,3 +101,24 @@ if (window.innerWidth <= 768) {
     }
   });
 }
+
+
+
+// ==========================
+// Projects Swiper Carousel
+// ==========================
+
+const swiper = new Swiper('.projects-carousel', {
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 50,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  effect: 'slide' // Optional: 'fade', 'coverflow', etc.
+});
