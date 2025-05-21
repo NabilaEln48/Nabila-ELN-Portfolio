@@ -299,9 +299,10 @@ main {
 .service-card {
   width: 350px;
   height: 500px;
-  background:linear-gradient(to bottom right, #112240, #0a192f);
-  box-shadow: 0 0 15px rgba(100, 255, 218, 0.05);
-  border-radius: 1.5rem;
+  background: transparent;
+  border-color: #00c597;
+  box-shadow: 0 0 20px rgba(100, 255, 218, 0.05);
+  border-radius: 2.5rem;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -312,7 +313,7 @@ main {
 }
 
 .service-card:hover {
-  box-shadow: 0 0 25px rgba(159, 90, 253, 0.3);
+  box-shadow: 0 0 25px #00c597;
 }
 
 .card-front {
@@ -379,12 +380,13 @@ main {
 }
 
 .skill-card {
-  background-color: #112240;
-  border-radius: 12px;
+  background-color: transparent;
+  border-color: #00c597;
+  border-radius: 5px;
   padding: 3rem 2rem;
   min-width: 180px;
   text-align: center;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px #00c597;
   transition: transform 0.3s ease;
 }
 
@@ -428,7 +430,7 @@ main {
   padding: 2.5rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
-  background-color: #112240;  /* unified dark navy tone */
+  background-color: #112240;  
   color: #ccd6f6;
   box-shadow: 0 0 15px rgba(100, 255, 218, 0.05);
   position: relative;
