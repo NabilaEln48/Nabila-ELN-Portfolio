@@ -386,7 +386,6 @@ main {
   padding: 3rem 2rem;
   min-width: 180px;
   text-align: center;
-  box-shadow: 0 0 10px #00c597;
   transition: transform 0.3s ease;
 }
 
