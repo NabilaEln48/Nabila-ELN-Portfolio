@@ -24,7 +24,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
-
 // ==========================
 // Intro Title Animation
 // ==========================
@@ -50,7 +49,6 @@ setTimeout(() => {
   document.getElementById("main-site").style.display = "block";
 }, titles.length * 3000 + 500);
 
-
 // ==========================
 // Skip Intro Text
 // ==========================
@@ -60,7 +58,6 @@ skipText.addEventListener("click", () => {
   document.getElementById("intro-loader").style.display = "none";
   document.getElementById("main-site").style.display = "block";
 });
-
 
 // ==========================
 // Service Cards - Flip on Click (Mobile Friendly)
@@ -74,7 +71,6 @@ document.querySelectorAll('.service-card').forEach(card => {
     card.classList.toggle('active');
   });
 });
-
 
 // ==========================
 // Mobile-Specific Scroll Effect (Robot)
@@ -91,7 +87,6 @@ if (window.innerWidth <= 768) {
     }
   });
 }
-
 
 // ==========================
 // Projects Swiper Carousel
@@ -110,41 +105,4 @@ const swiper = new Swiper('.projects-carousel', {
     prevEl: '.swiper-button-prev'
   },
   effect: 'slide'
-});
-
-
-// ==========================
-// Services Carousel (Manual Scroll with Loop + Responsive)
-// ==========================
-
-let currentSlide = 0;
-
-function getCardsPerView() {
-  return window.innerWidth <= 768 ? 1 : 2;
-}
-
-function scrollCarousel(direction) {
-  const track = document.querySelector(".services-track");
-  const cards = document.querySelectorAll(".service-card");
-  const cardWidth = 370; // 350px + 20px gap
-  const cardsPerView = getCardsPerView();
-  const totalCards = cards.length;
-  const maxSlides = Math.ceil(totalCards / cardsPerView);
-
-  currentSlide += direction;
-
-  if (currentSlide >= maxSlides) {
-    currentSlide = 0;
-  } else if (currentSlide < 0) {
-    currentSlide = maxSlides - 1;
-  }
-
-  const offset = currentSlide * cardWidth * cardsPerView;
-  track.style.transform = `translateX(-${offset}px)`;
-}
-
-// Recalculate on screen resize
-window.addEventListener("resize", () => {
-  currentSlide = 0;
-  scrollCarousel(0);
 });

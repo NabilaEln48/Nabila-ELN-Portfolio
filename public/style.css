@@ -289,27 +289,12 @@ main {
   text-align: center;
 }
 
-.carousel-wrapper {
+/* === Services Grid === */
+.services-grid {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  max-width: 1000px;
-  margin: auto;
-  overflow: visible;
-  position: relative;
-  padding: 0 1rem;
-}
-
-.carousel {
-  overflow: hidden;
-  width: calc(2 * 350px + 20px); /* 2 cards + 1 gap */
-}
-
-.services-track {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease;
+  gap: 2rem;
 }
 
 /* === Service Card === */
@@ -334,7 +319,7 @@ main {
   z-index: 2;
 }
 
-
+/* === Card Front === */
 .card-front {
   position: absolute;
   inset: 0;
@@ -397,22 +382,22 @@ main {
   opacity: 1;
 }
 
-/* === Carousel Buttons === */
-.carousel-btn {
-  background: #64ffda;
-  color: #000;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: background 0.3s ease;
-}
+/* === Mobile Responsive === */
+@media (max-width: 768px) {
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.carousel-btn:hover {
-  background: #00c597;
-}
+  .service-card {
+    width: 90%;
+    height: auto;
+  }
 
+  .card-hover p {
+    font-size: 1.1rem;
+  }
+}
 
 
 /* ==================== Skills Section ==================== */
@@ -1003,7 +988,7 @@ main {
 }
 
 
-/* Services Section - MOBILE */
+/* __________Services Section - MOBILE__________ */
 @media (max-width: 768px) {
   #services {
     padding: 3rem 0;
@@ -1017,35 +1002,45 @@ main {
   .service-card {
     width: 100%;
     max-width: 300px;
-    min-height: 200px;
+    min-height: 450px;
     margin-bottom: 1.5rem;
     position: relative;
     overflow: hidden;
     border-radius: 1.5rem;
-    background:transparent;
-    border-color: 0 0 5px #00f4bb;
+    background: transparent;
+    border: 1.5px solid #00f4bb;
+    box-shadow: 0 0 5px #00f4bb;
     cursor: pointer;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .card-front {
+  .card-front,
+  .card-hover {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 1.5rem;
     height: 100%;
+    width: 100%;
     text-align: center;
   }
-  
+
+  .card-front h5 {
+    font-size: 1rem;
+  }
+
+  .card-hover p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    max-width: 220px;
+    color: #bbb;
+  }
 
   .card-hover {
     display: none;
-    padding: 2.2rem;
-    font-size: 0.95rem;
-    color: white;
-    background: transparent;
-    border-radius: 0 0 1rem 1rem;
-    text-align: center;
   }
 
   .service-card.active .card-front {
@@ -1053,21 +1048,18 @@ main {
   }
 
   .service-card.active .card-hover {
-    display: block;
+    display: flex;
+  }
+
+  .service-card:hover .card-front,
+  .service-card:hover .card-hover {
+    opacity: 1;
   }
 }
 
-.card-hover p {
-  color: #bbb;
-  font-size: 1.2rem;
-  text-align: center;
-  line-height: 1.5;
-  max-width: 240px;
-}
 
 
-
-  /* Skills Section - Keep the loop */
+  /* __________________Skills Section - Keep the loop _________________ */
   #skills {
     padding: 2rem 0;
   }
