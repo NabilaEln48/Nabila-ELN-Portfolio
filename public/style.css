@@ -6,11 +6,9 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #000000;
+  background-color: #000000; /* Deep black-blue */
   color: #ccd6f6;
-  min-height: 100vh;
-  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Container */
@@ -288,7 +286,7 @@ main {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  background: #000;
+  background: transparent;
   padding: 1.8rem 2rem;
   border-radius: 1rem;
   width: 340px;
@@ -753,11 +751,11 @@ main {
 /* ==================== Footer Section ==================== */
 #footer {
   padding: 2rem;
-  background-color: #000000;
+  background-color: transparent;
   text-align: center;
   color: #ffffff;
   font-size: 0.95rem;
-  border-top: 1px solid #000000;
+  border-top: 1px solid transparent;
 }
 
 .footer-content {
