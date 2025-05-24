@@ -217,6 +217,53 @@ main {
   box-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
 }
 
+/* ========================= Spline Viewer Styling ======================== */
+.spline-container {
+  background-color: transparent; /* Dark space background */
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.spline-container h2 {
+  color: #64ffda;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  text-shadow: 0 0 10px #64ffda33;
+}
+
+spline-viewer {
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  display: block;
+  box-shadow: 0 0 30px rgba(100, 255, 218, 0.25);
+  background-color: #000; /* fallback bg in case model doesn't fill */
+}
+
+spline-viewer::part(branding) {
+  display: none !important;
+  pointer-events: none;
+}
+
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  spline-viewer {
+    height: 400px;
+    max-width: 95%;
+  }
+
+  .spline-container h2 {
+    font-size: 1.5rem;
+  }
+}
 
 
 /* ==================== About Section ==================== */
