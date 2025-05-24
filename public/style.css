@@ -292,19 +292,35 @@ spline-viewer::part(branding) {
   flex-direction: row-reverse;
 }
 
-.about-img img {
-  width: 380px;
-  max-width: 100%;
-  border-radius: 1rem;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-  animation: float 4s ease-in-out infinite;
+.about-img {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: #000; /* optional, or transparent */
+  border: 1px solid #00f4bb;
+  border-radius: 2rem;
+  box-shadow: 0 0 10px #00f4bb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Floating animation applied to the box */
+  animation: floatBox 4s ease-in-out infinite;
 }
 
-@keyframes float {
+.about-img img {
+  width: 180px;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* Float animation */
+@keyframes floatBox {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
+
 
 .about-text {
   flex: 1;
@@ -943,7 +959,7 @@ spline-viewer::part(branding) {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: #000; /* solid black now */
+    background: #000;
     flex-direction: column;
     align-items: center;
     justify-content: center;
