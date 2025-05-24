@@ -995,7 +995,7 @@ spline-viewer::part(branding) {
 }
 
 .typewriter-text {
-  font-size: 2.2rem; /* Match with h1 */
+  font-size: 1.9rem;
   animation: 
     typing 3.5s steps(35, end) forwards,
     blink 0.7s step-end 3.5s 5;
