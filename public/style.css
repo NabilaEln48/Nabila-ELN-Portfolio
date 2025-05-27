@@ -244,7 +244,7 @@ spline-viewer {
   overflow: hidden;
   display: block;
   box-shadow: 0 0 30px rgba(100, 255, 218, 0.25);
-  background-color: #000; /* fallback bg in case model doesn't fill */
+  background-color: #000; 
 }
 
 spline-viewer::part(branding) {
