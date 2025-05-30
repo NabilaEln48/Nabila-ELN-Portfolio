@@ -1,0 +1,226 @@
+
+/* ======== General ======== */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* ======== Header ======== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  border-bottom: 1px solid #111;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header .logo i {
+  font-size: 24px;
+  color: #18d26e;
+  margin-right: 10px;
+}
+
+.header .logo h1 {
+  font-size: 22px;
+  color: #18d26e;
+  font-weight: 600;
+  margin: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar .active {
+  color: #18d26e;
+  font-weight: 600;
+  border-bottom: 2px solid #18d26e;
+}
+
+.header-social-links a {
+  font-size: 18px;
+  margin-left: 15px;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.header-social-links a:hover {
+  color: #18d26e;
+}
+
+/* ======== Hero Section ======== */
+.hero {
+  height: 70vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px 40px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  font-family: 'Cardo', serif;
+}
+
+.hero h2 span {
+  color: #18d26e;
+}
+
+/* ======== Gallery Grid ======== */
+.gallery .container-fluid {
+  padding: 40px 30px;
+}
+
+.gallery .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.gallery .col-xl-3,
+.gallery .col-lg-4,
+.gallery .col-md-6 {
+  flex: 0 0 22%;
+  max-width: 22%;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(24, 210, 110, 0.5);
+}
+
+/* ======== Footer ======== */
+#footer {
+  background: #000;
+  color: #ccc;
+  padding: 50px 20px;
+  text-align: center;
+  border-top: 1px solid #111;
+}
+
+#footer h3 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+#footer .brand-alias {
+  color: #18d26e;
+}
+
+#footer .quote {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #aaa;
+  font-style: italic;
+}
+
+.footer-socials a {
+  font-size: 20px;
+  color: #fff;
+  margin: 0 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.footer-socials a:hover {
+  background: #18d26e;
+  color: #fff;
+}
+
+.footer-content p {
+  font-size: 13px;
+  color: #999;
+  margin-top: 15px;
+}
+
+/* ======== Scroll-Top ======== */
+.scroll-top {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 40px;
+  height: 40px;
+  background: #18d26e;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.scroll-top:hover {
+  background: #13b45e;
+}
+
+/* ======== Responsive ======== */
+@media (max-width: 1200px) {
+  .gallery .col-xl-3,
+  .gallery .col-lg-4,
+  .gallery .col-md-6 {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery .col-xl-3,
+  .gallery .col-lg-4,
+  .gallery .col-md-6 {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery .col-xl-3,
+  .gallery .col-lg-4,
+  .gallery .col-md-6 {
+    flex: 0 0 90%;
+    max-width: 90%;
+  }
+}
