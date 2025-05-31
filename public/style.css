@@ -410,6 +410,16 @@ spline-viewer::part(branding) {
 
 
 /* ============================= STATS SECTION ============================= */
+.stats-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
 .stats-card {
   display: flex;
   align-items: center;
@@ -418,6 +428,7 @@ spline-viewer::part(branding) {
   padding: 1.8rem 2rem;
   border-radius: 1rem;
   width: 340px;
+  min-height: 180px; /* 🔁 Equal height for all cards */
   box-shadow: 0 0 10px rgba(100, 255, 218, 0.6);
   transition: transform 0.3s ease;
 }
@@ -425,6 +436,7 @@ spline-viewer::part(branding) {
 .stats-card:hover {
   transform: translateY(-5px);
 }
+
 .card-icon {
   width: 60px;
   height: 60px;
@@ -448,6 +460,7 @@ spline-viewer::part(branding) {
   color: #fff;
   line-height: 1.4;
   text-align: left;
+  min-height: 50px; /* ✅ Consistent text block height */
 }
 
 .card-title strong {
@@ -458,15 +471,6 @@ spline-viewer::part(branding) {
   margin-top: 0.25rem;
 }
 
-.stats-list {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none; 
-  padding: 0;
-  margin: 0;
-  flex-wrap: wrap; 
-}
 
 /* ===================== Services Section Layout ============================== */
 #services {
