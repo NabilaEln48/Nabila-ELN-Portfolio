@@ -250,8 +250,13 @@ body {
 /* ==================== Theme Toggle Button ==================== */
 #theme-toggle {
   background-color: transparent;
-  border: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: transparent;
+  cursor: pointer;
+  margin-top: 1rem; 
 }
+
 
 
 /* ==================== Main Content ==================== */
@@ -1021,10 +1026,50 @@ spline-viewer::part(branding) {
 
   .logo {
     position: fixed;
-    left: 0.2rem;
-    top: 0.2rem;
+    left: 0.8rem;
+    top: 0.4rem;
     height: 45px;
     z-index: 1001;
+    cursor: pointer;
+  }
+
+  .mobile-top-buttons {
+    position: fixed;
+    top: 0.3rem;
+    right: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 1002;
+  }
+
+  .menu-toggle {
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-toggle .close-icon {
+    display: none;
+  }
+
+  .theme-toggle-mobile {
+    font-size: 1.3rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+  }
+
+  #theme-toggle {
+    display: none !important;
   }
 
   .nav-menu {
@@ -1053,19 +1098,6 @@ spline-viewer::part(branding) {
     padding: 0.5rem 1rem;
     color: var(--text-color);
     text-decoration: none;
-  }
-
-  .menu-toggle {
-    position: fixed;
-    right: 1rem;
-    top: 0.5rem;
-    display: block !important;
-    z-index: 1002;
-    font-size: 2rem;
-    color: var(--text-color);
-    background: none;
-    border: none;
-    cursor: pointer;
   }
 
   #hero {
@@ -1261,6 +1293,7 @@ spline-viewer::part(branding) {
   }
 }
 
+/* Ultra small screen adjustments */
 @media (max-width: 480px) {
   .content h1 {
     font-size: 1.8rem;

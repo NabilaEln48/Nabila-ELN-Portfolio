@@ -1,19 +1,27 @@
 // ==========================
-// Mobile Navigation Menu
+// Mobile Navigation Menu Toggle
 // ==========================
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
+const menuIcon = document.querySelector('.menu-icon');
+const closeIcon = document.querySelector('.close-icon');
 
 menuToggle?.addEventListener('click', () => {
-  navMenu.classList.add('active');
+  navMenu.classList.toggle('active');
+  const isOpen = navMenu.classList.contains('active');
+  menuIcon.style.display = isOpen ? 'none' : 'inline';
+  closeIcon.style.display = isOpen ? 'inline' : 'none';
 });
 
+// Close menu on link click
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', e => {
     const href = link.getAttribute('href');
     if (href?.startsWith('#')) {
       e.preventDefault();
       navMenu.classList.remove('active');
+      menuIcon.style.display = 'inline';
+      closeIcon.style.display = 'none';
       setTimeout(() => {
         window.location.href = href;
       }, 200);
@@ -100,23 +108,20 @@ const swiper = new Swiper('.projects-carousel', {
 });
 
 // ==========================
-// Theme Toggle (Light/Dark)
+// Theme Toggle by Clicking the Logo
 // ==========================
-const themeToggleBtn = document.getElementById("theme-toggle");
+const themeLogo = document.getElementById("theme-logo-toggle");
 const htmlElement = document.documentElement;
 
 function setTheme(mode) {
   htmlElement.setAttribute("data-theme", mode);
   localStorage.setItem("theme", mode);
-  if (themeToggleBtn) {
-    themeToggleBtn.textContent = mode === "light" ? "🌞" : "🌙";
-  }
 }
 
 const savedTheme = localStorage.getItem("theme") || "dark";
 setTheme(savedTheme);
 
-themeToggleBtn?.addEventListener("click", () => {
+themeLogo?.addEventListener("click", () => {
   const currentTheme = htmlElement.getAttribute("data-theme");
   setTheme(currentTheme === "dark" ? "light" : "dark");
 });

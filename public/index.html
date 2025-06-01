@@ -17,106 +17,62 @@
 
 
 <body>
-<!-- The loading page -->
-<div id="intro-loader">
-  <img src="/image/LOGO.png" alt="Logo" class="logo-center" />
+  <!-- The loading page -->
+  <div id="intro-loader">
+    <img src="/image/LOGO.png" alt="Logo" class="logo-center" />
 
-  <div class="progress-bar-wrapper">
-    <div class="progress-bar"></div>
+    <div class="progress-bar-wrapper">
+      <div class="progress-bar"></div>
+    </div>
+
+    <div class="title-display" id="title-text">Full-Stack Developer</div>
+    <p id="skip-text"><strong>Skip Intro</strong></p>
   </div>
 
-  <div class="title-display" id="title-text">Full-Stack Developer</div>
-  <p id="skip-text"><strong>Skip Intro</strong></p>
-</div>
+  <!-- Dark Mode Toggle (MOBILE only) -->
+  <button id="theme-toggle" class="theme-toggle-mobile" aria-label="Toggle theme">🌓</button>
 
-<!--  Wrap all main content inside #main-site -->
-<div id="main-site" style="display: none;">
-  <div class="container">
-    <div class="menu-toggle">&#9776;</div>
-    <header id="header" class="d-flex flex-column justify-content-center">
-      <div class="logo-wrapper">
-        <img src="/image/LOGO.png" alt="Logo" class="logo" />
+  <!-- Main Site Content -->
+  <div id="main-site" style="display: none;">
+    <div class="container">
+      <!-- Mobile Menu Toggle -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span class="menu-icon">&#9776;</span>
+        <span class="close-icon">&#10005;</span>
       </div>
 
+      <!-- Sidebar/Menu -->
+      <header id="header" class="d-flex flex-column justify-content-center">
+        <!-- Logo -->
+        <div class="logo-wrapper">
+          <img src="/public/image/LOGO.png" alt="Logo" class="logo" id="theme-logo-toggle" />
+        </div>
+        <!-- Navigation Menu -->
+        <nav id="navbar" class="nav-menu">
+          <ul>
+            <li><a href="#hero" class="nav-link scrollto active" title="Home"><i class="bx bx-home"></i><span class="nav-title">Home</span></a></li>
+            <li><a href="#about" class="nav-link scrollto" title="About"><i class="bx bx-user"></i><span class="nav-title">About</span></a></li>
+            <li><a href="#education" class="nav-link scrollto" title="Education"><i class="bx bx-book"></i><span class="nav-title">Education</span></a></li>
+            <li><a href="#skills" class="nav-link scrollto" title="Toolkits"><i class="bx bx-dumbbell"></i><span class="nav-title">Toolkits</span></a></li>
+            <li><a href="#experience" class="nav-link scrollto" title="Experience"><i class="bx bx-server"></i><span class="nav-title">Experience</span></a></li>
+            <li><a href="#services" class="nav-link scrollto" title="Services"><i class="bx bx-file-blank"></i><span class="nav-title">Services</span></a></li>
+            <li><a href="blog.html" class="nav-link scrollto" title="Blog"><i class="bx bxl-blogger"></i><span class="nav-title">Blog</span></a></li>
+            <li><a href="#projects" class="nav-link scrollto" title="Projects"><i class="bx bx-book-content"></i><span class="nav-title">Projects</span></a></li>
+          </ul>
+        </nav>
 
-<nav id="navbar" class="nav-menu">
-  <ul>
-    <li>
-        <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
-    </li>
-    <li>
-      <a href="#hero" class="nav-link scrollto active" title="Home">
-        <i class="bx bx-home"></i><span class="nav-title">Home</span>
-      </a>
-    </li>
-    <li>
-      <a href="#about" class="nav-link scrollto" title="About">
-        <i class="bx bx-user"></i><span class="nav-title">About</span>
-      </a>
-    </li>
-    <li>
-      <a href="#education" class="nav-link scrollto" title="Education">
-        <i class="bx bx-book"></i><span class="nav-title">Education</span>
-      </a>
-    </li>
-        <li>
-      <a href="#skills" class="nav-link scrollto" title="Toolkits">
-        <i class="bx bx-dumbbell"></i><span class="nav-title">Toolkits</span>
-      </a>
-    </li>
-            <li>
-      <a href="#experience" class="nav-link scrollto" title="Experience">
-        <i class="bx bx-server"></i><span class="nav-title">Experience</span>
-      </a>
-    </li>
-    <li>
-      <a href="#services" class="nav-link scrollto" title="Services">
-        <i class="bx bx-file-blank"></i><span class="nav-title">Services</span>
-      </a>
-    </li>
-    <li>
-      <a href="blog.html" class="nav-link scrollto" title="Blog">
-        <i class="bx bxl-blogger"></i><span class="nav-title">Blog</span>
-      </a>
-    </li>
-    <li>
-      <a href="#projects" class="nav-link scrollto" title="Projects">
-        <i class="bx bx-book-content"></i><span class="nav-title">Projects</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<!-- Social Links -->
-<div class="social-links">
-  <ul>
-    <li>
-      <a href="https://github.com/NabilaEln48" class="nav-link github" title="GitHub" target="_blank">
-        <i class="bx bxl-github"></i><span class="nav-title">GitHub</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.linkedin.com/in/nabilaeln48/" class="nav-link linkedin" title="LinkedIn" target="_blank">
-        <i class="bx bxl-linkedin"></i><span class="nav-title">LinkedIn</span>
-      </a>
-    </li>
-        <li>
-      <a href="https://x.com/nabila_eln48" class="nav-link twitter" title="Twitter" target="_blank">
-        <i class="bx bxl-twitter"></i><span class="nav-title">Twitter</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.instagram.com/nabila_eln48/" class="nav-link instagram" title="Instagram" target="_blank">
-        <i class="bx bxl-instagram"></i><span class="nav-title">Instagram</span>
-      </a>
-    </li>
-  </ul>
-</div>
-
-
-  </header>
+        <!-- Social Links -->
+        <div class="social-links">
+          <ul>
+            <li><a href="https://github.com/NabilaEln48" class="nav-link github" title="GitHub" target="_blank"><i class="bx bxl-github"></i><span class="nav-title">GitHub</span></a></li>
+            <li><a href="https://www.linkedin.com/in/nabilaeln48/" class="nav-link linkedin" title="LinkedIn" target="_blank"><i class="bx bxl-linkedin"></i><span class="nav-title">LinkedIn</span></a></li>
+            <li><a href="https://x.com/nabila_eln48" class="nav-link twitter" title="Twitter" target="_blank"><i class="bx bxl-twitter"></i><span class="nav-title">Twitter</span></a></li>
+            <li><a href="https://www.instagram.com/nabila_eln48/" class="nav-link instagram" title="Instagram" target="_blank"><i class="bx bxl-instagram"></i><span class="nav-title">Instagram</span></a></li>
+          </ul>
+        </div>
+      </header>
   </div>
-  
+  </div>
 
   <main>
     <section id="hero">
