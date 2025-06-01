@@ -31,13 +31,13 @@ body {
 
 .header .logo i {
   font-size: 24px;
-  color: #18d26e;
+  color: #00d5ff;
   margin-right: 10px;
 }
 
 .header .logo h1 {
   font-size: 22px;
-  color: #18d26e;
+  color: #00d5ff;
   font-weight: 600;
   margin: 0;
 }
@@ -59,9 +59,9 @@ body {
 
 .navbar a:hover,
 .navbar .active {
-  color: #18d26e;
+  color: #00d5ff;
   font-weight: 600;
-  border-bottom: 2px solid #18d26e;
+  border-bottom: 2px solid #00d5ff;
 }
 
 .header-social-links a {
@@ -72,7 +72,7 @@ body {
 }
 
 .header-social-links a:hover {
-  color: #18d26e;
+  color:#00d5ff;
 }
 
 /* ======== Hero Section ======== */
@@ -93,7 +93,7 @@ body {
 }
 
 .hero h2 span {
-  color: #18d26e;
+  color:#00d5ff;
 }
 
 /* ======== Gallery Grid ======== */
@@ -144,7 +144,7 @@ body {
 }
 
 #footer .brand-alias {
-  color: #18d26e;
+  color: #00d5ff;
 }
 
 #footer .quote {
@@ -165,7 +165,7 @@ body {
 }
 
 .footer-socials a:hover {
-  background: #18d26e;
+  background: #00d5ff;
   color: #fff;
 }
 
@@ -182,7 +182,7 @@ body {
   bottom: 15px;
   width: 40px;
   height: 40px;
-  background: #18d26e;
+  background: #00d5ff;
   color: #fff;
   border-radius: 50%;
   font-size: 20px;
