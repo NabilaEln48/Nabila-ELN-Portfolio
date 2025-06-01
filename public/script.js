@@ -1,68 +1,64 @@
 // ==========================
 // Mobile Navigation Menu
 // ==========================
-
-const toggleBtn = document.querySelector('.menu-toggle');
+const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
-// Open menu on ☰ click
-toggleBtn.addEventListener('click', () => {
+menuToggle?.addEventListener('click', () => {
   navMenu.classList.add('active');
 });
 
-// Close menu on nav link click (with delay + smooth scroll)
 document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', (e) => {
-    if (link.getAttribute('href').startsWith('#')) {
+  link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+    if (href?.startsWith('#')) {
       e.preventDefault();
-      const target = link.getAttribute('href');
       navMenu.classList.remove('active');
       setTimeout(() => {
-        window.location.href = target;
+        window.location.href = href;
       }, 200);
     }
   });
 });
 
 // ==========================
-// Intro Title Animation
+// Intro Title Animation + Loader
 // ==========================
+document.addEventListener("DOMContentLoaded", () => {
+  const titles = [
+    "Software Engineer",
+    "Full-Stack Developer",
+    "Database Manager & Designer",
+    "Mobile App Development",
+    "Welcome To My World"
+  ];
+  const titleText = document.getElementById("title-text");
+  const introLoader = document.getElementById("intro-loader");
+  const mainSite = document.getElementById("main-site");
 
-const titles = [
-  "Software Engineer",
-  "Full-Stack Developer",
-  "Database Manager & Designer",
-  "Mobile App Development",
-  "Welcome To My World",
-];
+  if (titleText && introLoader && mainSite) {
+    titles.forEach((title, i) => {
+      setTimeout(() => {
+        titleText.textContent = title;
+      }, i * 3000);
+    });
 
-const titleText = document.getElementById("title-text");
+    setTimeout(() => {
+      introLoader.style.display = "none";
+      mainSite.style.display = "block";
+    }, titles.length * 3000 + 500);
+  }
 
-titles.forEach((title, i) => {
-  setTimeout(() => {
-    titleText.textContent = title;
-  }, i * 3000);
+  const skipText = document.getElementById("skip-text");
+  skipText?.addEventListener("click", () => {
+    introLoader.style.display = "none";
+    mainSite.style.display = "block";
+  });
 });
 
-setTimeout(() => {
-  document.getElementById("intro-loader").style.display = "none";
-  document.getElementById("main-site").style.display = "block";
-}, titles.length * 3000 + 500);
-
 // ==========================
-// Skip Intro Text
+// Service Cards - Flip on Click (Mobile)
 // ==========================
-
-const skipText = document.getElementById("skip-text");
-skipText.addEventListener("click", () => {
-  document.getElementById("intro-loader").style.display = "none";
-  document.getElementById("main-site").style.display = "block";
-});
-
-// ==========================
-// Service Cards - Flip on Click (Mobile Friendly)
-// ==========================
-
 document.querySelectorAll('.service-card').forEach(card => {
   card.addEventListener('click', () => {
     document.querySelectorAll('.service-card').forEach(c => {
@@ -73,25 +69,21 @@ document.querySelectorAll('.service-card').forEach(card => {
 });
 
 // ==========================
-// Mobile-Specific Scroll Effect (Robot)
+// Mobile Robot Scroll Effect
 // ==========================
-
 if (window.innerWidth <= 768) {
   const robot = document.querySelector('.robot-3d');
-
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    const translateValue = scrollY * 0.15;
     if (robot) {
-      robot.style.transform = `translateY(${translateValue}px)`;
+      robot.style.transform = `translateY(${scrollY * 0.15}px)`;
     }
   });
 }
 
 // ==========================
-// Projects Swiper Carousel
+// Swiper Carousel
 // ==========================
-
 const swiper = new Swiper('.projects-carousel', {
   loop: true,
   slidesPerView: 1,
@@ -105,4 +97,26 @@ const swiper = new Swiper('.projects-carousel', {
     prevEl: '.swiper-button-prev'
   },
   effect: 'slide'
+});
+
+// ==========================
+// Theme Toggle (Light/Dark)
+// ==========================
+const themeToggleBtn = document.getElementById("theme-toggle");
+const htmlElement = document.documentElement;
+
+function setTheme(mode) {
+  htmlElement.setAttribute("data-theme", mode);
+  localStorage.setItem("theme", mode);
+  if (themeToggleBtn) {
+    themeToggleBtn.textContent = mode === "light" ? "🌞" : "🌙";
+  }
+}
+
+const savedTheme = localStorage.getItem("theme") || "dark";
+setTheme(savedTheme);
+
+themeToggleBtn?.addEventListener("click", () => {
+  const currentTheme = htmlElement.getAttribute("data-theme");
+  setTheme(currentTheme === "dark" ? "light" : "dark");
 });
