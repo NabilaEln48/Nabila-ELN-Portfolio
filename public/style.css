@@ -848,6 +848,65 @@ spline-viewer::part(branding) {
   box-shadow: 0 0 10px var(--glow-color);
 }
 
+/* ==================== Certifications Section ==================== */
+.certifications-section {
+  padding: 6rem 2rem;
+  background: transparent;
+  color: var(--text-color);
+}
+
+
+.certifications-subtext {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  opacity: 0.8;
+}
+
+.cert-list-compact {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.cert-list-compact li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 1rem;
+}
+
+[data-theme="light"] .cert-list-compact li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.cert-list-compact li i {
+  color: var(--text-color);
+  margin-right: 0.8rem;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.cert-name {
+  color: var(--text-color);
+  flex: 1;
+  padding-left: 0.5rem;
+  font-weight: 500;
+}
+
+.cert-year {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0.6;
+}
+
+
 /* ==================== Social Sidebar ==================== */
 .social-topright {
   position: absolute;
