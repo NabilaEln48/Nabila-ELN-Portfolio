@@ -3,10 +3,10 @@
   /* Dark Mode */
   --bg-color: #000000;
   --text-color: #ccd6f6;
-  --accent-color: #64ffda;
-  --secondary-accent: #00ffb3;
+  --accent-color: #00b3e0;
+  --secondary-accent: #002449;
   --card-bg: #0b0a10;
-  --glow-color: rgba(100, 255, 218, 0.4);
+  --glow-color: rgb(0, 242, 255);
   --shadow-color: rgba(0, 0, 0, 0.2);
 
   /* Light Mode Base */
@@ -1341,6 +1341,7 @@ spline-viewer::part(branding) {
     gap: 1rem;
   }
 }
+
 
 /* Ultra small screen adjustments */
 @media (max-width: 480px) {
