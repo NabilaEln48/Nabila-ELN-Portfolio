@@ -1375,3 +1375,65 @@ spline-viewer::part(branding) {
     transform: translateX(-50%);
   }
 }
+
+
+
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+#contact {
+  padding: 60px 20px;
+  background-color:transparent;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.contact-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info .info-block {
+  margin-bottom: 20px;
+}
+
+.contact-info h4 {
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: var(--accent-color);
+}
+
+.contact-info p,
+.contact-info a {
+  font-size: 16px;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.contact-image {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
