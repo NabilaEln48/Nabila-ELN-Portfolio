@@ -370,7 +370,7 @@ spline-viewer {
   overflow: hidden;
   display: block;
   box-shadow: 0 0 30px var(--glow-color);
-  background-color:transparent;
+  background-color:#000000;
 }
 
 spline-viewer::part(branding) {
@@ -688,7 +688,7 @@ spline-viewer::part(branding) {
   align-items: center;
   gap: 2rem;
   border-radius: 1.5rem;
-  padding: 2.5rem;
+  padding: 2rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
   background-color: transparent;
@@ -815,7 +815,7 @@ spline-viewer::part(branding) {
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--accent-color);
-  font-size: 1.2rem;
+  font-size: 1rem;
   transition: color 0.3s ease;
 }
 
