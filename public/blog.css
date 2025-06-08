@@ -10,42 +10,56 @@ body {
 
 /* ======== Header ======== */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 15px 30px;
+  background-color: #000000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  position: relative;
+}
+
+/* Logo Section */
+.logo-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  z-index: 1000;
-  border-bottom: 1px solid #111;
 }
 
-  .logo {
-    width: 50px;
-    height: 50px;
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.logo-link i {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+
+/* Responsive (Optional) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
-.header .logo h1 {
-  font-size: 22px;
-  color: #00d5ff;
-  font-weight: 600;
-  margin: 0;
+  .header-social-links {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 }
 
-
-.header-social-links a {
-  font-size: 18px;
-  margin-left: 15px;
-  color: #fff;
-  transition: 0.3s;
-}
-
-.header-social-links a:hover {
-  color:#00d5ff;
-}
 
 /* ======== Hero Section ======== */
 .hero {
