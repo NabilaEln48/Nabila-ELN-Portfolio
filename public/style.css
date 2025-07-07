@@ -679,7 +679,10 @@ spline-viewer::part(branding) {
 /* ==================== Projects Section ==================== */
 #projects {
   padding: 6rem 2rem;
+  padding-left: 7rem; /* Adjust to offset fixed sidebar width */
   color: var(--text-color);
+  position: relative;
+  z-index: 1;
 }
 
 .project-card {
@@ -695,6 +698,7 @@ spline-viewer::part(branding) {
   border: 1.5px solid var(--accent-color);
   color: var(--text-color);
   position: relative;
+  z-index: 1; /* Make sure it's above sidebar if needed */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -784,6 +788,7 @@ spline-viewer::part(branding) {
   transition: 0.3s ease;
 }
 
+/* Project-specific styles */
 .project-card.arise::before {
   background: var(--accent-color);
 }
@@ -795,6 +800,18 @@ spline-viewer::part(branding) {
 .project-card.portfolio::before {
   background: #112240;
 }
+
+/* Optional: Ensure sidebar stays in place without interfering */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 6rem; /* Or whatever width you're using */
+  height: 100%;
+  z-index: 0; /* Below main content */
+  background-color: var(--sidebar-color);
+}
+
 
 /* ======================= Swiper Pagination Dots ======================= */
 .swiper-pagination-bullet {
