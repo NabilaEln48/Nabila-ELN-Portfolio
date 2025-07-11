@@ -1,144 +1,98 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>"ELN" Blog</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-
-
-  <!-- Custom Blog CSS -->
-  <link href="blog.css" rel="stylesheet" />
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nabila M. Photography</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <link rel="stylesheet" href="blog.css">
 </head>
 
 <body>
+<header class="site-header">
+  <div class="container">
+    <!-- Logo Section -->
+    <div class="logo-wrapper">
+      <a href="index.html" class="logo-link">
+        <img src="/image/LOGO.png" alt="Logo" class="logo-img" id="theme-logo-toggle" />
+        <span class="logo-text">Nabila M.</span>
+      </a>
+    </div>
 
-<!-- Header -->
-<header id="header" class="header">
-  <div class="logo-wrapper">
-    <a href="index.html" class="logo-link">
-      <i class="bi bi-camera"></i>
-      <img src="/image/LOGO.png" alt="Logo" class="logo-img" id="theme-logo-toggle" />
-    </a>
+    <!-- Navigation Menu -->
+    <nav class="nav">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
   </div>
 </header>
 
 
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Hello, I’m Nabila M.</h1>
+      <p>Photographer & Visual Storyteller</p>
+      <a href="#gallery" class="btn">View Gallery</a>
+    </div>
+  </section>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6 text-center">
-          <h2>I'm <span><strong>Nabila M. "ELN"</strong></span> — This is my Personal Photography Blog</h2>
-        </div>
+  <section id="about" class="about section">
+    <div class="container about-content">
+      <img src="/image/16.jpg" alt="Nabila M." class="about-img">
+      <div>
+        <h2>About Me</h2>
+        <p>I’m a passionate person about Photography who loves capturing life’s moments through my lens. My real Job is Software Engineer, I turn complex problems into intuitive.
+          When I'm not coding, I'm probably drawing, learning to skateboard, Surfing, or telling myself to take a break and then not doing that.
+        </p>
       </div>
     </div>
   </section>
 
-  <main id="main" data-aos="fade" data-aos-delay="1500">
-    <section id="gallery" class="gallery">
-      <div class="container-fluid">
-        <div class="row gy-4 justify-content-center" id="galleryContainer">
-          
-    <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/1.jpg" class="img-fluid rounded shadow" alt="Photo 1" />
-    </div>
-        <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/2.jpg" class="img-fluid rounded shadow" alt="Photo 2" />
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/3.jpg" class="img-fluid rounded shadow" alt="Photo 3" />
-    </div>
-        <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/4.jpg" class="img-fluid rounded shadow" alt="Photo 4" />
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/5.JPG" class="img-fluid rounded shadow" alt="Photo 5" />
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/6.JPG" class="img-fluid rounded shadow" alt="Photo 6" />
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/7.JPG" class="img-fluid rounded shadow" alt="Photo 7" />
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/8.JPG" class="img-fluid rounded shadow" alt="Photo 8" />
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/9.JPG" class="img-fluid rounded shadow" alt="Photo 9" />
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/10.JPG" class="img-fluid rounded shadow" alt="Photo 10" />
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/11.JPG" class="img-fluid rounded shadow" alt="Photo 11" />
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/12.JPG" class="img-fluid rounded shadow" alt="Photo 12" />
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/13.JPG" class="img-fluid rounded shadow" alt="Photo 13" />
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/14.jpg" class="img-fluid rounded shadow" alt="Photo 14" />
-    </div>
-        <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/15.jpg" class="img-fluid rounded shadow" alt="Photo 15" />
-    </div>    
-    <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/16.jpg" class="img-fluid rounded shadow" alt="Photo 16" />
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/17.jpg" class="img-fluid rounded shadow" alt="Photo 17" />
-    </div>
-        <div class="col-xl-3 col-lg-4 col-md-6">
-      <img src="/image/img_blog/18.jpg" class="img-fluid rounded shadow" alt="Photo 18" />
-    </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer id="footer">
+  <section id="gallery" class="gallery section">
     <div class="container">
-      <div class="footer-socials">
-        <a href="https://x.com/nabila_eln48" target="_blank"><i class="bx bxl-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/nabilaeln48/" target="_blank"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://www.instagram.com/nabila_eln48/" target="_blank"><i class="bx bxl-instagram"></i></a>
-      </div>
-      <div class="footer-content">
-        <p><strong> Made by Nabila M. — All rights reserved. ©</strong></p>
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery-grid">
+        <a href="/image/img_blog/1.jpg" class="glightbox"><img src="/image/img_blog/1.jpg" alt="Photo 1"></a>
+        <a href="/image/img_blog/2.jpg" class="glightbox"><img src="/image/img_blog/2.jpg" alt="Photo 2"></a>
+        <a href="/image/img_blog/3.jpg" class="glightbox"><img src="/image/img_blog/3.jpg" alt="Photo 3"></a>
+        <a href="/image/img_blog/4.jpg" class="glightbox"><img src="/image/img_blog/4.jpg" alt="Photo 4"></a>
+        <a href="/image/img_blog/5.jpg" class="glightbox"><img src="/image/img_blog/1.jpg" alt="Photo 5"></a>
+        <a href="/image/img_blog/6.jpg" class="glightbox"><img src="/image/img_blog/2.jpg" alt="Photo 6"></a>
+        <a href="/image/img_blog/7.jpg" class="glightbox"><img src="/image/img_blog/3.jpg" alt="Photo 7"></a>
+        <a href="/image/img_blog/8.jpg" class="glightbox"><img src="/image/img_blog/4.jpg" alt="Photo 8"></a>
+        <a href="/image/img_blog/9.jpg" class="glightbox"><img src="/image/img_blog/1.jpg" alt="Photo 9"></a>
+        <a href="/image/img_blog/10.jpg" class="glightbox"><img src="/image/img_blog/2.jpg" alt="Photo 10"></a>
+        <a href="/image/img_blog/11.jpg" class="glightbox"><img src="/image/img_blog/3.jpg" alt="Photo 11"></a>
+        <a href="/image/img_blog/12.jpg" class="glightbox"><img src="/image/img_blog/4.jpg" alt="Photo 12"></a>
+        <a href="/image/img_blog/13.jpg" class="glightbox"><img src="/image/img_blog/1.jpg" alt="Photo 13"></a>
+        <a href="/image/img_blog/14.jpg" class="glightbox"><img src="/image/img_blog/2.jpg" alt="Photo 14"></a>
+        <a href="/image/img_blog/15.jpg" class="glightbox"><img src="/image/img_blog/3.jpg" alt="Photo 15"></a>
+        <a href="/image/img_blog/16.jpg" class="glightbox"><img src="/image/img_blog/4.jpg" alt="Photo 16"></a>
+        <a href="/image/img_blog/17.jpg" class="glightbox"><img src="/image/img_blog/1.jpg" alt="Photo 17"></a>
+        <a href="/image/img_blog/18.jpg" class="glightbox"><img src="/image/img_blog/2.jpg" alt="Photo 18"></a>
+        <a href="/image/img_blog/19.jpg" class="glightbox"><img src="/image/img_blog/3.jpg" alt="Photo 19"></a>
+        <a href="/image/img_blog/20.jpg" class="glightbox"><img src="/image/img_blog/4.jpg" alt="Photo 20"></a>
+        <a href="/image/img_blog/21.jpg" class="glightbox"><img src="/image/img_blog/3.jpg" alt="Photo 21"></a>
+        <a href="/image/img_blog/22.jpg" class="glightbox"><img src="/image/img_blog/4.jpg" alt="Photo 22"></a>
+        <!-- Add more as needed -->
       </div>
     </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Nabila M. — All rights reserved.</p>
   </footer>
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <div id="preloader"><div class="line"></div></div>
+  <a href="#" class="scroll-top"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/blog.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({ selector: '.glightbox' });
+  </script>
 </body>
+
 </html>
