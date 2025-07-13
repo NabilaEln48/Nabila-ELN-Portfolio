@@ -457,10 +457,17 @@ spline-viewer::part(branding) {
   gap: 2rem;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   flex-wrap: wrap;
+  max-width: 1080px; /* Optional: controls max container width */
 }
 
+.stats-list li {
+  flex: 0 0 auto;
+}
+
+
+/* Card styling */
 .stats-card {
   display: flex;
   align-items: center;
@@ -468,7 +475,7 @@ spline-viewer::part(branding) {
   background: transparent;
   padding: 1.8rem 2rem;
   border-radius: 1rem;
-  width: 340px;
+  width: 100%; /* updated to allow flex sizing */
   min-height: 180px;
   box-shadow: 0 0 10px var(--glow-color);
   transition: transform 0.3s ease;
@@ -511,6 +518,20 @@ spline-viewer::part(branding) {
   font-weight: 500;
   margin-top: 0.25rem;
 }
+
+/* Responsive tweaks for tablet and mobile */
+@media (max-width: 1024px) {
+  .stats-list li {
+    flex: 0 1 calc(50% - 1.5rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-list li {
+    flex: 0 1 100%;
+  }
+}
+
 
 /* ===================== Services Section Layout ============================== */
 #services {
