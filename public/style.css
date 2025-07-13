@@ -1469,3 +1469,30 @@ spline-viewer::part(branding) {
   border-radius: 12px;
   box-shadow: 0 4px 12px var(--shadow-color);
 }
+
+/* ============================= SPLINE CONTAINER ============================= */
+.spline-container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: transparent;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Spline viewer styling to match contact image style */
+.spline-container2 spline-viewer {
+  width: 600px;
+  height: 400px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .spline-container2 spline-viewer {
+    width: 90vw;
+    height: 300px;
+  }
+}
