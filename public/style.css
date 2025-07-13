@@ -345,12 +345,6 @@ main {
   transition: all 0.3s ease;
 }
 
-.btn-cta:hover {
-  background-color: var(--glow-color);
-  box-shadow: 0 0 10px var(--glow-color);
-  color: var(--text-color);
-}
-
 /* ========================= Spline Viewer Styling ======================== */
 .spline-container {
   background-color: transparent;
