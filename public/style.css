@@ -363,7 +363,6 @@ spline-viewer {
   border-radius: 1.2rem;
   overflow: hidden;
   display: block;
-  box-shadow: 0 0 30px var(--glow-color);
   background-color:#000000;
 }
 
