@@ -165,6 +165,7 @@ img:hover {
 }
 
 .logo-img {
+  background-color: #111111;
   height: 40px;
   width: auto;
   transition: opacity 0.3s ease-in-out;
