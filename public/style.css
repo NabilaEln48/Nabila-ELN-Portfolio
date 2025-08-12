@@ -1159,7 +1159,7 @@ spline-viewer::part(branding) {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: var(--bg-color);
     flex-direction: column;
     align-items: center;
@@ -1169,6 +1169,7 @@ spline-viewer::part(branding) {
     transition: transform 0.3s ease;
     z-index: 1000;
     padding-top: 60px;
+    overflow-y: auto;
   }
 
   .nav-menu.active {
