@@ -13,10 +13,10 @@
   --light-bg: #ffffff;
   --light-card-bg: #ffffff;
   --light-text: #1a1a1a;
-  --light-accent: #00b3e0 ;
-  --light-secondary-accent: #002449;
-  --light-glow-color: #00b3e0;
-  --light-shadow-color: #00b3e0;
+  --light-accent: #100077 ;
+  --light-secondary-accent: #100077;
+  --light-glow-color: #100077;
+  --light-shadow-color: #100077;
 
   /* Gradient for Titles */
   --gradient-text: linear-gradient(to right, #00d5ff, #00bfa6);
