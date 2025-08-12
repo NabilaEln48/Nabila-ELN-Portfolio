@@ -299,27 +299,52 @@ img:hover {
 }
 
 /* ===== Swiper Gallery ===== */
-.swiper-slide {
-  background: var(--card);
-  border-radius: 12px;
+/* Swiper Container */
+.swiper {
+  padding-bottom: 40px; /* Space for pagination */
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 213, 255, 0.1);
-  transition: transform 0.3s ease;
 }
 
+/* Slide styling */
+.swiper-slide {
+  width: 250px;
+  height: max-content;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Pagination positioning - FIXED */
+.swiper-pagination {
+  position: absolute;
+  bottom: 0 !important; /* Force to bottom */
+  top: auto !important;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* Navigation buttons */
 .swiper-button-next,
 .swiper-button-prev {
-  color: var(--accent);
+  color: white;
+  background: rgba(0,0,0,0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 10;
 }
 
-.swiper-pagination-bullet {
-  background: var(--accent);
-  opacity: 0.6;
-}
-
-.swiper-pagination-bullet-active {
-  background: var(--text);
-  opacity: 1;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .swiper {
+    padding-bottom: 30px;
+  }
 }
 
 /* ===== Footer ===== */
