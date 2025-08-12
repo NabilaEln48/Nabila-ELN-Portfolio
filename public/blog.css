@@ -5,6 +5,7 @@
   --accent: #48ff00;
   --accent-hover: #025c08;
   --card: #111;
+  --icon: 0;
 }
 
 [data-theme="light"] {
@@ -13,7 +14,10 @@
   --accent: #100077;
   --accent-hover: #3c8af7;
   --card: #f0f0f0;
+  --icon: 1;
 }
+
+
 
 /* ===== Base Reset ===== */
 * {
@@ -165,10 +169,10 @@ img:hover {
 }
 
 .logo-img {
-  background-color: #111111;
   height: 40px;
   width: auto;
   transition: opacity 0.3s ease-in-out;
+  filter: invert(var(--icon));
 }
 
 .logo-text {

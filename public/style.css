@@ -8,6 +8,7 @@
   --card-bg: #0b0a10;
   --glow-color: rgb(0, 242, 255);
   --shadow-color: rgba(0, 0, 0, 0.2);
+  --icon: 0;
 
   /* Light Mode Base */
   --light-bg: #ffffff;
@@ -17,6 +18,7 @@
   --light-secondary-accent: #100077;
   --light-glow-color: #100077;
   --light-shadow-color: #100077;
+  --icon: 1;
 
   /* Gradient for Titles */
   --gradient-text: linear-gradient(to right, #00d5ff, #00bfa6);
@@ -99,7 +101,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
-  background-color: #000000;
+  filter: invert(var(--icon));
 }
 
 /* Navigation Menu */
