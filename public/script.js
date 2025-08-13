@@ -9,8 +9,8 @@ const closeIcon = document.querySelector('.close-icon');
 menuToggle?.addEventListener('click', () => {
   navMenu.classList.toggle('active');
   const isOpen = navMenu.classList.contains('active');
-  menuIcon.style.display = isOpen ? 'none' : 'inline';
-  closeIcon.style.display = isOpen ? 'inline' : 'none';
+  if (menuIcon) menuIcon.style.display = isOpen ? 'none' : 'inline';
+  if (closeIcon) closeIcon.style.display = isOpen ? 'inline' : 'none';
 });
 
 // Close menu on link click
@@ -19,9 +19,9 @@ document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
     if (href?.startsWith('#')) {
       e.preventDefault();
-      navMenu.classList.remove('active');
-      menuIcon.style.display = 'inline';
-      closeIcon.style.display = 'none';
+      navMenu?.classList.remove('active');
+      if (menuIcon) menuIcon.style.display = 'inline';
+      if (closeIcon) closeIcon.style.display = 'none';
       setTimeout(() => {
         window.location.href = href;
       }, 200);
@@ -30,39 +30,25 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 // ==========================
-// Intro Title Animation + Loader
+// Intro Loader (no titles, instant)
 // ==========================
 document.addEventListener("DOMContentLoaded", () => {
-  const titles = [
-    "Software Engineer",
-    "Full-Stack Developer",
-    "Database Manager & Designer",
-    "Mobile App Development",
-    "Welcome To My World"
-  ];
-  const titleText = document.getElementById("title-text");
   const introLoader = document.getElementById("intro-loader");
   const mainSite = document.getElementById("main-site");
-
-  if (titleText && introLoader && mainSite) {
-    titles.forEach((title, i) => {
-      setTimeout(() => {
-        titleText.textContent = title;
-      }, i * 3000);
-    });
-
-    setTimeout(() => {
-      introLoader.style.display = "none";
-      mainSite.style.display = "block";
-    }, titles.length * 3000 + 500);
-  }
-
   const skipText = document.getElementById("skip-text");
-  skipText?.addEventListener("click", () => {
-    introLoader.style.display = "none";
-    mainSite.style.display = "block";
-  });
+
+  const showSite = () => {
+    if (introLoader) introLoader.style.display = "none";
+    if (mainSite) mainSite.style.display = "block";
+  };
+
+  // No waiting—show the site right away
+  showSite();
+
+  // Keep skip working in case CSS shows the loader for any reason
+  skipText?.addEventListener("click", showSite);
 });
+
 
 // ==========================
 // Service Cards - Flip on Click (Mobile)
@@ -92,20 +78,22 @@ if (window.innerWidth <= 768) {
 // ==========================
 // Swiper Carousel
 // ==========================
-const swiper = new Swiper('.projects-carousel', {
-  loop: true,
-  slidesPerView: 1,
-  spaceBetween: 50,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-  },
-  effect: 'slide'
-});
+if (document.querySelector('.projects-carousel')) {
+  const swiper = new Swiper('.projects-carousel', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 50,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    effect: 'slide'
+  });
+}
 
 // ==========================
 // Theme Toggle by Clicking the Logo
