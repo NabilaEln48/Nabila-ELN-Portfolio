@@ -442,7 +442,7 @@ spline-viewer::part(branding) {
   color: var(--accent-color);
 }
 
-/* ============================= STATS SECTION ============================= */
+/* ============================= Experience SECTION ============================= */
 .stats-list {
   display: flex;
   justify-content: center;
@@ -451,42 +451,46 @@ spline-viewer::part(branding) {
   padding: 0;
   margin: 0 auto;
   flex-wrap: wrap;
-  max-width: 1080px; /* Optional: controls max container width */
+  max-width: 1080px;
 }
 
 .stats-list li {
-  flex: 0 0 auto;
+  flex: 0 0 calc(25% - 2rem); /* 4 cards per row by default */
+  min-width: 250px; /* Minimum card width */
 }
-
 
 /* Card styling */
 .stats-card {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 1.2rem;
-  background: transparent;
-  padding: 1.8rem 2rem;
+  background: var(--card-bg);
+  padding: 1.8rem;
   border-radius: 1rem;
-  width: 100%; /* updated to allow flex sizing */
-  min-height: 180px;
-  box-shadow: 0 0 10px var(--glow-color);
-  transition: transform 0.3s ease;
+  height: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--text-color);
 }
 
 .stats-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-color);
 }
 
 .card-icon {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--accent-color);
+  background: var(--accent-color) !important;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  filter: invert(var(--icon));
 }
 
 .card-icon img {
@@ -496,12 +500,11 @@ spline-viewer::part(branding) {
 }
 
 .card-title {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-color);
-  line-height: 1.4;
+  line-height: 1.5;
   text-align: left;
-  min-height: 50px;
 }
 
 .card-title strong {
@@ -509,19 +512,31 @@ spline-viewer::part(branding) {
   font-size: 0.95rem;
   color: var(--accent-color);
   font-weight: 500;
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
+  line-height: 1.6;
 }
 
-/* Responsive tweaks for tablet and mobile */
+/* Responsive adjustments */
 @media (max-width: 1024px) {
   .stats-list li {
-    flex: 0 1 calc(50% - 1.5rem);
+    flex: 0 0 calc(50% - 1.5rem); /* 2 cards per row on tablets */
   }
 }
 
 @media (max-width: 600px) {
   .stats-list li {
-    flex: 0 1 100%;
+    flex: 0 0 100%; /* 1 card per row on mobile */
+    min-width: auto;
+  }
+  
+  .stats-card {
+    flex-direction: row;
+    align-items: center;
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 1rem;
   }
 }
 

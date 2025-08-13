@@ -303,53 +303,93 @@ img:hover {
   color: var(--accent);
 }
 
-/* ===== Swiper Gallery ===== */
-/* Swiper Container */
-.swiper {
+/* ==================== Gallery Animation ==================== */
+.gallery-section {
+  margin-top: 2rem;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.gallery-scroll {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
   padding-bottom: 40px; /* Space for pagination */
-  overflow: hidden;
 }
 
-/* Slide styling */
-.swiper-slide {
-  width: 250px;
-  height: max-content;
-  overflow: hidden;
+.gallery-track {
+  display: flex;
+  gap: 2rem;
+  animation: scrollGallery 60s linear infinite;
+  width: max-content;
 }
 
-.swiper-slide img {
+.gallery-slide {
+  background-color: transparent;
+  border-radius: 8px;
+  min-width: 250px;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.gallery-slide:hover {
+  transform: scale(1.05);
+}
+
+.gallery-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
 }
 
-/* Pagination positioning - FIXED */
-.swiper-pagination {
+.gallery-scroll:hover .gallery-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollGallery {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pagination positioning */
+.gallery-pagination {
   position: absolute;
-  bottom: 0 !important; /* Force to bottom */
-  top: auto !important;
+  bottom: 0;
   left: 0;
   width: 100%;
+  text-align: center;
   padding: 10px 0;
 }
 
 /* Navigation buttons */
-.swiper-button-next,
-.swiper-button-prev {
-  color: white;
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
   background: rgba(0,0,0,0.5);
+  color: white;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .swiper {
-    padding-bottom: 30px;
-  }
+.gallery-prev {
+  left: 20px;
+}
+
+.gallery-next {
+  right: 20px;
 }
 
 /* ===== Footer ===== */
