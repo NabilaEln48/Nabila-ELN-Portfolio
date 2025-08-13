@@ -489,6 +489,7 @@ spline-viewer::part(branding) {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  filter: invert(var(--icon));
 }
 
 .card-icon img {
