@@ -412,7 +412,7 @@ spline-viewer::part(branding) {
 }
 
 .about-img img {
-  width: 380px;
+  width: 280px;
   max-width: 100%;
   border-radius: 1rem;
   box-shadow: 0 0 20px var(--glow-color);
