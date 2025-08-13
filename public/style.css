@@ -3,10 +3,9 @@
   /* Dark Mode */
   --bg-color: #000000;
   --text-color: #ccd6f6;
-  --accent-color: #00b3e0;
+  --accent-color: #8100e4;
   --secondary-accent: #002449;
   --card-bg: #0b0a10;
-  --glow-color: rgb(0, 242, 255);
   --shadow-color: rgba(0, 0, 0, 0.2);
   --icon: 0;
 
@@ -14,14 +13,13 @@
   --light-bg: #ffffff;
   --light-card-bg: #ffffff;
   --light-text: #1a1a1a;
-  --light-accent: #100077 ;
-  --light-secondary-accent: #100077;
-  --light-glow-color: #100077;
-  --light-shadow-color: #100077;
+  --light-accent: #6600b4 ;
+  --light-secondary-accent: #6600b4;
+  --light-shadow-color: #6600b4;
 
   /* Gradient for Titles */
-  --gradient-text: linear-gradient(to right, #00d5ff, #00bfa6);
-  --light-gradient-text: linear-gradient(to right, #00d5ff, #00bfa6);
+  --gradient-text: #6600b4;
+  --light-gradient-text: #6600b4;
 }
 
 [data-theme="light"] {
@@ -30,7 +28,6 @@
   --accent-color: var(--light-accent);
   --secondary-accent: var(--light-secondary-accent);
   --card-bg: var(--light-card-bg);
-  --glow-color: var(--light-glow-color);
   --shadow-color: var(--light-shadow-color);
   --icon: 1;
 
@@ -96,8 +93,8 @@ body {
 
 /* Logo always at top */
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
