@@ -529,197 +529,349 @@
 </section>
 
 
+<!--Certification Section-->
 
-<section id="certifications" class="certifications-section">
-  <h2 class="section-title">CERTIFICATIONS</h2>
-  <p class="certifications-subtext">
-    A testament to lifelong learning, this section showcases certifications validating my expertise.
-  </p>
+<section id="certifications" class="certifications-section" aria-labelledby="certifications-title">
+  <div class="cert-head">
+    <h2 id="certifications-title" class="section-title">Certifications</h2>
+    <p class="certifications-subtext">
+      Credentials organized into Web Development, Data & AI, Business, and Professional Skills
+    </p>
+  </div>
 
-  <ul class="cert-list-compact">
+  <!-- Filters -->
+  <div class="cert-filters" role="tablist" aria-label="Certification filters">
+    <button class="cert-filter active" data-filter="development" role="tab" aria-selected="true">Web & Software Dev</button>
+    <button class="cert-filter" data-filter="business" role="tab" aria-selected="false">Business</button>
+    <button class="cert-filter" data-filter="professional" role="tab" aria-selected="false">Professional</button>
+  </div>
 
-    <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>Diploma in Supply Chain Management</strong>, Alison</span>
-      <span class="cert-year">July 2025</span>
+  <!-- Grid -->
+  <ul class="cert-grid" id="cert-grid">
+
+    <!-- ===== Web & Software Development ===== -->
+    <li class="cert-card featured" data-category="development">
+      <div class="cert-icon"><i class="bx bxl-linkedin"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Software Architecture: Patterns for Developers</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">LinkedIn</span>
+          <span class="cert-pill">Architecture</span>
+          <time class="cert-date" datetime="2025-07">Jul 2025</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bxl-linkedin"></i>
-      <span class="cert-name"><strong>Software Testing Foundations: Testing throughout the SDLC</strong>, LinkedIn</span>
-      <span class="cert-year">July 2025</span>
+    <li class="cert-card featured" data-category="development">
+      <div class="cert-icon"><i class="bx bxl-linkedin"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Software Testing Foundations: Testing throughout the SDLC</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">LinkedIn</span>
+          <span class="cert-pill">Testing</span>
+          <time class="cert-date" datetime="2025-07">Jul 2025</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bxl-linkedin"></i>
-      <span class="cert-name"><strong>Software Architecture: Patterns for Developers</strong>, LinkedIn</span>
-      <span class="cert-year">July 2025</span>
+    <li class="cert-card featured" data-category="development">
+      <div class="cert-icon"><i class="bx bxl-free-code-camp"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Legacy JavaScript Algorithms and Data Structures</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">freeCodeCamp</span>
+          <span class="cert-pill">JavaScript</span>
+          <time class="cert-date" datetime="2025-04">Apr 2025</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>Fundamentals of Predictive Project Management BADGE</strong>,by Project Management Institute</span>
-      <span class="cert-year">May 2025</span>
+    <li class="cert-card" data-category="development">
+      <div class="cert-icon"><i class="bx bxl-free-code-camp"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">JavaScript Algorithms and Data Structures</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">freeCodeCamp</span>
+          <span class="cert-pill">JavaScript</span>
+          <time class="cert-date" datetime="2025-02">Feb 2025</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="fab fa-free-code-camp"></i>
-      <span class="cert-name"><strong>Legacy JavaScript Algorithms and Data Structures</strong>, freeCodeCamp</span>
-      <span class="cert-year">April 2025</span>
+    <li class="cert-card" data-category="development">
+      <div class="cert-icon"><i class="bx bxl-free-code-camp"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Responsive Web Design</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">freeCodeCamp</span>
+          <span class="cert-pill">Frontend</span>
+          <time class="cert-date" datetime="2024-12">Dec 2024</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="fab fa-free-code-camp"></i>
-      <span class="cert-name"><strong>JavaScript Algorithms and Data Structures</strong>, freeCodeCamp</span>
-      <span class="cert-year">Feb 2025</span>
+    <li class="cert-card" data-category="development">
+      <div class="cert-icon"><i class="bx bx-code-alt"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Python (Beginner & Intermediate)</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Sololearn</span>
+          <span class="cert-pill">Python</span>
+          <time class="cert-date" datetime="2023-07">Jul 2023</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="fab fa-free-code-camp"></i>
-      <span class="cert-name"><strong>Responsive Web Design</strong>, freeCodeCamp</span>
-      <span class="cert-year">Dec 2024</span>
+    <li class="cert-card" data-category="development">
+      <div class="cert-icon"><i class="bx bx-code-alt"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">PHP</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Sololearn</span>
+          <span class="cert-pill">Backend</span>
+          <time class="cert-date" datetime="2023-06">Jun 2023</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>Ontario Human Rights & AODA Compliance</strong>, Ontario Human Rights Commission</span>
-      <span class="cert-year">Nov 2024</span>
+    <li class="cert-card" data-category="development">
+      <div class="cert-icon"><i class="bx bx-code-alt"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">HTML</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">MIMO</span>
+          <span class="cert-pill">Frontend</span>
+          <time class="cert-date" datetime="2023-04">Apr 2023</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>IELTS English Test</strong>, British Council</span>
-      <span class="cert-year">Dec 2023</span>
+    <li class="cert-card" data-category="development">
+      <div class="cert-icon"><i class="bx bx-code-alt"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">JavaScript</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">MIMO</span>
+          <span class="cert-pill">JavaScript</span>
+          <time class="cert-date" datetime="2023-07">Jul 2023</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>SQL</strong>, MIMO</span>
-      <span class="cert-year">July 2023</span>
+    <li class="cert-card" data-category="development">
+      <div class="cert-icon"><i class="bx bx-data"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">SQL</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">MIMO</span>
+          <span class="cert-pill">Database</span>
+          <time class="cert-date" datetime="2023-07">Jul 2023</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>Web Development</strong>, MIMO</span>
-      <span class="cert-year">July 2023</span>
+    <li class="cert-card" data-category="development">
+      <div class="cert-icon"><i class="bx bx-data"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">SQL – Full Stack Development</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Sololearn</span>
+          <span class="cert-pill">Database</span>
+          <time class="cert-date" datetime="2022-02">Feb 2022</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>Python (Beginner & Intermediate)</strong>, Sololearn</span>
-      <span class="cert-year">July 2023</span>
+    <li class="cert-card" data-category="development">
+      <div class="cert-icon"><i class="bx bx-code-curly"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">C Intermediate</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Sololearn</span>
+          <span class="cert-pill">C Programming</span>
+          <time class="cert-date" datetime="2023-04">Apr 2023</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>JavaScript</strong>,MIMO</span>
-      <span class="cert-year">July 2023</span>
+    <li class="cert-card" data-category="development">
+      <div class="cert-icon"><i class="bx bx-code-curly"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Intro to C Programming</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Sololearn</span>
+          <span class="cert-pill">C Programming</span>
+          <time class="cert-date" datetime="2023-04">Apr 2023</time>
+        </div>
+      </div>
+    </li> 
+
+        <li class="cert-card featured" data-category="development">
+      <div class="cert-icon"><i class="bx bx-code-curly"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Elements of AI</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">University of Helsinki</span>
+          <span class="cert-pill">AI Fundamentals</span>
+          <time class="cert-date" datetime="2023-04">Apr 2023</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>Elements of AI</strong>, University of Helsinki</span>
-      <span class="cert-year">April 2023</span>
+    <!-- ===== Professional Skills ===== -->
+    <li class="cert-card featured" data-category="professional">
+      <div class="cert-icon"><i class="bx bxs-award"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Ontario Human Rights & AODA Compliance</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Ontario Human Rights Commission</span>
+          <span class="cert-pill">Compliance</span>
+          <time class="cert-date" datetime="2024-11">Nov 2024</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>C Intermediate</strong>, Sololearn</span>
-      <span class="cert-year">April2023</span>
+    <li class="cert-card" data-category="professional">
+      <div class="cert-icon"><i class="bx bxs-award"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Fundamentals of Predictive Project Management</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">PMI</span>
+          <span class="cert-pill">Project Management</span>
+          <time class="cert-date" datetime="2025-05">May 2025</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>HTML</strong>, MIMO</span>
-      <span class="cert-year">April 2023</span>
+    <li class="cert-card" data-category="professional">
+      <div class="cert-icon"><i class="bx bx-bulb"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Problem Solving & Decision Making</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Edraak</span>
+          <span class="cert-pill">Soft Skills</span>
+          <time class="cert-date" datetime="2021-12">Dec 2021</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>Intro to C Programming</strong>, Sololearn</span>
-      <span class="cert-year">April 2023</span>
+    <li class="cert-card" data-category="professional">
+      <div class="cert-icon"><i class="bx bx-user-voice"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Personal Branding</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Rwaq</span>
+          <span class="cert-pill">Career Development</span>
+          <time class="cert-date" datetime="2021-11">Nov 2021</time>
+        </div>
+      </div>
     </li>
 
-        <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>Python</strong>, MIMO</span>
-      <span class="cert-year">March 2023</span>
+    <!-- ===== Business & Operations ===== -->
+    <li class="cert-card featured" data-category="business">
+      <div class="cert-icon"><i class="bx bxs-graduation"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Diploma in Supply Chain Management</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Alison</span>
+          <span class="cert-pill">Supply Chain</span>
+          <time class="cert-date" datetime="2025-07">Jul 2025</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>PHP</strong>, Sololearn</span>
-      <span class="cert-year">June 2023</span>
+    <li class="cert-card" data-category="business">
+      <div class="cert-icon"><i class="bx bxs-graduation"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Diploma in Operations Management</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Alison</span>
+          <span class="cert-pill">Operations</span>
+          <time class="cert-date" datetime="2021-05">May 2021</time>
+        </div>
+      </div>
     </li>
 
-    <li>
-      <i class="bx bx-link-alt"></i>
-      <span class="cert-name"><strong>SQL – Full Stack Development</strong>, Sololearn</span>
-      <span class="cert-year">Feb 2022</span>
+    <li class="cert-card" data-category="business">
+      <div class="cert-icon"><i class="bx bx-store"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Sales Force Management</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Alison</span>
+          <span class="cert-pill">Sales</span>
+          <time class="cert-date" datetime="2021-05">May 2021</time>
+        </div>
+      </div>
     </li>
 
-      <li>
-   <i class="bx bx-link-alt"></i>
-    <span class="cert-name"><strong>Digital Marketing and Media Foundations Certification</strong>, Edraak</span>
-    <span class="cert-year">Aug 2022</span>
-  </li>
+    <li class="cert-card" data-category="business">
+      <div class="cert-icon"><i class="bx bx-package"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Warehouse Management</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Alison</span>
+          <span class="cert-pill">Logistics</span>
+          <time class="cert-date" datetime="2021-05">May 2021</time>
+        </div>
+      </div>
+    </li>
 
-  <li>
-    <i class="bx bx-link-alt"></i>
-    <span class="cert-name"><strong>Microsoft Excel</strong>, Specto</span>
-    <span class="cert-year">Aug 2022</span>
-  </li>
+    <li class="cert-card" data-category="business">
+      <div class="cert-icon"><i class="bx bxl-microsoft"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Microsoft Office 365</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Microsoft</span>
+          <span class="cert-pill">Productivity</span>
+          <time class="cert-date" datetime="2021-12">Dec 2021</time>
+        </div>
+      </div>
+    </li>
 
-  <li>
-    <i class="bx bx-link-alt"></i>
-    <span class="cert-name"><strong>Digital Literacy</strong>, Edraak</span>
-    <span class="cert-year">Dec 2021</span>
-  </li>
+    <li class="cert-card" data-category="business">
+      <div class="cert-icon"><i class="bx bx-spreadsheet"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Microsoft Excel</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Specto</span>
+          <span class="cert-pill">Data Analysis</span>
+          <time class="cert-date" datetime="2022-08">Aug 2022</time>
+        </div>
+      </div>
+    </li>
 
-  <li>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" style="height: 20px; vertical-align: middle;">
-    <span class="cert-name"><strong>Microsoft Office 365</strong>, Microsoft</span>
-    <span class="cert-year">Dec 2021</span>
-  </li>
+    <li class="cert-card" data-category="business">
+      <div class="cert-icon"><i class="bx bx-laptop"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Digital Literacy</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Edraak</span>
+          <span class="cert-pill">Technology</span>
+          <time class="cert-date" datetime="2021-12">Dec 2021</time>
+        </div>
+      </div>
+    </li>
 
-  <li>
-    <i class="bx bx-link-alt"></i>
-    <span class="cert-name"><strong>Problem Solving & Decision Making</strong>, Edraak</span>
-    <span class="cert-year">Dec 2021</span>
-  </li>
-
-  <li>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" style="height: 20px; vertical-align: middle;">
-    <span class="cert-name"><strong>Software Skills BASICS</strong>, Microsoft</span>
-    <span class="cert-year">Dec 2021</span>
-  </li>
-
-  <li>
-    <i class="bx bx-link-alt"></i>
-    <span class="cert-name"><strong>Personal Branding</strong>, Rwaq</span>
-    <span class="cert-year">Nov 2021</span>
-  </li>
-
-  <li>
-    <i class="bx bx-link-alt"></i>
-    <span class="cert-name"><strong>Diploma in Operation Management (OPS)</strong>, Alison</span>
-    <span class="cert-year">May 2021</span>
-  </li>
-
-  <li>
-    <i class="bx bx-link-alt"></i>
-    <span class="cert-name"><strong>Sales Force Management</strong>, Alison</span>
-    <span class="cert-year">May 2021</span>
-  </li>
-
-  <li>
-    <i class="bx bx-link-alt"></i>
-    <span class="cert-name"><strong>Warehouse Management: Inventory, Stock and Supply Chains</strong>, Alison</span>
-    <span class="cert-year">May 2021</span>
-  </li>
+    <li class="cert-card" data-category="business">
+      <div class="cert-icon"><i class="bx bx-bullseye"></i></div>
+      <div class="cert-body">
+        <h3 class="cert-title">Digital Marketing and Media Foundations</h3>
+        <div class="cert-meta">
+          <span class="cert-issuer">Edraak</span>
+          <span class="cert-pill">Marketing</span>
+          <time class="cert-date" datetime="2022-08">Aug 2022</time>
+        </div>
+      </div>
+    </li>
 
   </ul>
+
+  <!-- Show more -->
+  <div class="cert-actions">
+    <button class="cert-toggle" id="cert-toggle" aria-expanded="false" aria-controls="cert-grid">Show more certifications</button>
+  </div>
 </section>
+
 
     <section id="contact">
             <h2 class="section-title">Contact</h2>

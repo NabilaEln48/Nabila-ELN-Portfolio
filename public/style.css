@@ -1138,62 +1138,58 @@ html, body { overflow-x: hidden; }
 }
 
 /* ==================== Certifications Section ==================== */
-.certifications-section {
-  padding: 6rem 2rem;
-  background: transparent;
-  color: var(--text-color);
+/* ===== Certifications ===== */
+.certifications-section { padding: 4rem 1.5rem; }
+.cert-head { max-width: 900px; margin: 0 auto 1.25rem; text-align: center; }
+.certifications-section .section-title { letter-spacing: .02em; text-transform: uppercase; }
+.certifications-subtext { opacity: .8; font-size: .95rem; }
+
+.cert-filters {
+  display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin: 1rem auto 1.5rem;
+}
+.cert-filter {
+  border: 1px solid var(--accent-color, currentColor);
+  background: transparent; color: inherit; padding: .4rem .75rem; border-radius: 999px;
+  font-size: .85rem; cursor: pointer; transition: .2s;
+}
+.cert-filter.is-active, .cert-filter:hover { background: var(--accent-color, currentColor); color: var(--bg, #ffffff); }
+
+.cert-grid {
+  --cols: 1;
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  margin: 0; padding: 0; list-style: none; max-width: 1100px; margin-inline: auto;
+}
+@media (min-width: 640px){ .cert-grid{ --cols: 2; } }
+@media (min-width: 960px){ .cert-grid{ --cols: 3; } }
+
+.cert-card {
+  display: grid; grid-template-columns: 40px 1fr; gap: .75rem;
+  padding: .9rem 1rem; border: 1px solid color-mix(in oklab, currentColor 25%, transparent);
+  border-radius: 16px; background: color-mix(in oklab, var(--card, transparent) 85%, transparent);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; align-items: center;
+}
+.cert-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px color-mix(in oklab, currentColor 18%, transparent); }
+.cert-icon { width: 40px; height: 40px; display: grid; place-items: center; }
+.cert-icon i { font-size: 1.35rem; opacity: .9; }
+.cert-icon img { width: 22px; height: 22px; object-fit: contain; opacity: .9; }
+
+.cert-body { min-width: 0; }
+.cert-title { font-size: .98rem; margin: 0 0 .1rem; line-height: 1.3; }
+.cert-issuer { font-size: .85rem; opacity: .8; }
+.cert-date { font-size: .8rem; opacity: .7; }
+
+/* Collapse behavior: show featured + first N by default */
+.cert-card { display: none; }
+.cert-card[data-featured="true"] { display: grid; }
+.cert-card.__visible { display: grid; }
+
+.cert-actions { display: grid; place-items: center; margin-top: 1rem; }
+.cert-toggle {
+  border: 1px solid var(--accent-color, currentColor);
+  background: transparent; color: inherit; padding: .55rem 1rem; border-radius: 12px; cursor: pointer;
 }
 
-
-.certifications-subtext {
-  text-align: center;
-  color: var(--text-color);
-  font-size: 1rem;
-  max-width: 700px;
-  margin: 0 auto 3rem;
-  opacity: 0.8;
-}
-
-.cert-list-compact {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 900px;
-}
-
-.cert-list-compact li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.8rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  font-size: 1rem;
-}
-
-[data-theme="light"] .cert-list-compact li {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.cert-list-compact li i {
-  color: var(--text-color);
-  margin-right: 0.8rem;
-  font-size: 1.1rem;
-  flex-shrink: 0;
-}
-
-.cert-name {
-  color: var(--text-color);
-  flex: 1;
-  padding-left: 0.5rem;
-  font-weight: 500;
-}
-
-.cert-year {
-  color: var(--text-color);
-  font-size: 0.9rem;
-  white-space: nowrap;
-  opacity: 0.6;
-}
 
 
 /* ==================== Social Sidebar ==================== */

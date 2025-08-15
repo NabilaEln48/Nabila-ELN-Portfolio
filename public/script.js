@@ -160,3 +160,61 @@ themeLogo?.addEventListener("click", () => {
   const currentTheme = htmlElement.getAttribute("data-theme");
   setTheme(currentTheme === "dark" ? "light" : "dark");
 });
+
+// ===== Certifications: filter + show more =====
+(function(){
+  const grid = document.getElementById('cert-grid');
+  const toggle = document.getElementById('cert-toggle');
+  const filters = Array.from(document.querySelectorAll('.cert-filter'));
+  const cards = Array.from(grid.querySelectorAll('.cert-card'));
+
+  // How many non-featured to show initially (in addition to featured)
+  const BASE_COUNT = 3;
+
+  function applyVisibility(activeCategory, expandAll){
+    // 1) filter
+    const visible = cards.filter(card => {
+      if (activeCategory === 'all') return true;
+      return (card.dataset.category || '').includes(activeCategory);
+    });
+
+    // 2) reset
+    cards.forEach(c => c.classList.remove('__visible'));
+
+    // 3) featured are always shown if they match filter
+    const featured = visible.filter(c => c.dataset.featured === 'true');
+
+    // 4) add baseline count for compact view unless expanded
+    const remainder = visible.filter(c => c.dataset.featured !== 'true');
+    const toShow = expandAll ? visible : [...featured, ...remainder.slice(0, BASE_COUNT)];
+
+    toShow.forEach(c => c.classList.add('__visible'));
+
+    // 5) toggle button state
+    const hiddenLeft = visible.length - toShow.length;
+    toggle.style.display = hiddenLeft > 0 ? 'inline-block' : 'none';
+    toggle.textContent = expandAll ? 'Show less' : `Show more (${hiddenLeft})`;
+    toggle.setAttribute('aria-expanded', String(expandAll));
+  }
+
+  let currentFilter = 'all';
+  let expanded = false;
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      currentFilter = btn.dataset.filter || 'all';
+      expanded = false;
+      applyVisibility(currentFilter, expanded);
+    });
+  });
+
+  toggle.addEventListener('click', () => {
+    expanded = !expanded;
+    applyVisibility(currentFilter, expanded);
+  });
+
+  // init
+  applyVisibility(currentFilter, expanded);
+})();
