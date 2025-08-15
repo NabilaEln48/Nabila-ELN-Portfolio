@@ -62,6 +62,53 @@ document.querySelectorAll('.service-card').forEach(card => {
   });
 });
 
+
+// ==========================
+// Experience Cards - Flip Functionality
+// ==========================
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+
+// Wait for DOM to be fully loaded before initializing experience cards
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize experience cards when DOM is ready
+  const experienceCards = document.querySelectorAll('.experience-card');
+  
+  experienceCards.forEach(card => {
+    // Remove any existing onclick attributes to avoid conflicts
+    card.removeAttribute('onclick');
+    
+    card.addEventListener('click', function(e) {
+      // Prevent flip if clicking on flip icon
+      if (e.target.classList.contains('flip-icon')) {
+        return;
+      }
+      flipCard(this);
+    });
+
+    // Handle flip icon clicks
+    const flipIcon = card.querySelector('.flip-icon');
+    if (flipIcon) {
+      flipIcon.removeAttribute('onclick');
+      flipIcon.addEventListener('click', function(e) {
+        e.stopPropagation();
+        flipCard(card);
+      });
+    }
+  });
+
+  // Keyboard navigation for experience cards
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.experience-card.flipped').forEach(card => {
+        card.classList.remove('flipped');
+      });
+    }
+  });
+});
+
+
 // ==========================
 // Mobile Robot Scroll Effect
 // ==========================

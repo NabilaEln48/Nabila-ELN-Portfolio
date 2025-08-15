@@ -28,10 +28,12 @@
 
       <!-- Sidebar/Menu -->
       <header id="header" class="d-flex flex-column justify-content-center">
-        <!-- Logo -->
-        <div class="logo-wrapper">
-          <img src="image/LOGO.png" alt="Logo" class="logo" id="theme-logo-toggle" />
-        </div>
+<!-- Logo -->
+<div class="logo-wrapper">
+  <img src="image/LOGO.png" alt="Logo" class="logo" id="theme-logo-toggle" />
+  <button id="logo-hint" class="logo-hint" aria-live="polite">Change Theme</button>
+</div>
+
         <!-- Navigation Menu -->
         <nav id="navbar" class="nav-menu">
           <ul>
@@ -135,58 +137,184 @@
   </div>
 </section>
 
+
+
 <!-- ===== Experience Section ===== -->
-<section class="experience" id="experience">
-  <div class="stats-wrapper">
+<div class="experience-section">
     <h2 class="section-title">Experience</h2>
-    <ul class="stats-list">
+    
+    <div class="experience-grid">
+        <!-- Interpreter Card -->
+        <div class="experience-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="company-logo"><img src="/public/image/exp.png" alt="EXP Logo"></div>
+                    <div class="job-title">Interpreter</div>
+                    <div class="company-name">CanTalk (Canada) Inc.</div>
+                    <div class="duration">Nov 2024 - Mar 2025, 5 mos • Remote</div>
+                    <div class="click-hint">Click to flip</div>
+                </div>
+                <div class="card-back">
+                    <div class="back-content">
+                        <div class="back-header">
+                            <div class="back-title">Interpreter</div>
+                            <div class="back-company">CanTalk (Canada) Inc.</div>
+                            <div class="back-duration">Nov 2024 - Mar 2025 • Remote</div>
+                        </div>
+                        
+                        <div class="description">
+                            <div class="description-text">
+                                Specializing in live phone-based interpretation services.
+                            </div>
+                            <ul class="key-points">
+                                <li>Facilitated culturally accurate communication across healthcare, legal, and other industries</li>
+                                <li>Provided real-time interpretation to bridge language gaps.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="all-skills">
+                            <div class="skills-title">Skills & Languages:</div>
+                            <div class="skills-preview">
+                                <span class="skill-tag">Translation</span>
+                                <span class="skill-tag">Arabic</span>
+                                <span class="skill-tag">French</span>
+                                <span class="skill-tag">English</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-      <li>
-        <a class="stats-card">
-          <div class="card-icon">
-            <img src="/image/stats-card_icon-2.png" alt="Badge icon">
-          </div>
-          <h3 class="h6 card-title">
-            Interpreter <strong>CanTalk <br>• Nov 2024 – Mar 2025</strong>
-          </h3>
-        </a>
-      </li>
+        <!-- Full-stack Developer Card -->
+        <div class="experience-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="company-logo"><img src="/public/image/exp.png" alt="EXP Logo"></div>
+                    <div class="job-title">Full-stack Developer</div>
+                    <div class="company-name">Upwork - Freelance</div>
+                    <div class="duration">Nov 2022 - Dec 2024, 2 yrs 2 mos • Remote</div>
+                    <div class="click-hint">Click to flip</div>
+                </div>
+                <div class="card-back">
+                    <div class="back-content">
+                        <div class="back-header">
+                            <div class="back-title">Full-stack Developer</div>
+                            <div class="back-company">Upwork - Freelance</div>
+                            <div class="back-duration">Nov 2022 - Dec 2024 • Remote</div>
+                        </div>
+                        
+                        <div class="description">
+                            <ul class="key-points">
+                                <li>Built secure backends</li>
+                                <li>Managed databases, optimizing queries and data structure</li>
+                                <li>Created projects with clean and scalable architecture</li>
+                                <li>Collaborated using GitHub and followed agile development best practices</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="all-skills">
+                            <div class="skills-title">Technical Skills:</div>
+                            <div class="skills-preview">
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">HTML</span>
+                                <span class="skill-tag">CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">Oracle</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-      <li>
-        <a class="stats-card">
-          <div class="card-icon">
-            <img src="/image/stats-card_icon-2.png" alt="Badge icon">
-          </div>
-          <h3 class="h6 card-title">
-            Full-stack Developer <strong>Upwork <br>• Mar 2023 – Oct 2023</strong>
-          </h3>
-        </a>
-      </li>
+        <!-- Graphic Designer Card -->
+        <div class="experience-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="company-logo"><img src="/public/image/exp.png" alt="EXP Logo"></div>
+                    <div class="job-title">Graphic Designer</div>
+                    <div class="company-name">Fiverr - Freelance</div>
+                    <div class="duration">2018 - Aug 2022, 4 yrs 8 mos</div>
+                    <div class="click-hint">Click to flip</div>
+                </div>
+                <div class="card-back">
+                    <div class="back-content">
+                        <div class="back-header">
+                            <div class="back-title">Graphic Designer</div>
+                            <div class="back-company">Fiverr - Freelance</div>
+                            <div class="back-duration">2018 - Aug 2022</div>
+                        </div>
+                        
+                        <div class="description">
+                            <div class="description-text">
+                                Delivered custom graphic design solutions including T-shirts, flyers, logos, posters, catalogs, book covers, and banners.
+                            </div>
+                            <ul class="key-points">
+                                <li>Collaborated closely with clients to understand visions and transformed concepts into impactful designs</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="all-skills">
+                            <div class="skills-title">Design Skills:</div>
+                            <div class="skills-preview">
+                                <span class="skill-tag">Graphic Design</span>
+                                <span class="skill-tag">Adobe Illustrator</span>
+                                <span class="skill-tag">Adobe PS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-      <li>
-        <a class="stats-card">
-          <div class="card-icon">
-            <img src="/image/stats-card_icon-2.png" alt="Badge icon">
-          </div>
-          <h3 class="h6 card-title">
-            Data Analyst <strong>Upwork <br>• June 2020 – Feb 2021</strong>
-          </h3>
-        </a>
-      </li>
-      <li>
-        <a class="stats-card">
-          <div class="card-icon">
-            <img src="/image/stats-card_icon-2.png" alt="Badge icon">
-          </div>
-          <h3 class="h6 card-title">
-            Graphic Designer <strong>Fiverr <br>• 2018 – Aug 2022</strong>
-          </h3>
-        </a>
-      </li>
-
-    </ul>
-  </div>
-</section>
+        <!-- Data Analyst Card -->
+        <div class="experience-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="company-logo"><img src="/public/image/exp.png" alt="EXP Logo"></div>
+                    <div class="job-title">Data Analyst</div>
+                    <div class="company-name">Upwork - Freelance</div>
+                    <div class="duration">Jun 2020 - Feb 2021, 9 mos • Remote</div>
+                    <div class="click-hint">Click to flip</div>
+                </div>
+                <div class="card-back">
+                    <div class="back-content">
+                        <div class="back-header">
+                            <div class="back-title">Data Analyst</div>
+                            <div class="back-company">Upwork - Freelance</div>
+                            <div class="back-duration">Jun 2020 - Feb 2021 • Remote</div>
+                        </div>
+                        
+                        <div class="description">
+                            <ul class="key-points">
+                                <li>Built and optimized complex SQL queries</li>
+                                <li>Created interactive dashboards</li>
+                                <li>Improved database performance and accuracy</li>
+                                <li>Collaborated with stakeholders to translate business requirements into technical database solutions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="all-skills">
+                            <div class="skills-title">Technical Skills:</div>
+                            <div class="skills-preview">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">Power BI</span>
+                                <span class="skill-tag">Data Analysis</span>
+                                <span class="skill-tag">SQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -368,6 +496,25 @@
 </div>
 
 
+
+      <!-- Slide 9: PTFMS -->
+<div class="swiper-slide project-card portfolio">
+  <div class="project-text">
+    <h3>PTFMS — Fleet Management System</h3>
+    <p>A Java web application for public-transport fleet operations. 
+      It provides vehicle management, maintenance scheduling, station/service logs, GPS & live tracking, and analytics. 
+      Includes predictive alerts (overdue tasks, excessive fuel use) and a clean layered architecture using DAO/DTO, Front Controller, and business logic services with Servlets/JSP over JDBC (Maven).</p>
+    <div class="stack">
+      <span>Java</span><span>Servlets</span><span>JSP</span><span>JDBC</span>
+      <span>Maven</span><span>DAO/DTO</span><span>Front Controller</span>
+    </div>
+  </div>
+  <div class="project-img">
+    <img src="/image/ptfms.png" alt="PTFMS Fleet Management System" />
+  </div>
+</div>
+
+
     </div> <!-- END .swiper-wrapper -->
 
     <!-- Swiper Controls -->
@@ -378,7 +525,7 @@
 
 
           <div class="coming-soon">
-          <button disabled>🚧 <strong>More Projects Coming Soon</strong> 🚧</button>
+          <button disabled><strong>More Projects Coming Soon</strong> 🚧</button>
         </div>
 </section>
 
