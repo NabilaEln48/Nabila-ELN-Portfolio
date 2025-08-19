@@ -417,42 +417,78 @@ main {
 
 /* ========================= Spline Viewer Styling ======================== */
 .spline-container {
-  background-color: transparent;
-  padding: 3rem 1rem;
+  /* layout */
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+
+  /* spacing */
+  padding: 2.5rem 1rem;
+
+  /* theme-safe bg (transparent by default) */
+  background: transparent;
 }
 
-
+/* Make the viewer scale responsively without hard-coding heights */
 spline-viewer {
+  display: block;
   width: 100%;
-  max-width: 1000px;
-  height: 600px;
+  max-width: 1100px;
+
+  /* aspect ratio scales cleanly; no layout jumps */
+  aspect-ratio: 16 / 9;
+
+  /* visuals */
   border-radius: 1.2rem;
   overflow: hidden;
-  display: block;
-  background-color:#000000;
+
+  /* fallback bg (looks good in dark & light themes) */
+  background: #000;
 }
 
+/* Remove Spline watermark */
 spline-viewer::part(branding) {
   display: none !important;
   pointer-events: none;
 }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
-  spline-viewer {
-    height: 400px;
-    max-width: 95%;
-  }
+/* ===== Optional size variants (just add class to the section) ===== */
+/* Full-bleed hero */
+.spline-container.hero {
+  padding: 0;
+}
+.spline-container.hero spline-viewer {
+  max-width: none;
+  width: 100%;
+  aspect-ratio: auto;   /* let height drive */
+  height: min(74vh, 820px);
+  border-radius: 0;
+}
 
-  .spline-container h2 {
-    font-size: 1.5rem;
+/* Compact card */
+.spline-container.card spline-viewer {
+  max-width: 900px;
+  aspect-ratio: 4 / 3;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .spline-container { padding: 1.75rem 1rem; }
+  spline-viewer {
+    max-width: 95%;
+    aspect-ratio: 3 / 4;   /* taller on phones for better visibility */
+    border-radius: 1rem;
   }
 }
 
+/* ===== Reduced motion (accessibility) ===== */
+@media (prefers-reduced-motion: reduce) {
+  .spline-container, .spline-container * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
 
 
 /* ==================== About Section ==================== */
@@ -1592,90 +1628,3 @@ html, body { overflow-x: hidden; }
 }
 
 
-
-
-/*--------------------------------------------------------------
-# Contact
---------------------------------------------------------------*/
-#contact {
-  padding: 60px 20px;
-  background-color:transparent;
-}
-
-.contact-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-}
-
-.contact-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.contact-info .info-block {
-  margin-bottom: 20px;
-}
-
-.contact-info h4 {
-  margin-bottom: 5px;
-  font-size: 18px;
-  color: var(--accent-color);
-}
-
-.contact-info p,
-.contact-info a {
-  font-size: 16px;
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  color: var(--accent-color);
-  text-decoration: underline;
-}
-
-.contact-image {
-  flex: 1;
-  min-width: 280px;
-  display: flex;
-  justify-content: center;
-}
-
-.contact-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px var(--shadow-color);
-}
-
-/* ============================= SPLINE CONTAINER ============================= */
-.spline-container2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem 2rem;
-  background-color: transparent;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-/* Spline viewer styling to match contact image style */
-.spline-container2 spline-viewer {
-  width: 600px;
-  height: 400px;
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .spline-container2 spline-viewer {
-    width: 90vw;
-    height: 300px;
-  }
-}
