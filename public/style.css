@@ -839,10 +839,12 @@ html, body { overflow-x: hidden; }
 }
 
 .service-icon {
-  width: 70px;
-  height: 70px;
+  font-size: 3rem; /* for <i> icons */
+  width: 90px;     /* for <img> icons */
+  height: 90px;
   object-fit: contain;
 }
+
 
 .card-front h5 {
   font-size: 1.2rem;
