@@ -376,13 +376,55 @@
   <div class="swiper projects-carousel">
     <div class="swiper-wrapper">
 
-      <!-- Slide 1: Arise -->
+      <!-- PTFMS -->
+      <div class="swiper-slide project-card portfolio">
+        <div class="project-text">
+          <h3>PTFMS — Fleet Management System</h3>
+          <p>A Java web application designed for public-transport fleet operations, built with enterprise-grade architecture.</p>
+          <ul>
+            <li> Vehicle & maintenance scheduling with live service logs</li>
+            <li> GPS & real-time tracking with predictive fuel/maintenance alerts</li>
+            <li> Scalable layered design using DAO/DTO, Servlets, JSP, JDBC (Maven)</li>
+          </ul>
+          <div class="stack">
+            <span>Java</span><span>Servlets</span><span>JSP</span><span>JDBC</span><span>Maven</span><span>DAO/DTO</span><span>Front Controller</span>
+          </div>
+        </div>
+        <div class="project-img">
+          <img src="/image/ptfms.png" alt="PTFMS Fleet Management System" />
+        </div>
+      </div>
+
+      <!-- BookRegistryApp -->
+      <div class="swiper-slide project-card portfolio">
+        <div class="project-text">
+          <h3>BookRegistryApp</h3>
+          <p>A Java-based CRUD web app to manage books and authors with a focus on clean backend design.</p>
+          <ul>
+            <li> Full CRUD for <code>Author</code> and <code>Title</code> entities</li>
+            <li> Enterprise patterns: DAO, DTO, Singleton, Front Controller</li>
+            <li> Servlet-driven workflows with JSP front-end & JDBC backend</li>
+          </ul>
+          <div class="stack">
+            <span>Java</span><span>Servlet</span><span>JSP</span><span>JDBC</span>
+            <a href="https://github.com/NabilaEln48/BookRegistryApp" class="visit-btn" target="_blank">View Repo →</a>
+          </div>
+        </div>
+        <div class="project-img">
+          <img src="/image/bookregistryapp.png" alt="BookRegistryApp Screenshot" />
+        </div>
+      </div>
+
+      <!-- Arise Fragrance -->
       <div class="swiper-slide project-card arise">
         <div class="project-text">
           <h3>Arise Fragrance</h3>
-          <p>Arise is a modern, fully responsive e-commerce website designed for a luxury fragrance brand. 
-            The platform supports dynamic product listings, category-based filtering, real-time search, user authentication (login/register), cart management, and a secure checkout workflow. 
-            With a focus on clean design and performance, Arise delivers an elegant shopping experience across all devices.</p>
+          <p>A modern, responsive e-commerce website designed for a luxury fragrance brand.</p>
+          <ul>
+            <li> Dynamic product listings with category filtering & real-time search</li>
+            <li> Secure login, cart management & checkout flow</li>
+            <li> Elegant, mobile-first UI for seamless shopping</li>
+          </ul>
           <div class="stack">
             <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span>
           </div>
@@ -394,127 +436,67 @@
         </div>
       </div>
 
-      <!-- Slide 2: Pacman -->
-      <div class="swiper-slide project-card portfolio">
-        <div class="project-text">
-          <h3>Pac-Man Java Game</h3>
-          <p>A classic arcade-style Pac-Man game developed using Java and Swing. 
-            The game features real-time movement, ghost AI, food collection, collision detection, and score/lives tracking. 
-            This project demonstrates my ability to build fully interactive desktop applications with graphical elements and game logic from scratch.</p>
-          <div class="stack">
-            <span>Java</span><span>Swing</span><span>OOP</span><span>Game Design</span>
-          </div>
-          <a href="https://github.com/NabilaEln48/Pacman_Game" class="visit-btn" target="_blank">Github Repo →</a>
-        </div>
-        <div class="project-img">
-          <img src="/image/pacman.png" alt="Pac-Man Java Game Screenshot" />
-        </div>
-      </div>
-
-      <!-- Slide 4: Tic Tac Toe -->
-      <div class="swiper-slide project-card portfolio">
-        <div class="project-text">
-          <h3>Tic-Tac-Toe Java Game</h3>
-          <p>A two-player Tic-Tac-Toe game developed using Java and Swing. 
-            It features an intuitive 3x3 grid interface, player turn logic, win and tie detection, and dynamic UI updates for game results. 
-            This project highlights my understanding of Java GUI development, event handling, and object-oriented programming principles.</p>
-          <div class="stack">
-            <span>Java</span><span>Swing</span><span>OOP</span><span>GUI</span>
-          </div>
-          <a href="https://github.com/NabilaEln48/TicTacToe_Java" class="visit-btn" target="_blank">Github Repo →</a>
-        </div>
-        <div class="project-img">
-          <img src="/image/tictactoe.png" alt="Tic-Tac-Toe Java Game Screenshot" />
-        </div>
-      </div>
-
-      <!-- Slide 5: Portfolio -->
+      <!-- Portfolio Website -->
       <div class="swiper-slide project-card portfolio">
         <div class="project-text">
           <h3>Modern Portfolio Website</h3>
-          <p>A modern and professional website built with HTML, CSS, JavaScript, and Node.js. It features smooth animations, an animated 3D robot, and responsive design.
-             The site supports dark and light mode toggled by clicking the “ELN” logo and links to a personal photography blog for visual storytelling. 
-             This project demonstrates both front-end and back-end skills.</p>
+          <p>A professional personal portfolio built with smooth animations and integrated blog.</p>
+          <ul>
+            <li> Responsive design with dark/light theme toggle</li>
+            <li> 3D animated robot built with Spline</li>
+            <li> Linked to creative blog for drawings, photos & hobbies</li>
+          </ul>
           <div class="stack">
             <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span>
           </div>
           <a href="https://elnabilam.com/" class="visit-btn" target="_blank">Visit Site →</a>
-          <a href="https://github.com/NabilaEln48/NabilaPortfolio" class="visit-btn" target="_blank">Github Repo →</a>
         </div>
         <div class="project-img">
           <img src="/image/port.png" alt="Portfolio Screenshot" />
         </div>
       </div>
 
-      <!-- Slide 6: Flappy Java -->
+      <!-- Java Games Collection -->
       <div class="swiper-slide project-card portfolio">
         <div class="project-text">
-          <h3>Flappy Bird Java Game</h3>
-          <p>A side-scrolling Flappy Bird clone built using Java and Swing. 
-            The game includes smooth bird movement, gravity and jump mechanics, dynamic pipe generation, collision detection, and score tracking. 
-            This project demonstrates my ability to create engaging 2D games with real-time animations, game physics, and responsive controls using Java.</p>
+          <h3>Java Games Collection</h3>
+          <p>A set of classic games built with Java & Swing to demonstrate OOP, GUI, and game logic.</p>
+          <ul>
+            <li>🎮 <strong>Pac-Man</strong> – Ghost AI, collision detection, scoring system</li>
+            <li>🎮 <strong>Flappy Bird</strong> – Physics-based controls, pipe generation, score tracking</li>
+            <li>🎮 <strong>Tic-Tac-Toe</strong> – 2-player mode, win/tie detection, dynamic UI</li>
+          </ul>
           <div class="stack">
-            <span>Java</span><span>Swing</span><span>Game Physics</span><span>OOP</span>
+            <span>Java</span><span>Swing</span><span>OOP</span><span>Game Design</span>
           </div>
-          <a href="https://github.com/NabilaEln48/FlappyBird_Java" class="visit-btn" target="_blank">Github Repo →</a>
+          <a href="https://github.com/NabilaEln48/Pacman_Game" class="visit-btn" target="_blank">Pac-Man Repo →</a>
+          <a href="https://github.com/NabilaEln48/FlappyBird_Java" class="visit-btn" target="_blank">Flappy Bird Repo →</a>
+          <a href="https://github.com/NabilaEln48/TicTacToe_Java" class="visit-btn" target="_blank">Tic-Tac-Toe Repo →</a>
         </div>
         <div class="project-img">
-          <img src="/image/flappy2.png" alt="Flappy Bird Java Game Screenshot" />
+          <img src="/image/Games.png" alt="Java Games Collection Screenshot" />
         </div>
       </div>
 
-      <!-- Slide 7: Blog -->
+      <!-- Blog Page -->
       <div class="swiper-slide project-card portfolio">
         <div class="project-text">
-          <h3>Blog Page</h3>
-          <p>A clean and simple photography blog showcasing some of my favorite photos. The blog also highlights a few of my favorite activities and hobbies.
-            Visitors can explore images that reflect my perspective and style. It's designed to complement my main portfolio with a creative touch.</p>
+          <h3>Creative Blog Page</h3>
+          <p>A personal blog integrated with portfolio to share hobbies and creativity.</p>
+          <ul>
+            <li> Responsive galleries for drawings, photos & motorbikes</li>
+            <li> Minimalist UI for smooth browsing</li>
+            <li> Complements main portfolio with personal storytelling</li>
+          </ul>
           <div class="stack">
             <span>Photography</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
-            <a href="https://elnabilam.com/blog" class="visit-btn" target="_blank">Visit Site →</a>
           </div>
+          <a href="https://elnabilam.com/blog" class="visit-btn" target="_blank">Visit Site →</a>
         </div>
         <div class="project-img">
-          <img src="/image/blog1.png" alt="blog" />
+          <img src="/image/blog1.png" alt="Blog Screenshot" />
         </div>
       </div>
-
-      <!-- Slide 8: BookRegistryApp -->
-<div class="swiper-slide project-card portfolio">
-  <div class="project-text">
-    <h3>BookRegistryApp</h3>
-    <p>A Java web application that enables users to manage books and authors through a responsive interface. 
-      It showcases full CRUD operations for `Author` and `Title` entities, built using enterprise-level design patterns like DAO, DTO, Singleton, and Front Controller.
-      This application was created to demonstrate clean backend architecture and servlet-driven web development.</p>
-    <div class="stack">
-      <span>Java</span><span>Servlet</span><span>JSP</span><span>JDBC</span>
-      <a href="https://github.com/NabilaEln48/BookRegistryApp" class="visit-btn" target="_blank">View Repo →</a>
-    </div>
-  </div>
-  <div class="project-img">
-    <img src="/image/bookregistryapp.png" alt="BookRegistryApp" />
-  </div>
-</div>
-
-
-
-      <!-- Slide 9: PTFMS -->
-<div class="swiper-slide project-card portfolio">
-  <div class="project-text">
-    <h3>PTFMS — Fleet Management System</h3>
-    <p>A Java web application for public-transport fleet operations. 
-      It provides vehicle management, maintenance scheduling, station/service logs, GPS & live tracking, and analytics. 
-      Includes predictive alerts (overdue tasks, excessive fuel use) and a clean layered architecture using DAO/DTO, Front Controller, and business logic services with Servlets/JSP over JDBC (Maven).</p>
-    <div class="stack">
-      <span>Java</span><span>Servlets</span><span>JSP</span><span>JDBC</span>
-      <span>Maven</span><span>DAO/DTO</span><span>Front Controller</span>
-    </div>
-  </div>
-  <div class="project-img">
-    <img src="/image/ptfms.png" alt="PTFMS Fleet Management System" />
-  </div>
-</div>
-
 
     </div> <!-- END .swiper-wrapper -->
 
@@ -524,11 +506,11 @@
     <div class="swiper-button-next"></div>
   </div> <!-- END .swiper -->
 
-
-          <div class="coming-soon">
-          <button disabled><strong>More Projects Coming Soon</strong> 🚧</button>
-        </div>
+  <div class="coming-soon">
+    <button disabled><strong>More Projects Coming Soon</strong> 🚧</button>
+  </div>
 </section>
+
 
 
 <!--Certification Section-->
