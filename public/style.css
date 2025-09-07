@@ -573,6 +573,8 @@ spline-viewer::part(branding) {
   overflow-x: visible;
   gap: 2rem;
   padding: 1rem;
+    justify-content: center;   /* center the grid itself */
+  justify-items: center;  
 }
 
 /* Card + flip shell */
