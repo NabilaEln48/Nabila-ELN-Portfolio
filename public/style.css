@@ -637,30 +637,39 @@ spline-viewer::part(branding) {
   left: -10px;
 }
 
-/* ---------- Responsive ---------- */
+/* ============================= Mobile Responsive ============================= */
 @media (max-width: 768px) {
   .timeline-alt::after {
-    left: 8px; /* move line left */
+    display: none; /* hide center line */
   }
 
   .timeline-item {
-    width: 100%;
-    padding-left: 2rem;
-    padding-right: 0;
-    text-align: left;
+    width: 100%;       /* full width */
+    left: 0 !important;  /* reset positioning */
+    text-align: center;
+    padding: 1rem 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
   }
 
   .timeline-item.left,
   .timeline-item.right {
-    left: 0;
-    text-align: left;
+    text-align: center;
+    left: 0 !important;  /* force reset */
   }
 
   .timeline-item::before {
-    left: -2px;
-    right: auto;
+    display: none; /* hide dots */
+  }
+
+  .timeline-content {
+    margin: 0 auto;
+    max-width: 90%; /* nice margin on sides */
   }
 }
+
+
 
 
 /* ===================== Services Section Layout ============================== */
