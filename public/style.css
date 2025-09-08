@@ -550,276 +550,117 @@ spline-viewer::part(branding) {
 }
 
 /* ============================= Experience SECTION ============================= */
-.experience-section {
-  max-width: 1400px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-.section-title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #8b5cf6;
-  margin-bottom: 3rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* Grid: flexible columns that snap nicely from 4 → 3 → 2 → 1 */
-.experience-grid {
-  display: flex;
-  flex-wrap: wrap;   /* allow wrapping to new rows */
-  overflow-x: visible;
-  gap: 2rem;
-  padding: 1rem;
-    justify-content: center;   /* center the grid itself */
-  justify-items: center;  
-}
-
-/* Card + flip shell */
-.experience-card {
-  perspective: 1000px;
-  height: 370px; /* desktop default */
-  flex: 0 0 300px;
-}
-
-.card-inner {
+.timeline-alt {
   position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s ease;
-  transform-style: preserve-3d;
-  cursor: pointer;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-.experience-card.flipped .card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Sides */
-.card-front,
-.card-back {
+/* Vertical center line */
+.timeline-alt::after {
+  content: '';
   position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  border-radius: 20px;
-  border: 2px solid rgba(139, 92, 246, 0.25);
-  background:transparent;
-  backdrop-filter: blur(8px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
-  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: rgba(139, 92, 246, 0.6);
+  transform: translateX(-50%);
 }
 
-.card-front:hover {
-  border-color: rgba(139, 92, 246, 0.5);
-  background: transparent;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.22);
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
 }
 
-.card-back {
-  transform: rotateY(180deg);
-  background:transparent;
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
   text-align: left;
-  overflow: hidden; /* no scroll; we size to fit */
-    justify-content: flex-start !important;  /* stop vertical centering */
-  align-items: stretch !important;
-  padding: 1rem !important; 
 }
 
-/* Front content */
-.company-logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, #8b5cf6, #3b82f6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.9rem;
+/* Content box */
+.timeline-content {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  position: relative;
+  display: inline-block;
+  min-width: 220px;
 }
 
-.job-title {
-  font-size: 1.25rem;
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-color);
-  margin-bottom: 0.4rem;
 }
 
-.company-name {
+.timeline-content .company {
   font-size: 0.9rem;
   color: #8b5cf6;
-  margin-bottom: 0.25rem;
-  text-align: center;
+  margin: 0.2rem 0;
 }
 
-.duration {
-  font-size: 0.85rem;
-  color:var(--text-color);
-  margin-bottom: 0.9rem;
-  text-align: center;
-}
-
-.skills-preview {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  justify-content: center;
-}
-
-.skill-tag {
-  background: rgba(139, 92, 246, 0.15);
-  color: #8b5cf6;
-  padding: 0.28rem 0.6rem;
-  border-radius: 14px;
-  font-size: 0.78rem;
-  border: 1px solid rgba(139, 92, 246, 0.28);
-}
-
-/* Micro-hints */
-.click-hint {
-  position: absolute;
-  bottom: 10px;
-  right: 14px;
-  color: rgba(139, 92, 246, 0.65);
-  font-size: 0.75rem;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
-}
-
-/* Back content layout */
-.back-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  height: auto;
-}
-
-.back-header { margin-bottom: 0.8rem; }
-
-.back-title {
-  font-size: 1.05rem;
-  color: #fff;
-  margin-bottom: 0.25rem;
-}
-
-.back-company {
-  font-size: 0.88rem;
-  color: #8b5cf6;
-  margin-bottom: 0.15rem;
-}
-
-.back-duration {
+.timeline-content .duration {
   font-size: 0.8rem;
   color: var(--text-color);
 }
 
-.description {
-  flex: 0 0 auto !important;               
-  margin: 0 0 0.25rem !important;
-}
-
-.description-text {
-  color:var(--text-color);
-  font-size: 0.8rem;
-  line-height: 1.35;
-  margin-bottom: 0.6rem;
-}
-
-.key-points {
-  list-style: none;
-  padding: 0;
-  margin: 0 !important;
-}
-
-.key-points li {
-  color: var(--text-color);
-  font-size: 0.75rem;
-  line-height: 1.25;
-  margin-bottom: 0.35rem;
-  position: relative;
-  padding-left: 0.9rem;
-}
-
-.key-points li:before {
-  content: '▸';
-  color: #8b5cf6;
+/* Dot on the line */
+.timeline-item::before {
+  content: '';
   position: absolute;
-  left: 0;
+  top: 18px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
 }
 
-.all-skills {
-  margin-top: 0 !important;
+.timeline-item.left::before {
+  right: -10px;
 }
 
-.skills-title {
-  color: #8b5cf6;
-  font-size: 0.85rem;
-  margin-bottom: 0.15rem !important;
-  font-weight: 700;
+.timeline-item.right::before {
+  left: -10px;
 }
 
-.all-skills .skill-tag {
-  font-size: 0.65rem;
-  padding: 0.18rem 0.38rem;
-  margin: 0 0.22rem 0.22rem 0;
-}
-
-/* ==== Experience: Mobile-only ==== */
+/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+  .timeline-alt::after {
+    left: 8px; /* move line left */
   }
 
-  .experience-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 0 12px;              /* keep borders inside viewport */
+  .timeline-item {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 0;
+    text-align: left;
   }
 
-  /* override any desktop fixed basis (e.g., flex: 0 0 300px) */
-  .experience-card {
-    flex: 0 0 auto !important;
-    width: 300px;
-    max-width: 520px;
-    height: 390px;                /* fixed for flip cards */
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+    text-align: left;
   }
 
-  .card-front,
-  .card-back { padding: 14px; }
-
-  .company-logo { width: 44px; height: 44px; font-size: 1rem; }
-  .job-title { font-size: 1.1rem; }
-  .company-name { font-size: 0.9rem; }
-  .duration { font-size: 0.82rem; }
-
-  .description { margin: 0.4rem 0 0.2rem; }
-  .key-points li { font-size: 0.78rem; margin-bottom: 0.25rem; }
-  .all-skills .skill-tag { font-size: 0.68rem; padding: 0.2rem 0.4rem; }
-
-  /* no hover lift on touch */
-  .card-front:hover { transform: none; box-shadow: none; }
+  .timeline-item::before {
+    left: -2px;
+    right: auto;
+  }
 }
-
-/* prevent accidental horizontal scroll */
-html, body { overflow-x: hidden; }
 
 
 /* ===================== Services Section Layout ============================== */
