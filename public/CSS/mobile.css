@@ -1,0 +1,245 @@
+/* ======================================
+   🌐 FINAL MOBILE STYLES (All Pages)
+   Max-width: 768px
+====================================== */
+
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: #0d0d0d;
+  color: #eaeaea;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(13, 13, 13, 0.97);
+  border-bottom: 1px solid #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 8%;
+  z-index: 9999; /* Always on top */
+}
+
+.navbar .logo a {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 1px;
+}
+
+.menu-icon {
+  display: block;
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 10000; /* Above nav links */
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  position: fixed;
+  top: 60px;
+  right: 8%;
+  background: #111;
+  width: 230px;
+  border-radius: 12px;
+  padding: 15px 0;
+  border: 1px solid #1a1a1a;
+  z-index: 9998;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.nav-links.open {
+  display: flex;
+}
+
+.nav-links li {
+  width: 100%;
+  padding: 8px 20px;
+}
+
+.nav-links li a {
+  width: 100%;
+  display: block;
+  color: #ddd;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: var(--accent-color);
+}
+
+/* Allow scrolling when menu open */
+body.menu-open {
+  overflow: auto;
+}
+
+/* ===== Section Titles ===== */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 90px;
+  margin-bottom: 25px;
+  color: var(--accent-color);
+  font-family: 'Space Mono', monospace;
+}
+
+/* ===== General Layouts ===== */
+.container,
+section,
+.certifications-page,
+.projects-page,
+.resume {
+  padding: 0 6%;
+}
+
+/* ===== About Section ===== */
+.about-flex {
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+  padding: 25px 15px;
+  margin-top: 70px;
+}
+
+.about-img img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.about-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* ===== Timeline ===== */
+.timeline {
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.timeline-item {
+  padding: 15px;
+  min-height: auto;
+}
+
+/* ===== Skills ===== */
+.skills-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 50px;
+}
+
+.skill {
+  width: 100%;
+  border-radius: 10px;
+  padding: 12px 5px;
+  background: #121212;
+  border: 1px solid #1e1e1e;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.skill img {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 6px;
+}
+
+.skill p {
+  font-size: 0.75rem;
+  color: #ccc;
+}
+
+/* ===== Projects (Work Page) ===== */
+.project-section {
+  flex-direction: column;
+  text-align: center;
+  gap: 25px;
+  padding-top: 80px;
+}
+
+.project-img img {
+  max-width: 90%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-info {
+  padding: 0;
+}
+
+.project-navigation {
+  margin-top: 25px;
+}
+
+/* ===== Certifications ===== */
+.certifications-page {
+  padding-top: 80px;
+}
+
+.cert-filters {
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.cert-grid {
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.cert-card {
+  padding: 15px;
+  flex-direction: row;
+  gap: 10px;
+  border-radius: 10px;
+  background: #121212;
+  border: 1px solid #1a1a1a;
+}
+
+/* ===== Services ===== */
+.services-grid {
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding-top: 80px;
+}
+
+.service-card {
+  padding: 20px;
+  text-align: center;
+  background: #121212;
+  border-radius: 12px;
+  border: 1px solid #1e1e1e;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  font-size: 0.7rem;
+  padding: 15px 0;
+  border-top: 1px solid #1a1a1a;
+  margin-top: 40px;
+}
+
+/* Hide Swiper on Mobile */
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination {
+  display: none !important;
+}

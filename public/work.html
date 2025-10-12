@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work | Nabila M. "ELN"</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="CSS/base.css" />
+  <link rel="stylesheet" href="CSS/work.css" />
+  <link rel="stylesheet" href="CSS/mobile.css" media="only screen and (max-width: 768px)">
+</head>
+
+<body>
+<header class="navbar">
+  <div class="logo"><a href="index.html">ELN<span>.</span></a></div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="mailto:nabilaelnm@gmail.com" class="btn">Hire Me</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- Projects Section -->
+  <section class="projects-page">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="swiper projects-carousel">
+      <div class="swiper-wrapper">
+
+        <!-- 01 PTFMS -->
+        <div class="swiper-slide project-section">
+          <div class="project-info">
+            <div class="project-index">01</div>
+            <h3 class="project-title">PTFMS — Fleet Management System</h3>
+            <p>A Java web application for public-transport fleet operations, built with enterprise-grade architecture.<br>
+              • Vehicle & maintenance scheduling with live service logs.<br>
+              • GPS tracking with predictive maintenance alerts.<br>
+              • Scalable DAO/DTO, Servlets, JSP, JDBC (Maven).
+            </p>
+            <p class="tech-stack">Java · Servlets · JSP · JDBC · Maven</p>
+          </div>
+          <div class="project-img">
+            <img src="images/ptfms.webp" alt="PTFMS Fleet Management System" />
+          </div>
+        </div>
+
+        <!-- 02 SniperBot -->
+        <div class="swiper-slide project-section">
+          <div class="project-info">
+            <div class="project-index">02</div>
+            <h3 class="project-title">SniperBot — Solana Trading Automation</h3>
+            <p>A crypto trading bot built for Solana with automated trade execution and liquidity scanning.<br>
+              • Multi-coin engine with validation and burn detection.<br>
+              • Portfolio analytics and async execution.<br>
+              • Modular architecture for scalability.
+            </p>
+            <p class="tech-stack">Python · Solana · Web3 · AsyncIO · REST APIs</p>
+          </div>
+          <div class="project-img">
+            <img src="images/sniperbot.png" alt="SniperBot Solana Trading Bot" />
+          </div>
+        </div>
+
+        <!-- 03 CryptoScraper -->
+        <div class="swiper-slide project-section">
+          <div class="project-info">
+            <div class="project-index">03</div>
+            <h3 class="project-title">CryptoScraperDashboard</h3>
+            <p>A Python-based dashboard for real-time crypto tracking.<br>
+              • CoinGecko API integration.<br>
+              • Streamlit charts and SQLite persistence.<br>
+              • DAO, DTO, Factory, and Strategy patterns.
+            </p>
+            <p class="tech-stack">Python · Streamlit · Pandas · SQLite</p>
+            <div class="project-links">
+              <a href="https://github.com/NabilaEln48/crypto_scraper_dashboard" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-img">
+            <img src="images/scr.webp" alt="CryptoScraper Dashboard" />
+          </div>
+        </div>
+
+        <!-- 04 BookRegistryApp -->
+        <div class="swiper-slide project-section">
+          <div class="project-info">
+            <div class="project-index">04</div>
+            <h3 class="project-title">BookRegistryApp</h3>
+            <p>A Java CRUD web app for managing authors and books.<br>
+              • DAO, DTO, Singleton, and Front Controller patterns.<br>
+              • JSP frontend with JDBC and Servlets.
+            </p>
+            <p class="tech-stack">Java · JSP · Servlets · JDBC</p>
+            <div class="project-links">
+              <a href="https://github.com/NabilaEln48/BookRegistryApp" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-img">
+            <img src="images/bookregistryapp.webp" alt="BookRegistryApp Screenshot" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Custom Green Navigation Buttons -->
+    <div class="project-navigation">
+      <div class="nav-arrow" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></div>
+      <div class="nav-arrow" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Nabila M. "ELN" — All Rights Reserved.</p>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- JS Init -->
+  <script>
+    const swiper = new Swiper(".projects-carousel", {
+      slidesPerView: 1,
+      spaceBetween: 50,
+      loop: true,
+      autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+      },
+    });
+
+    // Custom button controls
+    document.getElementById("prevBtn").addEventListener("click", () => swiper.slidePrev());
+    document.getElementById("nextBtn").addEventListener("click", () => swiper.slideNext());
+  </script>
+</body>
+</html>

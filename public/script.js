@@ -1,220 +1,74 @@
-// ==========================
-// Mobile Navigation Menu Toggle
-// ==========================
-const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
-const menuIcon = document.querySelector('.menu-icon');
-const closeIcon = document.querySelector('.close-icon');
-
-menuToggle?.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-  const isOpen = navMenu.classList.contains('active');
-  if (menuIcon) menuIcon.style.display = isOpen ? 'none' : 'inline';
-  if (closeIcon) closeIcon.style.display = isOpen ? 'inline' : 'none';
-});
-
-// Close menu on link click
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
-    if (href?.startsWith('#')) {
-      e.preventDefault();
-      navMenu?.classList.remove('active');
-      if (menuIcon) menuIcon.style.display = 'inline';
-      if (closeIcon) closeIcon.style.display = 'none';
-      setTimeout(() => {
-        window.location.href = href;
-      }, 200);
-    }
-  });
-});
-
-// ==========================
-// Intro Loader (no titles, instant)
-// ==========================
+// ================================
+// 🌐 Global Page Interactions Script
+// (Smooth transitions, Tabs, Navbar)
+// ================================
 document.addEventListener("DOMContentLoaded", () => {
-  const introLoader = document.getElementById("intro-loader");
-  const mainSite = document.getElementById("main-site");
-  const skipText = document.getElementById("skip-text");
-
-  const showSite = () => {
-    if (introLoader) introLoader.style.display = "none";
-    if (mainSite) mainSite.style.display = "block";
-  };
-
-  // No waiting—show the site right away
-  showSite();
-
-  // Keep skip working in case CSS shows the loader for any reason
-  skipText?.addEventListener("click", showSite);
-});
-
-
-// ==========================
-// Service Cards - Flip on Click (Mobile)
-// ==========================
-document.querySelectorAll('.service-card').forEach(card => {
-  card.addEventListener('click', () => {
-    document.querySelectorAll('.service-card').forEach(c => {
-      if (c !== card) c.classList.remove('active');
-    });
-    card.classList.toggle('active');
+  // ==========================
+  // 🌐 Smooth Page Transitions
+  // ==========================
+  document.body.style.opacity = 0;
+  document.body.style.transition = "opacity 0.5s ease-in";
+  requestAnimationFrame(() => {
+    document.body.style.opacity = 1;
   });
-});
 
+  const internalLinks = document.querySelectorAll("a[href$='.html']");
+  internalLinks.forEach((link) => {
+    if (link.classList.contains("hire-me") || link.classList.contains("no-fade")) return;
 
-// ==========================
-// Experience Cards - Flip Functionality
-// ==========================
-function flipCard(card) {
-  card.classList.toggle('flipped');
-}
+    link.addEventListener("click", (e) => {
+      const target = link.getAttribute("href");
+      if (!target || link.target === "_blank") return; // skip external or blank
 
-// Wait for DOM to be fully loaded before initializing experience cards
-document.addEventListener('DOMContentLoaded', function() {
-  // Initialize experience cards when DOM is ready
-  const experienceCards = document.querySelectorAll('.experience-card');
-  
-  experienceCards.forEach(card => {
-    // Remove any existing onclick attributes to avoid conflicts
-    card.removeAttribute('onclick');
-    
-    card.addEventListener('click', function(e) {
-      // Prevent flip if clicking on flip icon
-      if (e.target.classList.contains('flip-icon')) {
-        return;
-      }
-      flipCard(this);
+      e.preventDefault();
+      document.body.style.opacity = 0;
+
+      // Delay to allow fade-out
+      setTimeout(() => {
+        window.location.href = target;
+      }, 350);
     });
+  });
 
-    // Handle flip icon clicks
-    const flipIcon = card.querySelector('.flip-icon');
-    if (flipIcon) {
-      flipIcon.removeAttribute('onclick');
-      flipIcon.addEventListener('click', function(e) {
-        e.stopPropagation();
-        flipCard(card);
+  // ==========================
+  // 📑 Resume Page Tabs Logic
+  // ==========================
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  if (tabButtons.length && tabContents.length) {
+    tabButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // Reset all tabs
+        tabButtons.forEach((b) => b.classList.remove("active"));
+        tabContents.forEach((tab) => tab.classList.remove("active"));
+
+        // Activate clicked one
+        btn.classList.add("active");
+        const targetId = btn.getAttribute("data-target");
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) targetContent.classList.add("active");
       });
-    }
-  });
-
-  // Keyboard navigation for experience cards
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.experience-card.flipped').forEach(card => {
-        card.classList.remove('flipped');
-      });
-    }
-  });
-});
-
-
-// ==========================
-// Mobile Robot Scroll Effect
-// ==========================
-if (window.innerWidth <= 768) {
-  const robot = document.querySelector('.robot-3d');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    if (robot) {
-      robot.style.transform = `translateY(${scrollY * 0.15}px)`;
-    }
-  });
-}
-
-// ==========================
-// Swiper Carousel
-// ==========================
-if (document.querySelector('.projects-carousel')) {
-  const swiper = new Swiper('.projects-carousel', {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 50,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    effect: 'slide'
-  });
-}
-
-// ==========================
-// Theme Toggle by Clicking the Logo
-// ==========================
-const themeLogo = document.getElementById("theme-logo-toggle");
-const htmlElement = document.documentElement;
-
-function setTheme(mode) {
-  htmlElement.setAttribute("data-theme", mode);
-  localStorage.setItem("theme", mode);
-}
-
-const savedTheme = localStorage.getItem("theme") || "dark";
-setTheme(savedTheme);
-
-themeLogo?.addEventListener("click", () => {
-  const currentTheme = htmlElement.getAttribute("data-theme");
-  setTheme(currentTheme === "dark" ? "light" : "dark");
-});
-
-// ===== Certifications: filter + show more =====
-(function(){
-  const grid = document.getElementById('cert-grid');
-  const toggle = document.getElementById('cert-toggle');
-  const filters = Array.from(document.querySelectorAll('.cert-filter'));
-  const cards = Array.from(grid.querySelectorAll('.cert-card'));
-
-  // How many non-featured to show initially (in addition to featured)
-  const BASE_COUNT = 3;
-
-  function applyVisibility(activeCategory, expandAll){
-    // 1) filter
-    const visible = cards.filter(card => {
-      if (activeCategory === 'all') return true;
-      return (card.dataset.category || '').includes(activeCategory);
     });
-
-    // 2) reset
-    cards.forEach(c => c.classList.remove('__visible'));
-
-    // 3) featured are always shown if they match filter
-    const featured = visible.filter(c => c.dataset.featured === 'true');
-
-    // 4) add baseline count for compact view unless expanded
-    const remainder = visible.filter(c => c.dataset.featured !== 'true');
-    const toShow = expandAll ? visible : [...featured, ...remainder.slice(0, BASE_COUNT)];
-
-    toShow.forEach(c => c.classList.add('__visible'));
-
-    // 5) toggle button state
-    const hiddenLeft = visible.length - toShow.length;
-    toggle.style.display = hiddenLeft > 0 ? 'inline-block' : 'none';
-    toggle.textContent = expandAll ? 'Show less' : `Show more (${hiddenLeft})`;
-    toggle.setAttribute('aria-expanded', String(expandAll));
   }
 
-  let currentFilter = 'all';
-  let expanded = false;
+  // ==========================
+  // 📱 Navbar Mobile Toggle
+  // ==========================
+  const navbar = document.querySelector(".navbar");
+  const navLinks = document.querySelector(".nav-links");
 
-  filters.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filters.forEach(b => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-      currentFilter = btn.dataset.filter || 'all';
-      expanded = false;
-      applyVisibility(currentFilter, expanded);
+  if (navbar && navLinks && !document.querySelector(".menu-icon")) {
+    const menuIcon = document.createElement("div");
+    menuIcon.classList.add("menu-icon");
+    menuIcon.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    navbar.insertBefore(menuIcon, navbar.children[1]);
+
+    menuIcon.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      menuIcon.innerHTML = navLinks.classList.contains("open")
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
     });
-  });
-
-  toggle.addEventListener('click', () => {
-    expanded = !expanded;
-    applyVisibility(currentFilter, expanded);
-  });
-
-  // init
-  applyVisibility(currentFilter, expanded);
-})();
+  }
+});

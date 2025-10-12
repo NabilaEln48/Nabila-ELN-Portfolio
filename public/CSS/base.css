@@ -1,0 +1,187 @@
+/* ======================================
+   🌐 BASE STYLES
+====================================== */
+:root {
+  --bg-color: #0d0d0d;
+  --text-color: #eaeaea;
+  --accent-color: #00ff9d;
+  --font-primary: 'Poppins', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-primary);
+  overflow-x: hidden;
+}
+
+/* ===============================
+   NAVBAR — Logo Left / Menu Center
+=============================== */
+.navbar {
+  width: 100%;
+  padding: 18px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 1000;
+}
+
+/* LOGO (top-left corner) */
+.logo {
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo a {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.4rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--accent-color);
+}
+
+/* NAV LINKS CENTERED */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #aaa;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-color);
+}
+
+/* Hire Me Button */
+.nav-links .btn {
+  border: 1px solid var(--accent-color);
+  border-radius: 25px;
+  padding: 8px 20px;
+  color: var(--accent-color);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-links .btn:hover {
+  background: var(--accent-color);
+  color: var(--bg-color);
+}
+
+/* Hide on desktop */
+.menu-icon {
+  display: none;
+}
+
+/* ===============================
+   FOOTER
+=============================== */
+.footer {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  padding: 30px 0 20px;
+  font-size: 0.85rem;
+  color: #666;
+  font-family: var(--font-mono);
+  border-top: 1px solid #1a1a1a;
+}
+
+/* ===============================
+   MOBILE STYLES
+=============================== */
+@media (max-width: 900px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 16px 8%;
+    background: rgba(13, 13, 13, 0.98);
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 60px;
+    right: 8%;
+    background: #111;
+    width: 230px;
+    border-radius: 12px;
+    padding: 15px 0;
+    border: 1px solid #1a1a1a;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding: 8px 20px;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    display: block;
+    color: #ddd;
+    font-size: 0.95rem;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    color: var(--accent-color);
+  }
+
+  /* Hamburger icon */
+  .menu-icon {
+    display: block;
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  .footer {
+    font-size: 0.75rem;
+    padding: 15px 0;
+  }
+}

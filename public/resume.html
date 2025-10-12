@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume | Nabila M. "ELN"</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="CSS/base.css">
+  <link rel="stylesheet" href="CSS/resume.css">
+  <link rel="stylesheet" href="CSS/mobile.css" media="only screen and (max-width: 768px)">
+</head>
+
+<body>
+<header class="navbar">
+  <div class="logo"><a href="index.html">ELN<span>.</span></a></div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="mailto:nabilaelnm@gmail.com" class="btn">Hire Me</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- Resume Section -->
+  <section class="resume">
+    <div class="container">
+      <h1 class="section-title">Resume</h1>
+
+      <!-- Tab Buttons -->
+      <div class="tabs">
+        <button class="tab-btn active" data-target="about">About</button>
+        <button class="tab-btn" data-target="experience">Experience</button>
+        <button class="tab-btn" data-target="education">Education</button>
+        <button class="tab-btn" data-target="skills">Skills</button>
+      </div>
+
+      <!-- About -->
+      <div id="about" class="tab-content active">
+        <div class="about-flex">
+          <!-- Profile Image -->
+          <div class="about-img">
+            <img src="images/Nabila.gif" alt="Animated photo of Nabila" />
+          </div>
+
+          <!-- About Text -->
+          <div class="about-text">
+            <p>
+              <strong>I’m Nabila "ELN"</strong> — a Software Engineer who loves clean code, clean UI, and just the right amount of chaos.
+              I turn complex problems into intuitive, user-friendly experiences — blending solid backend logic with polished front-end design.
+              With a strong background in databases, I don’t just make things look good — I make them work, scale, and stay reliable under pressure.
+              When I’m not coding, you’ll probably find me drawing, skateboarding, surfing, or telling myself to take a break (and then not taking it).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div id="experience" class="tab-content">
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Interpreter</h3>
+            <p class="company">CanTalk (Canada) Inc.</p>
+            <p class="duration">Nov 2024 – Mar 2025 • Remote</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Full-Stack Developer</h3>
+            <p class="company">Upwork</p>
+            <p class="duration">Mar 2020 – Nov 2022 • Remote</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Graphic Designer</h3>
+            <p class="company">Fiverr</p>
+            <p class="duration">2018 – Aug 2022</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div id="education" class="tab-content">
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Computer Programming Diploma</h3>
+            <p class="company">Algonquin College, Ottawa</p>
+            <p class="duration">2023 – 2026 (Expected)</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Diploma in Operations Management</h3>
+            <p class="company">Alison</p>
+            <p class="duration">Completed 2021</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills (Grid: 4 per line) -->
+      <div id="skills" class="tab-content">
+        <div class="skills-grid">
+          <div class="skill"><img src="images/java-logo-transparent-free-png.webp" alt="Java"><p>Java</p></div>
+          <div class="skill"><img src="images/python.webp" alt="Python"><p>Python</p></div>
+          <div class="skill"><img src="images/c.webp" alt="C"><p>C</p></div>
+          <div class="skill"><img src="images/php.webp" alt="PHP"><p>PHP</p></div>
+
+          <div class="skill"><img src="images/FullStack.webp" alt="HTML/CSS/JS"><p>HTML / CSS / JS</p></div>
+          <div class="skill"><img src="images/Node.webp" alt="NodeJS"><p>NodeJS</p></div>
+          <div class="skill"><img src="images/sql.webp" alt="SQL"><p>SQL</p></div>
+          <div class="skill"><img src="images/R (1).webp" alt="MongoDB"><p>MongoDB</p></div>
+
+          <div class="skill"><img src="images/linux.webp" alt="Linux"><p>Linux</p></div>
+          <div class="skill"><img src="images/OIP.webp" alt="GitHub"><p>GitHub</p></div>
+          <div class="skill"><img src="images/notion.webp" alt="Notion"><p>Notion</p></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Nabila M. "ELN" — All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
