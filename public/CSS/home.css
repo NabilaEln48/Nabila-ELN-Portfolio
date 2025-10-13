@@ -276,30 +276,29 @@ body {
   .subtitle {
     order: 1;
     font-size: 0.9rem;
-    margin-bottom: 0;
+    margin-bottom: 5px;
   }
 
   .hero h1 {
     order: 2;
     font-size: 2rem;
     line-height: 1.2;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 
   .hero h1 span {
     font-size: 2.1rem;
   }
 
-  /* === Profile Image (lifted closer to text) === */
+  /* === Profile Image (closer to title) === */
   .hero-image {
     order: 3;
-    width: 220px;
-    height: 220px;
-    margin-top: -10px;
-    transform: translateY(-10px);
+    width: 200px;
+    height: 200px;
+    margin-top: -5px;
   }
 
-  /* === Stats Row (in middle) === */
+  /* === Stats Row (under image, nicely spaced) === */
   .stats {
     order: 4;
     display: flex;
@@ -308,9 +307,10 @@ body {
     flex-wrap: nowrap;
     width: 100%;
     gap: 10px;
-    margin-top: 0;          /* remove extra space */
-    transform: translateY(-15px); /* move up closer to image */
+    margin-top: 10px;
     padding: 0 10px;
+    position: relative;
+    transform: none; /* prevent overlaps */
   }
 
   .stats div {
@@ -319,42 +319,40 @@ body {
   }
 
   .stats h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .stats p {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: #aaa;
   }
 
-  /* === Description + Socials pinned at bottom === */
-  .desc,
-  .socials {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
+  /* === Description (below stats, centered, no overlap) === */
+  .desc {
+    order: 5;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 90%;
+    font-size: 0.85rem;
+    line-height: 1.4;
     text-align: center;
+    color: #ccc;
+    margin: 20px auto 10px;
   }
 
-.desc {
-  position: absolute;
-  bottom: 150px; /* higher above socials */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  font-size: 1.1rem;
-  line-height: 1;
-  text-align: center;
-  color: #ccc;
-  margin: 0;
-}
-
+  /* === Socials (at bottom but still part of flow) === */
   .socials {
-    bottom: 20px; /* very bottom */
+    order: 6;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 25px;
   }
 }
-
