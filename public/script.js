@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuIcon = document.createElement("div");
     menuIcon.classList.add("menu-icon");
     menuIcon.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    navbar.insertBefore(menuIcon, navbar.children[1]);
+    navbar.appendChild(menuIcon);
 
     menuIcon.addEventListener("click", () => {
       navLinks.classList.toggle("open");

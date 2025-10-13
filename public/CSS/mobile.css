@@ -90,7 +90,7 @@ body.menu-open {
   text-align: center;
   font-size: 2rem;
   margin-top: 90px;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   color: var(--accent-color);
   font-family: 'Space Mono', monospace;
 }
@@ -214,14 +214,17 @@ section,
 }
 
 /* ===== Services ===== */
+/* Services grid layout */
 .services-grid {
   grid-template-columns: 1fr;
-  gap: 20px;
-  padding-top: 80px;
+  gap: 10px;          /* compact space between cards */
+  padding-top: 0;     /* remove top padding that pushes cards down */
+  margin-top: 0;      /* ensure grid starts immediately under subtitle */
 }
 
+/* Service cards */
 .service-card {
-  padding: 20px;
+  padding: 18px;
   text-align: center;
   background: #121212;
   border-radius: 12px;
