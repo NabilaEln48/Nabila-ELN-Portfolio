@@ -74,9 +74,24 @@
   <section class="stats">
     <div><h2>6+</h2><p>Years of experience</p></div>
     <div><h2>25+</h2><p>Projects completed</p></div>
-    <div><h2>10+</h2><p>Technologies mastered</p></div>
+    <div><h2>20+</h2><p>Technologies mastered</p></div>
     <div><h2>500+</h2><p>Code commits</p></div>
   </section>
+  <script>
+  // Highlight current page link in navbar
+  const currentPage = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  navLinks.forEach(link => {
+    const linkPage = link.getAttribute("href");
+    if (linkPage === currentPage || (linkPage === "index.html" && currentPage === "")) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+</script>
+
   <script src="script.js"></script>
 </body>
 </html>

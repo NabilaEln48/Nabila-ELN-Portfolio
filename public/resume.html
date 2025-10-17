@@ -146,6 +146,20 @@
   <footer class="footer">
     <p>© 2025 Nabila M. "ELN" — All Rights Reserved.</p>
   </footer>
+<script>
+  // Highlight current page link in navbar
+  const currentPage = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  navLinks.forEach(link => {
+    const linkPage = link.getAttribute("href");
+    if (linkPage === currentPage || (linkPage === "index.html" && currentPage === "")) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+</script>
 
   <script src="script.js"></script>
 </body>

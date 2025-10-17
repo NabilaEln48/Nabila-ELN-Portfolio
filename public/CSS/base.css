@@ -62,30 +62,53 @@ body {
   color: var(--accent-color);
 }
 
-/* NAV LINKS CENTERED */
+/* NAV LINKS CENTERED (rounded container like pic 1) */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 35px;
   justify-content: center;
   align-items: center;
+  background: transparent;
+  border: 1px solid #00ff9d;
+  border-radius: 50px;
+  padding: 12px 40px;
+  backdrop-filter: blur(8px);
+
 }
 
+/* NAV LINK STYLE + underline gradient */
 .nav-links a {
-  color: #aaa;
+  color: #e0e0e0;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
-  transition: 0.3s;
-  background: rgba(17,17,17,0.95);
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ffbb00, var(--accent-color));
+  transition: width 0.4s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--accent-color);
+  color: #fff;
 }
 
-/* Hire Me Button */
+/* HIRE ME BUTTON */
 .nav-links .btn {
   border: 1px solid var(--accent-color);
   border-radius: 25px;
@@ -100,7 +123,7 @@ body {
   color: var(--bg-color);
 }
 
-/* Hide on desktop */
+/* Hide mobile icon on desktop */
 .menu-icon {
   display: none;
 }
