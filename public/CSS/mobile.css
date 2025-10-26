@@ -1,55 +1,11 @@
-/* ======================================
-   🌐 MOBILE STYLES (All Pages)
-   Max-width: 768px
-====================================== */
 
 /* ===============================
-   FIX STATS POSITIONING
-=============================== */
-@media (max-width: 768px) {
-  /* Ensure stats stay in place */
-  .stats {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 30px 5%;
-    margin-top: 20px;
-    width: 100%;
-    left: 0;
-    right: 0;
-  }
-  
-  .stats div {
-    position: relative;
-    padding: 15px 10px;
-    text-align: center;
-  }
-  
-  /* Prevent text overflow */
-  html, body {
-    overflow-x: hidden;
-    width: 100%;
-  }
-  
-  * {
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-  
-  p, h1, h2, h3, h4, h5, h6, span, div {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-}
-
-/* ===============================
-   MOBILE MENU - EXACT RESTO RUISSEAU STYLE
+   MOBILE MENU 
 =============================== */
 @media (max-width: 900px) {
   .navbar {
     justify-content: space-between;
-    padding: 16px 8%;
+    padding: 12px 8%;
     background: rgba(13, 13, 13, 0.98);
     backdrop-filter: blur(10px);
     position: relative;
@@ -88,13 +44,13 @@
     background: #111;
     border: 1px solid #333;
     border-radius: 8px;
-    padding: 10px 0;
+    padding: 8px 0;
     z-index: 999;
     text-align: left;
     gap: 0;
     min-width: 180px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    margin-top: 5px;
+    margin-top: 3px;
   }
 
   .nav-links.open li {
@@ -106,7 +62,7 @@
     color: #eaeaea;
     font-size: 0.9rem;
     font-weight: 400;
-    padding: 10px 20px;
+    padding: 8px 18px;
     transition: all 0.2s ease;
     display: block;
     text-align: left;
@@ -117,7 +73,7 @@
   .nav-links.open li a.active {
     background: rgba(0, 255, 157, 0.08);
     color: var(--accent-color);
-    padding-left: 20px;
+    padding-left: 18px;
     transform: none;
   }
 
@@ -126,10 +82,10 @@
     background: transparent;
     border: 1px solid var(--accent-color);
     border-radius: 4px;
-    padding: 6px 15px;
+    padding: 5px 12px;
     color: var(--accent-color);
     font-weight: 500;
-    margin: 8px 15px 5px;
+    margin: 6px 12px 4px;
     font-size: 0.8rem;
     text-align: center;
     transition: all 0.2s ease;
@@ -156,7 +112,7 @@
 /* Enhanced mobile experience */
 @media (max-width: 768px) {
   .navbar {
-    padding: 12px 5%;
+    padding: 10px 5%;
   }
 
   .nav-links.open {
@@ -166,13 +122,13 @@
 
   .nav-links.open li a {
     font-size: 0.85rem;
-    padding: 8px 15px;
+    padding: 7px 14px;
   }
 
   .nav-links.open .btn {
-    padding: 5px 12px;
+    padding: 4px 10px;
     font-size: 0.75rem;
-    margin: 6px 12px 4px;
+    margin: 5px 10px 3px;
   }
 }
 
@@ -183,9 +139,9 @@ body.menu-open {
 /* ===== Section Titles ===== */
 .section-title {
   text-align: center;
-  font-size: 2rem;
-  margin-top: 90px;
-  margin-bottom: 5px;
+  font-size: 1.8rem;
+  margin-top: 20px;
+  margin-bottom: 3px;
   color: var(--accent-color);
   font-family: 'Space Mono', monospace;
 }
@@ -203,47 +159,47 @@ section,
 .about-flex {
   flex-direction: column;
   text-align: center;
-  gap: 20px;
-  padding: 25px 15px;
-  margin-top: 70px;
+  gap: 15px;
+  padding: 20px 12px;
+  margin-top: 20px;
 }
 
 .about-img img {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   border: 2px solid var(--accent-color);
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .about-text {
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.85rem;
+  line-height: 1.5;
   color: #ccc;
 }
 
 /* ===== Timeline ===== */
 .timeline {
   grid-template-columns: 1fr;
-  gap: 15px;
+  gap: 12px;
 }
 
 .timeline-item {
-  padding: 15px;
+  padding: 12px;
   min-height: auto;
 }
 
 /* ===== Skills ===== */
 .skills-grid {
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 50px;
+  gap: 10px;
+  margin-bottom: 30px;
 }
 
 .skill {
   width: 100%;
-  border-radius: 10px;
-  padding: 12px 5px;
+  border-radius: 8px;
+  padding: 10px 4px;
   background: #121212;
   border: 1px solid #1e1e1e;
   transition: 0.3s ease;
@@ -251,13 +207,13 @@ section,
 }
 
 .skill img {
-  width: 28px;
-  height: 28px;
-  margin-bottom: 6px;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 5px;
 }
 
 .skill p {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: #ccc;
 }
 
@@ -265,14 +221,14 @@ section,
 .project-section {
   flex-direction: column;
   text-align: center;
-  gap: 25px;
-  padding-top: 80px;
+  gap: 20px;
+  padding-top: 30px;
 }
 
 .project-img img {
   max-width: 90%;
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .project-info {
@@ -280,30 +236,30 @@ section,
 }
 
 .project-navigation {
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 /* ===== Certifications ===== */
 .certifications-page {
-  padding-top: 80px;
+  padding-top: 30px;
 }
 
 .cert-filters {
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   justify-content: center;
 }
 
 .cert-grid {
   grid-template-columns: 1fr;
-  gap: 15px;
+  gap: 12px;
 }
 
 .cert-card {
-  padding: 15px;
+  padding: 12px;
   flex-direction: row;
-  gap: 10px;
-  border-radius: 10px;
+  gap: 8px;
+  border-radius: 8px;
   background: #121212;
   border: 1px solid #1a1a1a;
 }
@@ -311,16 +267,16 @@ section,
 /* ===== Services ===== */
 .services-grid {
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 8px;
   padding-top: 0;
   margin-top: 0;
 }
 
 .service-card {
-  padding: 18px;
+  padding: 15px;
   text-align: center;
   background: #121212;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid #1e1e1e;
 }
 
@@ -328,9 +284,9 @@ section,
 .footer {
   text-align: center;
   font-size: 0.7rem;
-  padding: 15px 0;
+  padding: 12px 0;
   border-top: 1px solid #1a1a1a;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 /* Hide Swiper on Mobile */
@@ -339,11 +295,3 @@ section,
 .swiper-pagination {
   display: none !important;
 }
-
-
-
-
-
-
-
-
