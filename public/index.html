@@ -3,56 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NABILA M. "ELN" | Software Engineer</title>
+  <title>NABILA M. "ELN" | Software Engineer Portfolio</title>
 
-  <!-- SEO -->
   <meta name="description" content="Nabila (ELN) — Software Engineer specializing in full-stack, backend, and data-driven applications." />
-  <meta name="keywords" content="Nabila M, Nabila eln, ELN, Software Engineer, Full Stack Developer, Backend Developer, Java, Python Developer" />
+  <meta name="keywords" content="Nabila M, Nabila eln, ELN, Software Engineer, Full Stack Developer, Backend Developer, Java, Python Developer, Portfolio" />
   <meta name="author" content="Nabila M" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0d0d0d" />
   <link rel="canonical" href="https://elnabilam.com/" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Nabila (ELN) — Software Engineer" />
   <meta property="og:description" content="Portfolio showcasing full-stack, backend, and database-driven projects with a focus on clean architecture and modern design." />
-  <meta property="og:image" content="images/LOGO.png" />
+  <meta property="og:image" content="/images/LOGO.webp" />
   <meta property="og:url" content="https://elnabilam.com/" />
   <meta property="og:type" content="website" />
 
-  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="CSS/base.css">
-  <link rel="stylesheet" href="CSS/home.css">
-  <link rel="stylesheet" href="CSS/mobile.css" media="only screen and (max-width: 768px)">
-  <link rel="icon" type="image/webp" href="/public/images/LOGO.webp">
+  <link rel="stylesheet" href="/public/CSS/Style.css">
+  <link rel="icon" type="image/webp" href="/images/LOGO.webp">
+  
+  <style>
+    /* Custom Style for the combined SPA structure */
+    
+    /* Style for Certifications section */
+    .cert-grid {
+      max-height: 700px; 
+      overflow: hidden;
+      transition: max-height 0.6s ease;
+    }
+    .cert-grid.expanded {
+      max-height: 5000px;
+    }
+    
+    /* Project grid styling */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .project-card {
+      background: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .project-img {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .project-content {
+      padding: 20px;
+    }
+    
+    .project-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    
+    .project-desc {
+      color: #aaa;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+    }
+    
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+    
+    .tech-tag {
+      background: #333;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .project-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .project-link:hover {
+      color: #6c63ff;
+    }
+    
+    .view-more-projects {
+      display: block;
+      margin: 40px auto 0;
+      padding: 12px 30px;
+      background: transparent;
+      border: 1px solid #6c63ff;
+      color: #6c63ff;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .view-more-projects:hover {
+      background: #6c63ff;
+      color: #fff;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Navbar -->
-<header class="navbar">
-  <div class="logo"><a href="index.html">ELN<span>.</span></a></div>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="work.html">Projects</a></li>
-      <li><a href="certifications.html">Certifications</a></li>
-      <li><a href="mailto:nabilaelnm@gmail.com" class="btn">Hire Me</a></li>
-    </ul>
-  </nav>
-</header>
+  <header class="navbar">
+    <div class="logo"><a href="#hero">ELN<span>.</span></a></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#skills-section">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="mailto:nabilaelnm@gmail.com" class="btn">Hire Me</a></li>
+      </ul>
+    </nav>
+  </header>
 
-
-
-  <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="hero-text">
       <p class="subtitle">Software Engineer</p>
       <h1>Hello I'm <span><br>NABILA M. "ELN"</span></h1>
@@ -70,28 +170,448 @@
     </div>
   </section>
 
-  <!-- Stats -->
   <section class="stats">
     <div><h2>5+</h2><p>Years of experience</p></div>
     <div><h2>25+</h2><p>Projects completed</p></div>
     <div><h2>20+</h2><p>Technologies mastered</p></div>
     <div><h2>500+</h2><p>Code commits</p></div>
   </section>
-  <script>
-  // Highlight current page link in navbar
-  const currentPage = window.location.pathname.split("/").pop();
-  const navLinks = document.querySelectorAll(".nav-links a");
+  
+  <section id="services" class="services">
+    <h2 class="section-title">What I Do</h2>
+    <p class="section-subtitle">Focused on crafting solutions that blend <span>logic</span> and <span>design</span>.</p>
 
-  navLinks.forEach(link => {
-    const linkPage = link.getAttribute("href");
-    if (linkPage === currentPage || (linkPage === "index.html" && currentPage === "")) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="card-header">
+          <h3>01</h3>
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <h4>Full-Stack Web Development</h4>
+        <p>I build responsive, high-performance web applications from front to back — clean UI, efficient logic, and scalable structure. From modern stacks to legacy fixes, I deliver reliable results.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="card-header">
+          <h3>02</h3>
+          <i class="fa-solid fa-database"></i>
+        </div>
+        <h4>Backend & Database Architecture</h4>
+        <p>I design secure APIs and optimized databases using enterprise-level patterns (DAO, DTO, MVC). My focus: performance, scalability, and clean architecture that can grow with your product.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="card-header">
+          <h3>03</h3>
+          <i class="fa-solid fa-sitemap"></i>
+        </div>
+        <h4>Technical Leadership & Project Delivery</h4>
+        <p>I guide full project lifecycles, mentor development teams, and apply Agile methodologies to deliver scalable, user-focused applications. My focus is aligning technical decisions with business goals while ensuring predictable, high-quality delivery.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="resume" id="resume">
+    <div class="container">
+      <h2 class="section-title">Resume</h2>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-target="about">About</button>
+        <button class="tab-btn" data-target="experience">Experience</button>
+        <button class="tab-btn" data-target="education">Education</button>
+      </div>
+
+      <div id="about" class="tab-content active">
+        <div class="about-flex">
+          <div class="about-img">
+            <img src="images/NabilaM.png" alt="Animated photo of Nabila" />
+          </div>
+
+          <div class="about-text">
+             <p>
+                 <strong>I’m Nabila "ELN,"</strong> a Software Engineer specializing in backend development and software quality. 
+                  I build reliable, maintainable systems using **Python, Java, and SQL**, focused on correctness and long-term stability.<br>
+                  My approach emphasizes clean logic design, data integrity, and **risk reduction** through structured validation and automated testing.<br>
+                  I deliver scalable architecture and code that is clear, trustworthy, and easily extensible.
+             </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="experience" class="tab-content">
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Full-Stack & Python Developer</h3>
+            <p class="company">Freelancer.com</p>
+            <p class="duration">Mar 2025 – Present • Remote</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Interpreter</h3>
+            <p class="company">CanTalk (Canada) Inc.</p>
+            <p class="duration">Nov 2024 – Mar 2025 • Remote</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Full-Stack Developer</h3>
+            <p class="company">Upwork</p>
+            <p class="duration">Mar 2020 – Nov 2022 • Remote</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Graphic Designer</h3>
+            <p class="company">Fiverr</p>
+            <p class="duration">2018 – Aug 2022</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="education" class="tab-content">
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Computer Programming Diploma</h3>
+            <p class="company">Algonquin College, Ottawa</p>
+            <p class="duration">2024 – Dec 2025 (Expected)</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Diploma in Operations Management</h3>
+            <p class="company">Alison</p>
+            <p class="duration">Completed 2021</p>
+          </div>
+          <div class="timeline-item">
+            <h3>High School Degree in Economic</h3>
+            <p class="company">Cady Ayaad High School, Marrakech Morocco</p>
+            <p class="duration">Completed 2019</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+<section id="skills-section" class="skills-section">
+  <div class="section-inner">
+    <h2 class="section-title">Skills</h2>
+
+    <!-- TECHNICAL SKILLS TRAIN -->
+    <div class="skill-train-wrap">
+      <div class="business-title">Technical Skills</div>
+
+      <div class="skill-train" data-speed="55">
+        <div class="train-track">
+
+          <!-- LANGUAGES -->
+          <div class="skill-card"><span>Java</span></div>
+          <div class="skill-card"><span>Python</span></div>
+          <div class="skill-card"><span>JavaScript</span></div>
+          <div class="skill-card"><span>SQL</span></div>
+          <div class="skill-card"><span>PHP</span></div>
+
+          <!-- BACKEND -->
+          <div class="skill-card"><span>Jakarta EE</span></div>
+          <div class="skill-card"><span>Servlets</span></div>
+          <div class="skill-card"><span>JSP</span></div>
+          <div class="skill-card"><span>Spring</span></div>
+          <div class="skill-card"><span>Node.js</span></div>
+          <div class="skill-card"><span>Flask</span></div>
+          <div class="skill-card"><span>REST APIs</span></div>
+
+          <!-- FRONTEND -->
+          <div class="skill-card"><span>React</span></div>
+          <div class="skill-card"><span>HTML5</span></div>
+          <div class="skill-card"><span>CSS3</span></div>
+          <div class="skill-card"><span>Tailwind CSS</span></div>
+
+          <!-- DATABASES -->
+          <div class="skill-card"><span>Oracle</span></div>
+          <div class="skill-card"><span>MySQL</span></div>
+          <div class="skill-card"><span>PostgreSQL</span></div>
+          <div class="skill-card"><span>MongoDB</span></div>
+          <div class="skill-card"><span>PyMongo</span></div>
+
+          <!-- DATA / VISUALIZATION -->
+          <div class="skill-card"><span>Matplotlib</span></div>
+          <div class="skill-card"><span>Streamlit</span></div>
+          <div class="skill-card"><span>Pandas</span></div>
+
+          <!-- DEVOPS / TOOLS -->
+          <div class="skill-card"><span>Git</span></div>
+          <div class="skill-card"><span>GitHub</span></div>
+          <div class="skill-card"><span>Docker</span></div>
+          <div class="skill-card"><span>Maven</span></div>
+          <div class="skill-card"><span>Linux</span></div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- LEADERSHIP & BUSINESS SKILLS TRAIN -->
+<!-- LEADERSHIP / BUSINESS SKILLS – STATIC CARDS -->
+<div class="business-section">
+  <h3 class="business-title">Leadership & Business Skills</h3>
+
+  <div class="business-grid">
+
+    <div class="business-card">Agile & Scrum Methodologies</div>
+    <div class="business-card">Project Lifecycle Management</div>
+    <div class="business-card">Software Architecture & Design Patterns</div>
+    <div class="business-card">Team Leadership & Mentoring</div>
+    <div class="business-card">Stakeholder Communication</div>
+    <div class="business-card">Performance Management</div>
+    <div class="business-card">Predictive Project Management (PMI)</div>
+    <div class="business-card">Risk Management & Decision Making</div>
+    <div class="business-card">Business & Economic Analysis</div>
+    <div class="business-card">Operational Efficiency</div>
+    <div class="business-card">Process Improvement</div>
+    <div class="business-card">Supply Chain Management</div>
+    <div class="business-card">Sales Force Management</div>
+    <div class="business-card">Digital Marketing & Media</div>
+    <div class="business-card">Budgeting & Resource Allocation</div>
+    <div class="business-card">AODA & Compliance Standards</div>
+
+  </div>
+</div>
+
+
+
+  </div>
+</section>
+
+
+
+  <section class="projects-page" id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-img">
+          <img src="images/ptfms.webp" alt="PTFMS Fleet Management System" />
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">PTFMS — Fleet Management System</h3>
+          <p class="project-desc">A Java web application for public-transport fleet operations, built with enterprise-grade architecture.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Servlets</span>
+            <span class="tech-tag">JSP</span>
+            <span class="tech-tag">JDBC</span>
+            <span class="tech-tag">Maven</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <img src="images/ecom.png" alt="Project Placeholder" />
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">E-Commerce Platform</h3>
+          <p class="project-desc">A modern e-commerce web app offering 100+ fragrances with live stock sync.</p>
+          <div class="project-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Stripe API</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <img src="images/sniperbot.png" alt="Project Placeholder" />
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">SniperBot — Solana Trading Automation</h3>
+          <p class="project-desc">A crypto trading bot built for Solana with automated trade execution and liquidity scanning.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Web3</span>
+            <span class="tech-tag">Solana</span>
+            <span class="tech-tag">Rest API</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn1" onclick="window.location.href='IT_Projects.html'">View All Projects</button>
+  </section>
+  
+  <section class="certifications-page" id="certifications">
+    <h2 class="section-title">Certifications</h2>
+    <p class="section-subtitle">
+      Professional recognition of <span>technical</span> and <span>business</span> excellence.
+    </p>
+
+    <div class="cert-filters">
+      <button class="cert-filter active" data-filter="development">IT</button>
+      <button class="cert-filter" data-filter="business">Business</button>
+    </div>
+
+    <div class="cert-grid" id="cert-grid">
+      <div class="cert-card" data-category="development"><i class="fa-brands fa-linkedin icon"></i><div class="text"><h3>Software Architecture: Patterns for Developers</h3><p>LinkedIn • Jul 2025</p></div></div>
+      <div class="cert-card" data-category="development"><i class="fa-brands fa-linkedin icon"></i><div class="text"><h3>Software Testing Foundations: Testing throughout the SDLC</h3><p>LinkedIn • Jul 2025</p></div></div>
+      <div class="cert-card" data-category="development"><i class="fa-brands fa-free-code-camp icon"></i><div class="text"><h3>Legacy JavaScript Algorithms and Data Structures</h3><p>freeCodeCamp • Apr 2025</p></div></div>
+      <div class="cert-card" data-category="development"><i class="fa-brands fa-free-code-camp icon"></i><div class="text"><h3>JavaScript Algorithms and Data Structures</h3><p>freeCodeCamp • Feb 2025</p></div></div>
+      <div class="cert-card" data-category="development"><i class="fa-brands fa-free-code-camp icon"></i><div class="text"><h3>Responsive Web Design</h3><p>freeCodeCamp • Dec 2024</p></div></div>
+      <div class="cert-card" data-category="development"><i class="fa-solid fa-code icon"></i><div class="text"><h3>Introduction To Python</h3><p>Sololearn • Jul 2023</p></div></div>
+      <div class="cert-card" data-category="development"><i class="fa-solid fa-code icon"></i><div class="text"><h3>Python Intermediate</h3><p>Sololearn • Jul 2023</p></div></div>
+      <div class="cert-card" data-category="development"><i class="fa-solid fa-code icon"></i><div class="text"><h3>PHP</h3><p>Sololearn • Jun 2023</p></div></div>
+      <!-- Hidden certificates -->
+      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-code icon"></i><div class="text"><h3>HTML</h3><p>MIMO • Apr 2023</p></div></div>
+      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-code icon"></i><div class="text"><h3>CSS</h3><p>MIMO • Apr 2023</p></div></div>
+      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-code icon"></i><div class="text"><h3>JavaScript</h3><p>MIMO • Jul 2023</p></div></div>
+      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-code icon"></i><div class="text"><h3>Web Development</h3><p>MIMO • Apr 2023</p></div></div>
+      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-database icon"></i><div class="text"><h3>SQL</h3><p>MIMO • Jul 2023</p></div></div>
+      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-database icon"></i><div class="text"><h3>SQL – Full Stack Development</h3><p>Sololearn • Feb 2022</p></div></div>
+      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-terminal icon"></i><div class="text"><h3>Intro to C Programming</h3><p>Sololearn • Apr 2023</p></div></div>
+      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-terminal icon"></i><div class="text"><h3>C Intermediate</h3><p>Sololearn • Apr 2023</p></div></div>
+      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-robot icon"></i><div class="text"><h3>Elements of AI</h3><p>University of Helsinki • Apr 2023</p></div></div>
+
+      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-award icon"></i><div class="text"><h3>Diploma in Supply Chain Management</h3><p>Alison • Jul 2025</p></div></div>
+      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-building icon"></i><div class="text"><h3>Diploma in Operations Management</h3><p>Alison • May 2021</p></div></div>
+      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-store icon"></i><div class="text"><h3>Sales Force Management</h3><p>Alison • May 2021</p></div></div>
+      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-warehouse icon"></i><div class="text"><h3>Warehouse Management</h3><p>Alison • May 2021</p></div></div>
+      <div class="cert-card hidden-cert" data-category="business"><i class="fa-brands fa-microsoft icon"></i><div class="text"><h3>Microsoft Office 365</h3><p>Microsoft • Dec 2021</p></div></div>
+      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-laptop icon"></i><div class="text"><h3>Digital Literacy</h3><p>Edraak • Dec 2021</p></div></div>
+      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-bullseye icon"></i><div class="text"><h3>Digital Marketing and Media Foundations</h3><p>Edraak • Aug 2022</p></div></div>
+      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-user-tie icon"></i><div class="text"><h3>Personal Branding</h3><p>Rwaq • Nov 2021</p></div></div>
+      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-award icon"></i><div class="text"><h3>Fundamentals of Predictive Project Management</h3><p>PMI • May 2025</p></div></div>
+      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-lightbulb icon"></i><div class="text"><h3>Problem Solving & Decision Making</h3><p>Edraak • Dec 2021</p></div></div>
+      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-people-arrows icon"></i><div class="text"><h3>Supervision Skills - Managing Employee Performance</h3><p>Alison • Aug 2020</p></div></div>
+      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-comments icon"></i><div class="text"><h3>Supervision - Effective Communication Skills</h3><p>Alison • Aug 2020</p></div></div>
+      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-scale-balanced icon"></i><div class="text"><h3>Ontario Human Rights & AODA Compliance</h3><p>Ontario Human Rights Commission • Nov 2024</p></div></div>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Nabila M. "ELN" — All Rights Reserved.</p>
+  </footer>
+
+<script>
+/* === ENTIRE JAVASCRIPT HERE === */
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* ============================
+       RESUME — TABS SWITCHING
+    ============================= */
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            tabButtons.forEach(b => b.classList.remove("active"));
+            tabContents.forEach(c => c.classList.remove("active"));
+            btn.classList.add("active");
+            document.getElementById(btn.dataset.target).classList.add("active");
+        });
+    });
+
+    /* ============================
+       CERTIFICATIONS — FILTERS
+    ============================= */
+    const filterButtons = document.querySelectorAll(".cert-filter");
+    const certCards = document.querySelectorAll(".cert-card");
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            filterButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const type = btn.dataset.filter;
+
+            certCards.forEach(card => {
+                card.style.display = (card.dataset.category === type) ? "flex" : "none";
+            });
+
+            expanded = false;
+            showMoreBtn.textContent = "Show More";
+            applyLimit();
+        });
+    });
+
+    /* ============================
+       SHOW FIRST 8 CERTIFICATES
+    ============================= */
+    const SHOW_LIMIT = 8;
+    const certGrid = document.getElementById("cert-grid");
+
+    const showMoreBtn = document.createElement("button");
+    showMoreBtn.className = "cert-toggle";
+    showMoreBtn.textContent = "Show More";
+    certGrid.insertAdjacentElement("afterend", showMoreBtn);
+
+    let expanded = false;
+
+    function applyLimit() {
+        const visible = [...certCards].filter(c => c.style.display !== "none");
+
+        visible.forEach((c, i) => {
+            if (!expanded && i >= SHOW_LIMIT) c.classList.add("hidden-by-js");
+            else c.classList.remove("hidden-by-js");
+        });
+
+        showMoreBtn.style.display = visible.length > SHOW_LIMIT ? "block" : "none";
     }
+
+    showMoreBtn.addEventListener("click", () => {
+        expanded = !expanded;
+        showMoreBtn.textContent = expanded ? "Show Less" : "Show More";
+        applyLimit();
+    });
+
+    applyLimit();
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  function initTrain(trainEl, reverse = false) {
+    const track = trainEl.querySelector(".train-track");
+    if (!track) return;
+
+    let trackWidth = track.scrollWidth;
+    let speed = parseFloat(trainEl.dataset.speed) || 50;
+    let pos = 0;
+    let lastTime = performance.now();
+    let paused = false;
+
+    trainEl.addEventListener("mouseenter", () => paused = true);
+    trainEl.addEventListener("mouseleave", () => paused = false);
+
+    function step(now) {
+      const dt = (now - lastTime) / 1000;
+      lastTime = now;
+
+      if (!paused) {
+        const delta = speed * dt;
+        pos += reverse ? delta : -delta;
+
+        // if loop fully passed → restart
+        if (Math.abs(pos) >= trackWidth) {
+          pos = 0;
+        }
+
+        track.style.transform = `translateX(${pos}px)`;
+      }
+      requestAnimationFrame(step);
+    }
+
+    function recalc() {
+      setTimeout(() => {
+        trackWidth = track.scrollWidth;
+      }, 100);
+    }
+
+    window.addEventListener("resize", recalc);
+    recalc();
+    requestAnimationFrame(step);
+  }
+
+  document.querySelectorAll(".skill-train").forEach((train, i) => {
+    const reverse = i % 2 === 1;
+    initTrain(train, reverse);
   });
+
+});
 </script>
 
-  <script src="script.js"></script>
 </body>
 </html>
