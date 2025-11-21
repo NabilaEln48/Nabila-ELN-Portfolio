@@ -1160,116 +1160,99 @@ section,
 
 
 
-/* Skills Section Layout */
-.skills-section {
-  padding: 80px 8%;
-}
-
-.skills-section .section-title {
+.skills-flip-section {
+  padding: 80px 6%;
   text-align: center;
-  color: var(--accent-color);
-  margin-bottom: 45px;
-  font-family: var(--font-mono);
 }
 
-/* TRAIN WRAPPER */
-.skill-train-wrap {
-  margin-bottom: 50px;
+.skills-card-container {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-.train-label {
-  color: #cfcfcf;
-  margin-bottom: 10px;
-  font-family: var(--font-mono);
+.flip-card {
+  background: transparent;
+  width: 100%;
+  height: 400px; /* TALLER CARDS */
+  perspective: 1000px;
 }
 
-/* MAIN TRAIN */
-.skill-train {
-  overflow: hidden;
-  border-radius: 16px;
-  padding: 20px 0;
-
-  /* transparent background */
-  background: transparent !important;
-  border: none !important;
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  position: relative;
 }
 
-.train-track {
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT + BACK */
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(0,255,157,0.15);
   display: flex;
-  gap: 20px;
-  align-items: center;
-  will-change: transform;
-}
-
-/* TECHNICAL GLASS CARDS */
-.skill-card {
-  min-width: 160px;
-  height: 90px;
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+}
 
+.flip-front i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+}
+
+.flip-front h3 {
   font-family: var(--font-mono);
-  font-size: 1rem;
-  color: white;
-
-  border-radius: 12px;
-  backdrop-filter: blur(12px);
-  background: linear-gradient(
-    135deg,
-    rgba(0,255,157,0.10),
-    rgba(0,255,120,0.05) 40%,
-    rgba(255,255,255,0.03)
-  );
-
-  border: 1px solid rgba(0,255,157,0.25);
-  box-shadow: 0 0 20px rgba(0,255,157,0.05);
-  transition: 0.3s ease;
+  font-size: 1.5rem;
 }
 
-.skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 30px rgba(0,255,157,0.20);
+.flip-back {
+  transform: rotateY(180deg);
 }
 
-/* BUSINESS / LEADERSHIP STATIC GRID */
-.business-section {
-  margin-top: 70px;
-}
-
-.business-title {
-  text-align: center;
+.flip-back ul {
+  list-style: none;
+  padding: 0;
   font-family: var(--font-mono);
-  color: white;
-  margin-bottom: 30px;
-  font-size: 1.6rem;
 }
 
-/* Responsive grid: 4–5 per row */
-.business-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
+.flip-back ul li {
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
 }
 
-/* Business skill cards */
-.business-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(0,255,157,0.25);
-  border-radius: 16px;
-  padding: 22px 18px;
-  text-align: center;
-
-  color: #eaeaea;
-  font-family: var(--font-mono);
-  line-height: 1.6;
-  font-size: 1rem;
-
-  transition: 0.25s ease;
+.flip-back ul li img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.9;
 }
 
-.business-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 22px rgba(0,255,157,0.25);
-  border-color: rgba(0,255,157,0.45);
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .skills-card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .flip-card {
+    height: 400px;
+  }
+
+  .flip-card:active .flip-inner {
+    transform: rotateY(180deg);
+  }
 }
