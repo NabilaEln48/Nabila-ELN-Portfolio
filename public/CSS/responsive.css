@@ -1,3 +1,4 @@
+
 /* ======================================
    MOBILE RESPONSIVE FIXES
 ====================================== */
@@ -157,58 +158,6 @@
     font-size: 2rem;
     margin-top: 60px;
     margin-bottom: 30px;
-  }
-}
-
-/* ============================
-   768px SCREEN ADJUSTMENTS
-============================ */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 16px 15px;
-  }
-
-  .logo {
-    top: 1px;
-  }
-
-  .nav-toggle {
-    right: 15px;
-    top: 14px;
-    font-size: 1.2rem !important;
-    width: 24px;
-    height: 24px;
-  }
-
-  .hero {
-    padding-top: 100px;
-    gap: 20px;
-  }
-
-  .hero-image {
-    width: 200px;
-    height: 200px;
-  }
-
-  .stats {
-    gap: 12px;
-  }
-
-  .stats h2 {
-    font-size: 1.2rem;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-    margin-top: 50px;
-    margin-bottom: 25px;
-  }
-
-  section, 
-  .container,
-  .projects-page,
-  .resume {
-    padding: 0 4%;
   }
 }
 
