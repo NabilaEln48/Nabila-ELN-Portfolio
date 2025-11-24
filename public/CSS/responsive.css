@@ -1,0 +1,171 @@
+
+/* ======================================
+   MOBILE RESPONSIVE FIXES
+====================================== */
+
+@media (max-width: 900px) {
+
+  /* -------------------------
+      NAVBAR MOBILE
+  --------------------------- */
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #0d0d0d;
+    z-index: 2000;
+  }
+
+  /* Show Mobile Menu Toggle */
+  .menu-icon {
+    display: flex !important;
+    font-size: 1.7rem;
+    color: var(--accent-color);
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  /* Hide desktop nav by default */
+  .nav-links {
+    display: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Mobile Navigation When Open */
+  .nav-links.open {
+    position: absolute;
+    top: 100%;
+    right: 8%;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 8px 0;
+    display: flex !important;
+    min-width: 180px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .nav-links.open a {
+    padding: 10px 15px;
+  }
+    /* Center logo */
+  .logo {
+    position: absolute;
+    left: 50%;
+    top: 2px;
+    transform: translateX(-50%);
+  }
+
+  /* Show toggle top-right */
+.nav-toggle {
+    display: flex !important;
+    font-size: 1.25rem !important; /* smaller */
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    right: 18px;
+    top: 16px;              /* pushed slightly down */
+    color: var(--accent-color);
+    cursor: pointer;
+    z-index: 2001;
+    background: none;
+    border: none;
+}
+
+
+  /* Hide desktop nav by default on mobile */
+  /* Full-page mobile menu */
+.nav-menu {
+  display: none;
+  position: fixed;
+  top: 65px; /* below navbar */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 65px);
+  background: #0d0d0d;
+  padding-top: 40px;
+  z-index: 1500;
+}
+
+.nav-menu.open {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+  }
+
+  /* -------------------------
+      HERO MOBILE
+  --------------------------- */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 110px;
+    gap: 25px;
+  }
+
+  .hero-image {
+    width: 220px;
+    height: 220px;
+  }
+
+  .stats {
+    margin-top: -8px !important;
+    gap: 15px;
+  }
+
+  .stats h2 {
+    font-size: 1.3rem;
+  }
+  /* SOCIAL ICONS CENTERED */
+  .socials {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  /* -------------------------
+      SECTIONS
+  --------------------------- */
+  section, 
+  .container,
+  .projects-page,
+  .resume {
+    padding: 0 5%;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+}
+
+/* END */
+
+/* ============================
+   NAVBAR — DESKTOP
+============================ */
+.nav-toggle {
+  display: none; /* Hide toggle on desktop */
+}
