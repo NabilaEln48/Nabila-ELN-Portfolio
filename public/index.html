@@ -23,132 +23,33 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link rel="stylesheet" href="CSS/Style.css">
-  
-  <style>
-    /* Custom Style for the combined SPA structure */
-    
-    /* Style for Certifications section */
-    .cert-grid {
-      max-height: 700px; 
-      overflow: hidden;
-      transition: max-height 0.6s ease;
-    }
-    .cert-grid.expanded {
-      max-height: 5000px;
-    }
-    
-    /* Project grid styling */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    
-    .project-card {
-      background: #1a1a1a;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-    
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .project-img {
-      height: 200px;
-      overflow: hidden;
-    }
-    
-    .project-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .project-content {
-      padding: 20px;
-    }
-    
-    .project-title {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-    
-    .project-desc {
-      color: #aaa;
-      margin-bottom: 15px;
-      font-size: 0.9rem;
-    }
-    
-    .project-tech {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 15px;
-    }
-    
-    .tech-tag {
-      background: #333;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-    }
-    
-    .project-links {
-      display: flex;
-      gap: 15px;
-    }
-    
-    .project-link {
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    
-    .project-link:hover {
-      color: #6c63ff;
-    }
-    
-    .view-more-projects {
-      display: block;
-      margin: 40px auto 0;
-      padding: 12px 30px;
-      background: transparent;
-      border: 1px solid #6c63ff;
-      color: #6c63ff;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-    
-    .view-more-projects:hover {
-      background: #6c63ff;
-      color: #fff;
-    }
-  </style>
+
 </head>
 
 <body>
-  <header class="navbar">
-    <div class="logo"><a href="#hero">ELN<span>.</span></a></div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#hero" class="active">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#skills-section">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="mailto:nabilaelnm@gmail.com" class="btn">Hire Me</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="navbar">
+  <!-- Logo centered on mobile, left on desktop -->
+  <div class="logo"><a href="#hero">ELN<span>.</span></a></div>
+
+  <!-- Mobile Toggle -->
+  <button class="nav-toggle" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Desktop + Mobile Menu -->
+  <nav class="nav-menu">
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#skills-section">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="mailto:nabilaelnm@gmail.com" class="btn">Hire Me</a></li>
+    </ul>
+  </nav>
+</header>
+
 
   <section class="hero" id="hero">
     <div class="hero-text">
@@ -471,133 +372,7 @@
     <p>© 2025 Nabila M. "ELN" — All Rights Reserved.</p>
   </footer>
 
-<script>
-/* === ENTIRE JAVASCRIPT HERE === */
-document.addEventListener("DOMContentLoaded", () => {
-
-    /* ============================
-       RESUME — TABS SWITCHING
-    ============================= */
-    const tabButtons = document.querySelectorAll(".tab-btn");
-    const tabContents = document.querySelectorAll(".tab-content");
-
-    tabButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            tabButtons.forEach(b => b.classList.remove("active"));
-            tabContents.forEach(c => c.classList.remove("active"));
-            btn.classList.add("active");
-            document.getElementById(btn.dataset.target).classList.add("active");
-        });
-    });
-
-    /* ============================
-       CERTIFICATIONS — FILTERS
-    ============================= */
-    const filterButtons = document.querySelectorAll(".cert-filter");
-    const certCards = document.querySelectorAll(".cert-card");
-
-    filterButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            filterButtons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-
-            const type = btn.dataset.filter;
-
-            certCards.forEach(card => {
-                card.style.display = (card.dataset.category === type) ? "flex" : "none";
-            });
-
-            expanded = false;
-            showMoreBtn.textContent = "Show More";
-            applyLimit();
-        });
-    });
-
-    /* ============================
-       SHOW FIRST 8 CERTIFICATES
-    ============================= */
-    const SHOW_LIMIT = 8;
-    const certGrid = document.getElementById("cert-grid");
-
-    const showMoreBtn = document.createElement("button");
-    showMoreBtn.className = "cert-toggle";
-    showMoreBtn.textContent = "Show More";
-    certGrid.insertAdjacentElement("afterend", showMoreBtn);
-
-    let expanded = false;
-
-    function applyLimit() {
-        const visible = [...certCards].filter(c => c.style.display !== "none");
-
-        visible.forEach((c, i) => {
-            if (!expanded && i >= SHOW_LIMIT) c.classList.add("hidden-by-js");
-            else c.classList.remove("hidden-by-js");
-        });
-
-        showMoreBtn.style.display = visible.length > SHOW_LIMIT ? "block" : "none";
-    }
-
-    showMoreBtn.addEventListener("click", () => {
-        expanded = !expanded;
-        showMoreBtn.textContent = expanded ? "Show Less" : "Show More";
-        applyLimit();
-    });
-
-    applyLimit();
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  function initTrain(trainEl, reverse = false) {
-    const track = trainEl.querySelector(".train-track");
-    if (!track) return;
-
-    let trackWidth = track.scrollWidth;
-    let speed = parseFloat(trainEl.dataset.speed) || 50;
-    let pos = 0;
-    let lastTime = performance.now();
-    let paused = false;
-
-    trainEl.addEventListener("mouseenter", () => paused = true);
-    trainEl.addEventListener("mouseleave", () => paused = false);
-
-    function step(now) {
-      const dt = (now - lastTime) / 1000;
-      lastTime = now;
-
-      if (!paused) {
-        const delta = speed * dt;
-        pos += reverse ? delta : -delta;
-
-        // if loop fully passed → restart
-        if (Math.abs(pos) >= trackWidth) {
-          pos = 0;
-        }
-
-        track.style.transform = `translateX(${pos}px)`;
-      }
-      requestAnimationFrame(step);
-    }
-
-    function recalc() {
-      setTimeout(() => {
-        trackWidth = track.scrollWidth;
-      }, 100);
-    }
-
-    window.addEventListener("resize", recalc);
-    recalc();
-    requestAnimationFrame(step);
-  }
-
-  document.querySelectorAll(".skill-train").forEach((train, i) => {
-    const reverse = i % 2 === 1;
-    initTrain(train, reverse);
-  });
-
-});
-</script>
+<script src="JS/script.js"></script>
 
 </body>
 </html>
