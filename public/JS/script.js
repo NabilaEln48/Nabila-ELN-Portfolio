@@ -1,10 +1,10 @@
 /* ============================
-   Wait for DOM to load
+    Wait for DOM to load
 ============================ */
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ============================
-       MOBILE MENU
+        MOBILE MENU
     ============================= */
     const navToggle = document.querySelector(".nav-toggle");
     const navMenu = document.querySelector(".nav-menu");
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ============================
-       RESUME TABS
+        RESUME TABS
     ============================= */
     const tabButtons = document.querySelectorAll(".tab-btn");
     const tabContents = document.querySelectorAll(".tab-content");
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ============================
-       CERTIFICATION FILTER
+        CERTIFICATION FILTER
     ============================= */
     const filterButtons = document.querySelectorAll(".cert-filter");
     const certCards = document.querySelectorAll(".cert-card");
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ============================
-       CERTIFICATION SHOW MORE
+        CERTIFICATION SHOW MORE
     ============================= */
     const SHOW_LIMIT = 8;
     const certGrid = document.getElementById("cert-grid");
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ============================
-       SKILL TRAINS
+        SKILL TRAINS
     ============================= */
     function initTrain(trainEl, reverse = false) {
         const track = trainEl.querySelector(".train-track");
@@ -147,5 +147,27 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".skill-train").forEach((train, i) => {
         const reverse = i % 2 === 1;
         initTrain(train, reverse);
+    });
+
+    // --- NEW LOGIC ADDED BELOW ---
+
+    /* ============================
+        SKILLS/SERVICE CARD INTERACTION
+        (Accordion-like behavior for mobile tap)
+    ============================= */
+    const serviceCards = document.querySelectorAll('.service-card, .flip-card');
+
+    serviceCards.forEach(card => {
+        card.addEventListener('click', () => {
+            
+            serviceCards.forEach(c => {
+                if (c !== card) {
+                    c.classList.remove('active');
+                    c.classList.remove('show-content'); 
+                }
+            });
+            card.classList.toggle('active');
+            card.classList.toggle('show-content');
+        });
     });
 });

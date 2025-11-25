@@ -968,10 +968,7 @@ section,
 
 
 /* ======================================
-    FLIP CARD FIXES
-====================================== */
-/* ======================================
-    FLIP CARD FIXES
+    SKILLS CARD STYLING (Fade/Hover Effect)
 ====================================== */
 
 .skills-flip-section {
@@ -987,58 +984,55 @@ section,
 }
 
 .flip-card {
-    background: transparent;
-    width: 100%;
-    height: 400px; /* TALLER CARDS */
-    
-    /* FIX: Add WebKit prefix for 3D context */
-    perspective: 1000px;
-    -webkit-perspective: 1000px; 
-}
-
-.flip-inner {
-    width: 100%;
-    height: 100%;
-    
-    /* FIX: Add WebKit prefix for transition */
-    transition: transform 0.8s ease;
-    -webkit-transition: -webkit-transform 0.8s ease;
-    
-    /* FIX: Add WebKit prefix for 3D style */
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    
-    position: relative;
-    
-    /* FIX: Force 3D rendering on iOS */
-    transform: translateZ(0); 
-    -webkit-transform: translateZ(0); 
-}
-
-.flip-card:hover .flip-inner {
-    /* FIX: Add WebKit prefix for the hover flip */
-    transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg); 
-}
-
-/* FRONT + BACK */
-.flip-front, .flip-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    /* Main container properties */
+    background: rgba(255,255,255,0.03); /* Moved background here */
+    border: 1px solid rgba(0,255,157,0.15); /* Moved border here */
     border-radius: 20px;
+    width: 100%;
+    height: 400px;
     
-    /* FIX: Add WebKit prefix for backface visibility */
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden; 
+    /* New effect properties */
+    position: relative;
+    overflow: hidden; /* Important for clean transitions */
+    cursor: pointer;
     
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(0,255,157,0.15);
+    /* Optional: Hover shadow similar to your service card example */
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.05);
+    transition: box-shadow 0.3s ease;
+    
+    /* Removed all 3D properties: perspective, transform styles, etc. */
+}
+
+.flip-card:hover {
+    box-shadow: 0 0 25px rgba(0,255,157,0.3); /* Accent shadow on hover */
+}
+
+/* .flip-inner is removed from the CSS as it's not strictly necessary for this effect */
+
+/* FRONT FACE (Default Visible Content) */
+.flip-front {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Content Layout */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    
+    /* Fade Transition */
+    opacity: 1; 
+    transition: opacity 0.4s ease; /* Adjusted transition speed */
+    
+    /* Removed background/border/radius and backface-visibility */
+}
+
+/* Hover effect: Fade out the front content */
+.flip-card:hover .flip-front {
+    opacity: 0;
 }
 
 .flip-front i {
@@ -1052,11 +1046,30 @@ section,
     font-size: 1.5rem;
 }
 
+/* BACK FACE (Hover Content) */
 .flip-back {
-    /* FIX: Use WebKit prefix and translateZ(1px) to prevent 
-            flickering/disappearing issues on iOS */
-    transform: rotateY(180deg) translateZ(1px);
-    -webkit-transform: rotateY(180deg) translateZ(1px); 
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Content Layout (Same as front) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    
+    /* Start hidden, Fade in */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    
+    /* Removed all 3D transforms */
+}
+
+/* Hover effect: Fade in the back content */
+.flip-card:hover .flip-back {
+    opacity: 1;
 }
 
 .flip-back ul {
@@ -1079,7 +1092,7 @@ section,
     opacity: 0.9;
 }
 
-/* 📱 MOBILE */
+/* 📱 MOBILE - Use the :active state for touch devices */
 @media (max-width: 768px) {
     .skills-card-container {
         grid-template-columns: 1fr;
@@ -1089,9 +1102,13 @@ section,
         height: 400px;
     }
 
-    .flip-card:active .flip-inner {
-        /* FIX: Add WebKit prefix for the touch flip action */
-        transform: rotateY(180deg);
-        -webkit-transform: rotateY(180deg); 
+    /* On mobile tap: Fade out the front */
+    .flip-card:active .flip-front {
+        opacity: 0;
+    }
+    
+    /* On mobile tap: Fade in the back */
+    .flip-card:active .flip-back {
+        opacity: 1;
     }
 }
