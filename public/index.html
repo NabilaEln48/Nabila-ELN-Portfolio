@@ -1,248 +1,542 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>NABILA M. "ELN" | Software Engineer Portfolio</title>
-
   <meta name="description" content="Nabila (ELN) — Software Engineer specializing in full-stack, backend, and data-driven applications." />
-  <meta name="keywords" content="Nabila M, Nabila eln, ELN, Software Engineer, Full Stack Developer, Backend Developer, Java, Python Developer, Portfolio" />
-  <meta name="author" content="Nabila M" />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0d0d0d" />
-  <link rel="canonical" href="https://elnabilam.com/" />
 
-  <meta property="og:title" content="Nabila (ELN) — Software Engineer" />
-  <meta property="og:description" content="Portfolio showcasing full-stack, backend, and database-driven projects with a focus on clean architecture and modern design." />
-  <meta property="og:url" content="https://elnabilam.com/" />
-  <meta property="og:type" content="website" />
-
+  <!-- Google fonts + Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <link rel="stylesheet" href="CSS/Style.css">
-  <link rel="stylesheet" href="CSS/responsive.css">
+  <!-- Tailwind CDN -->
+  <script>
+    // Configure Tailwind (font names)
+    tailwind = window.tailwind || {};
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace']
+          },
+          colors: {
+            accent: '#00ff9d',
+            bg: '#0d0d0d',
+            text: '#eaeaea'
+          },
+          keyframes: {
+            glow: {
+              '0%': { opacity: '0.4', transform: 'translate(-50%, -50%) scale(1)' },
+              '100%': { opacity: '1', transform: 'translate(-50%, -50%) scale(1.07)' }
+            }
+          },
+          animation: {
+            glow: 'glow 3s infinite alternate'
+          }
+        }
+      }
+    }
+  </script>
 
+  <style>
+    /* tiny custom rules for things Tailwind doesn't express easily */
+    :root { --accent: #00ff9d; --bg: #0d0d0d; --text: #eaeaea; }
+    html,body { background: var(--bg); color: var(--text); font-family: Poppins, sans-serif; }
+    /* glow ring fallback visual */
+    .glow-ring { position: absolute; width: 380px; height: 380px; border-radius: 9999px;
+                 border: 2px solid var(--accent); top:50%; left:50%; transform:translate(-50%,-50%); animation: glow 3s infinite alternate; z-index:0; }
+    @keyframes glow {
+      from { opacity: .4; transform:translate(-50%,-50%) scale(1); }
+      to { opacity: 1; transform:translate(-50%,-50%) scale(1.07); }
+    }
+    /* subtle neon shadow utility class (used on images/cards) */
+    .neon-shadow { box-shadow: 0 0 18px rgba(0,255,157,0.18), 0 0 40px rgba(0,255,157,0.10); }
+    /* simple flip effect using opacity (replaces 3d flips) */
+    .flip-card { position: relative; overflow: hidden; border-radius: 1rem; }
+    .flip-front, .flip-back { transition: opacity .35s ease; position: absolute; inset: 0; padding: 1.25rem; display:flex; align-items:center; justify-content:center; }
+    .flip-back { opacity: 0; flex-direction: column; }
+    .flip-card:hover .flip-front { opacity: 0; }
+    .flip-card:hover .flip-back { opacity: 1; }
+  </style>
 </head>
+<body class="antialiased">
 
-<body>
-<header class="navbar">
-  <!-- Logo centered on mobile, left on desktop -->
-  <div class="logo"><a href="#hero">ELN<span>.</span></a></div>
+  <!-- NAVBAR -->
+  <header class="fixed w-full top-0 z-40 bg-[#0d0d0d]">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-4 flex items-center justify-center md:justify-between">
+      <a href="#hero" class="font-mono text-white text-xl font-bold">ELN<span class="text-accent">.</span></a>
 
-  <!-- Mobile Toggle -->
-  <button class="nav-toggle" aria-label="Toggle navigation">
-    <i class="fas fa-bars"></i>
-  </button>
+      <!-- center nav (desktop) -->
+      <nav id="mainNav" class="hidden md:flex items-center gap-8">
+        <a href="#hero" class="px-4 py-2 rounded-full border border-transparent hover:text-white text-gray-200">Home</a>
+        <a href="#services" class="px-4 py-2 rounded-full hover:text-white text-gray-200">Services</a>
+        <a href="#resume" class="px-4 py-2 rounded-full hover:text-white text-gray-200">Resume</a>
+        <a href="#skills-section" class="px-4 py-2 rounded-full hover:text-white text-gray-200">Skills</a>
+        <a href="#projects" class="px-4 py-2 rounded-full hover:text-white text-gray-200">Projects</a>
+        <a href="#certifications" class="px-4 py-2 rounded-full hover:text-white text-gray-200">Certifications</a>
+        <a href="mailto:nabilaelnm@gmail.com" class="ml-4 inline-block text-sm font-semibold px-4 py-2 rounded-full border border-accent text-accent hover:bg-accent hover:text-black transition">Hire Me</a>
+      </nav>
 
-  <!-- Desktop + Mobile Menu -->
-  <nav class="nav-menu">
-    <ul class="nav-links">
-      <li><a href="#hero" class="active">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#skills-section">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="mailto:nabilaelnm@gmail.com" class="btn">Hire Me</a></li>
-    </ul>
-  </nav>
-</header>
+      <!-- mobile toggle -->
+      <button id="navToggle" class="md:hidden text-accent ml-auto" aria-label="menu">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
 
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-[#0b0b0b] border-t border-gray-800">
+      <div class="flex flex-col gap-4 p-6">
+        <a href="#hero" class="text-gray-200">Home</a>
+        <a href="#services" class="text-gray-200">Services</a>
+        <a href="#resume" class="text-gray-200">Resume</a>
+        <a href="#skills-section" class="text-gray-200">Skills</a>
+        <a href="#projects" class="text-gray-200">Projects</a>
+        <a href="#certifications" class="text-gray-200">Certifications</a>
+        <a href="mailto:nabilaelnm@gmail.com" class="inline-block mt-2 text-center border border-accent text-accent py-2 rounded-full">Hire Me</a>
+      </div>
+    </div>
+  </header>
 
-  <section class="hero" id="hero">
-    <div class="hero-text">
-      <p class="subtitle">Software Engineer</p>
-      <h1>Hello I'm <span><br>NABILA M. "ELN"</span></h1>
-      <p class="desc">Powered by curiosity, guided by coffee, and haunted by code.</p>
-      <div class="socials">
-        <a href="https://github.com/NabilaEln48" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/nabilaeln48/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:nabilaelnm@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+  <main class="pt-24">
+
+<!-- HERO SECTION -->
+<section id="hero" class="max-w-6xl mx-auto px-6 md:px-10 pt-6 md:pt-28 mb-16">
+
+  <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
+
+    <div class="flex-1 text-center md:text-left pt-6">
+      <p class="text-white font-sans tracking-wider text-lg md:text-xl opacity-70 mb-1">
+        Software Engineer
+      </p>
+
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+        
+        <span class="inline-block">Hello I'm</span> <br>
+        
+        <span class="text-green-400 text-5xl md:text-6xl font-extrabold leading-tight block md:inline">
+          NABILA M. "ELN"
+        </span>
+      </h1>
+
+      <p class="mt-3 text-white text-base md:text-lg leading-relaxed opacity-80 max-w-lg">
+        Powered by curiosity and coffee, occasionally arguing with my monitor about semicolons.
+      </p>
+
+      <div class="flex justify-center md:justify-start gap-5 mt-5">
+        <a href="#" class="text-white hover:text-green-400 text-xl opacity-70 hover:opacity-100 transition-opacity"><i class="fab fa-github"></i></a>
+        <a href="#" class="text-white hover:text-green-400 text-xl opacity-70 hover:opacity-100 transition-opacity"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="text-white hover:text-green-400 text-xl opacity-70 hover:opacity-100 transition-opacity"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+
+    </div>
+
+    <div class="flex-1 flex justify-center md:justify-end mt-4 md:mt-0">
+      <div class="relative w-56 h-56 md:w-80 md:h-80 flex items-center justify-center">
+
+        <div class="absolute w-full h-full rounded-full border-4 border-green-400"></div>
+
+        <img
+          src="images/NabilaM.png"
+          class="w-[95%] h-[95%] rounded-full object-cover"
+          alt="Nabila portrait"
+        >
       </div>
     </div>
 
-    <div class="hero-image">
-      <div class="glow-ring"></div>
-      <img src="images/NabilaM.png" alt="Nabila portrait">
-    </div>
-  </section>
+  </div>
 
-  <section class="stats">
-    <div><h2>5+</h2><p>Years of experience</p></div>
-    <div><h2>25+</h2><p>Projects completed</p></div>
-    <div><h2>20+</h2><p>Technologies mastered</p></div>
-    <div><h2>500+</h2><p>Code commits</p></div>
-  </section>
+  <div class="grid grid-cols-2 md:flex justify-between items-center mt-12 md:mt-24 text-center">
+
+    <div class="p-4 md:p-0 flex-1 min-w-0">
+      <h2 class="text-green-400 text-4xl md:text-5xl font-extrabold">5+</h2>
+      <p class="text-white text-xs md:text-base opacity-70 mt-1">Years of experience</p>
+    </div>
+
+    <div class="p-4 md:p-0 flex-1 min-w-0">
+      <h2 class="text-green-400 text-4xl md:text-5xl font-extrabold">25+</h2>
+      <p class="text-white text-xs md:text-base opacity-70 mt-1">Projects completed</p>
+    </div>
+
+    <div class="p-4 md:p-0 flex-1 min-w-0">
+      <h2 class="text-green-400 text-4xl md:text-5xl font-extrabold">20+</h2>
+      <p class="text-white text-xs md:text-base opacity-70 mt-1">Technologies mastered</p>
+    </div>
+
+    <div class="p-4 md:p-0 flex-1 min-w-0">
+      <h2 class="text-green-400 text-4xl md:text-5xl font-extrabold">500+</h2>
+      <p class="text-white text-xs md:text-base opacity-70 mt-1">Code commits</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+ <!-- SERVICES -->
+<section id="services" class="max-w-6xl mx-auto px-6 md:px-10 mt-32">
+  <h2 class="text-3xl md:text-5xl font-mono text-green-400 text-center font-bold">What I Do</h2>
+  <p class="text-center text-gray-300 mt-4 text-lg">
+    Focused on crafting solutions that blend <span class="text-green-400 font-semibold">logic</span> and 
+    <span class="text-green-400 font-semibold">design</span>.
+  </p>
+
+  <div class="grid md:grid-cols-3 gap-6 mt-16">
+
+    <div class="service-card bg-[#0b0b0b] border border-gray-800 rounded-xl p-8 
+                transition md:hover:shadow-[0_0_25px_rgba(0,255,157,0.4)] 
+                md:hover:border-green-400
+                shadow-[0_0_20px_rgba(0,255,157,0.35)] md:shadow-none">
+
+      <div class="flex items-center justify-between mb-6">
+        <div class="text-green-400 text-3xl font-bold">01</div>
+        <i class="fa-solid fa-laptop-code text-3xl text-green-400"></i>
+      </div>
+
+      <h4 class="text-white text-xl font-semibold mb-3 leading-tight">Full-Stack Web Development</h4>
+      <p class="text-gray-400 text-base leading-relaxed">I build responsive, high-performance web applications from front to back — clean UI, efficient logic, and scalable structure. From modern stacks to legacy fixes, I deliver reliable results.</p>
+    </div>
+
+    <div class="service-card bg-[#0b0b0b] border border-gray-800 rounded-xl p-8 
+                transition md:hover:shadow-[0_0_25px_rgba(0,255,157,0.4)]
+                md:hover:border-green-400
+                shadow-[0_0_20px_rgba(0,255,157,0.35)] md:shadow-none">
+
+      <div class="flex items-center justify-between mb-6">
+        <div class="text-green-400 text-3xl font-bold">02</div>
+        <i class="fa-solid fa-database text-3xl text-green-400"></i>
+      </div>
+
+      <h4 class="text-white text-xl font-semibold mb-3 leading-tight">Backend & Database Architecture</h4>
+      <p class="text-gray-400 text-base leading-relaxed">I design secure APIs and optimized databases using enterprise-level patterns (DAO, DTO, MVC). My focus: performance, scalability, and clean architecture that can grow with your product.</p>
+    </div>
+
+    <div class="service-card bg-[#0b0b0b] border border-gray-800 rounded-xl p-8 
+                transition md:hover:shadow-[0_0_25px_rgba(0,255,157,0.4)]
+                md:hover:border-green-400
+                shadow-[0_0_20px_rgba(0,255,157,0.35)] md:shadow-none">
+
+      <div class="flex items-center justify-between mb-6">
+        <div class="text-green-400 text-3xl font-bold">03</div>
+        <i class="fa-solid fa-sitemap text-3xl text-green-400"></i>
+      </div>
+
+      <h4 class="text-white text-xl font-semibold mb-3 leading-tight">Technical Leadership & Project Delivery</h4>
+      <p class="text-gray-400 text-base leading-relaxed">I guide full project lifecycles, mentor development teams, and apply Agile methodologies to deliver scalable, user-focused applications. My focus is aligning technical decisions with business goals while ensuring predictable, high-quality delivery.</p>
+    </div>
+
+  </div>
+</section>
+
+    <!-- RESUME -->
+    <section id="resume" class="max-w-6xl mx-auto px-6 md:px-10 mt-40">
+  <h2 class="text-3xl md:text-5xl font-mono text-green-400 text-center font-bold mb-12">
+    Resume
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-[250px_1px_1fr] gap-10">
+
+    <!-- LEFT: Picture + Buttons -->
+    <div class="flex flex-col items-center md:items-start">
+      
+      <!-- Profile Picture -->
+      <div class="relative w-36 h-36 mb-8 flex items-center justify-center">
+        <div class="absolute inset-0 rounded-full border-4 border-green-400"></div>
+        <img
+          src="images/NabilaM.png"
+          alt="Nabila"
+          class="w-[92%] h-[92%] rounded-full object-cover"
+        >
+      </div>
+
+      <!-- Buttons -->
+      <div id="tab-controls-vertical" class="flex flex-col gap-3 w-full">
+        <button class="tab-btn bg-green-400 text-black font-semibold px-4 py-2 rounded-lg"
+                data-target="about">
+          About Me
+        </button>
+
+        <button class="tab-btn border border-gray-700 text-gray-300 hover:text-green-400 hover:border-green-400 px-4 py-2 rounded-lg"
+                data-target="experience">
+          Experience
+        </button>
+
+        <button class="tab-btn border border-gray-700 text-gray-300 hover:text-green-400 hover:border-green-400 px-4 py-2 rounded-lg"
+                data-target="education">
+          Education
+        </button>
+      </div>
+
+    </div>
+
+    <!-- MIDDLE: vertical line -->
+    <div class="hidden md:block border-r border-gray-800"></div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="md:pl-10" id="tab-container">
+      
+      <!-- About Tab -->
+      <div id="about" class="tab-content">
+        <h3 class="text-3xl font-bold text-white mb-6 border-b border-gray-800 pb-2">About Me</h3>
+        <p class="text-gray-300 text-lg leading-relaxed">
+          <strong class="text-green-400">I’m Nabila "ELN",</strong> a Software Engineer and Technical Specialist specializing in backend development, software quality, and predictable delivery. I build reliable, maintainable systems using Python, Java, and SQL , focused on correctness and long-term stability.
+            <br><br>My approach uniquely blends robust MVC/DAO architecture with the discipline of requirements engineering. I emphasize translating stakeholder vision into clean logic design, enforcing data integrity , and mitigating risk through structured requirements (WBS, SRS) and automated testing.
+            <br><br>I deliver scalable architecture and code that is clear, trustworthy, and easily extensible , successfully bridging technical execution with predictable SDLC delivery that aligns perfectly with user needs.
+        </p>
+      </div>
+
+      <!-- OPTION A or B template goes here -->
+<!-- Experience - TIMELINE -->
+<div id="experience" class="tab-content hidden">
+  <h3 class="text-3xl font-bold text-white mb-6 border-b border-gray-800 pb-2">Experience</h3>
+
+  <ul class="space-y-8">
+    <li class="flex items-start">
+      <span class="text-green-400 text-3xl mr-4">•</span>
+      <div>
+        <h4 class="text-white text-xl font-semibold">Full-Stack & Python Developer</h4>
+        <p class="text-green-400 text-sm">Freelancer • 2025–Present</p>
+        <p class="text-gray-400 text-sm mt-2">Working on backend systems and automation...</p>
+      </div>
+    </li>
+
+    <li class="flex items-start">
+      <span class="text-green-400 text-3xl mr-4">•</span>
+      <div>
+        <h4 class="text-white text-xl font-semibold">Full-Stack Developer</h4>
+        <p class="text-green-400 text-sm">Upwork / Fiverr • 2020–2023</p>
+        <p class="text-gray-400 text-sm mt-2">Modernizing legacy applications...</p>
+      </div>
+    </li>
+
+    <li class="flex items-start">
+      <span class="text-green-400 text-3xl mr-4">•</span>
+      <div>
+        <h4 class="text-white text-xl font-semibold">UI/UX Designer</h4>
+        <p class="text-green-400 text-sm">Fiverr • 2018–2022</p>
+        <p class="text-gray-400 text-sm mt-2">Designed intuitive user experiences.</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Education - TIMELINE -->
+<div id="education" class="tab-content hidden">
+  <h3 class="text-3xl font-bold text-white mb-6 border-b border-gray-800 pb-2">Education</h3>
+
+  <ul class="space-y-8">
+    <li class="flex items-start">
+      <span class="text-green-400 text-3xl mr-4">•</span>
+      <div>
+        <h4 class="text-white text-xl font-semibold">Computer Programming Diploma</h4>
+        <p class="text-green-400 text-sm">Algonquin • 2024–2025</p>
+      </div>
+    </li>
+
+    <li class="flex items-start">
+      <span class="text-green-400 text-3xl mr-4">•</span>
+      <div>
+        <h4 class="text-white text-xl font-semibold">Supply Chain Diploma</h4>
+        <p class="text-green-400 text-sm">Alison • 2025</p>
+      </div>
+    </li>
+
+    <li class="flex items-start">
+      <span class="text-green-400 text-3xl mr-4">•</span>
+      <div>
+        <h4 class="text-white text-xl font-semibold">Operations Management</h4>
+        <p class="text-green-400 text-sm">Alison • 2021</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- SKILLS (flip cards) -->
+<style>
+  /* Base styles for the flip card container */
+  .flip-card {
+    background-color: transparent;
+    perspective: 1000px; /* 3D perspective effect */
+    height: 410px; /* Set a fixed height for the card container */
+  }
+
+  /* The actual flipping content area */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  /* Do the flip when you hover over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Position the front and back side */
+  .flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    /* Tailwind styling applied via classes in the HTML */
+  }
+
+  /* Style the back side and rotate it 180 degrees */
+  .flip-back {
+    transform: rotateY(180deg);
+    overflow-y: auto; /* Allows scrolling if list is long */
+  }
+
+  /* List specific styling for the back side */
+  .flip-back ul {
+    list-style: none;
+    padding: 1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .flip-back ul li {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+  }
+  .flip-back ul li i {
+    margin-right: 0.75rem;
+    color: #34d399; /* Tailwind's default accent green */
+  }
+</style>
+
+<style>
+    /* Ensure the back face is initially hidden and both faces are layered */
+    .flip-back-fade, .flip-front-fade {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.4s ease;
+    }
+
+    /* Set the back face to be invisible initially */
+    .flip-back-fade {
+        opacity: 0;
+        z-index: 10; /* Bring back forward on hover */
+    }
+
+    /* Set the front face to be visible initially */
+    .flip-front-fade {
+        opacity: 1;
+        z-index: 20; /* Keep front above initially */
+    }
+
+    /* Hover State: Hide the front, Show the back */
+    .flip-card:hover .flip-front-fade {
+        opacity: 0;
+    }
+    .flip-card:hover .flip-back-fade {
+        opacity: 1;
+    }
+
+    /* Touch/Mobile Support (Active State) */
+    .flip-card:active .flip-front-fade {
+        opacity: 0;
+    }
+    .flip-card:active .flip-back-fade {
+        opacity: 1;
+    }
+</style>
+
+<section id="skills-section" class="max-w-6xl mx-auto px-6 md:px-10 mt-12 mb-16">
   
-  <section id="services" class="services">
-    <h2 class="section-title">What I Do</h2>
-    <p class="section-subtitle">Focused on crafting solutions that blend <span>logic</span> and <span>design</span>.</p>
+    <h2 class="text-3xl md:text-4xl font-mono text-accent text-center mb-10 md:mb-16">
+        Skills
+    </h2>
 
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="card-header">
-          <h3>01</h3>
-          <i class="fa-solid fa-laptop-code"></i>
-        </div>
-        <h4>Full-Stack Web Development</h4>
-        <p>I build responsive, high-performance web applications from front to back — clean UI, efficient logic, and scalable structure. From modern stacks to legacy fixes, I deliver reliable results.</p>
-      </div>
+    <div class="skills-card-container grid grid-cols-1 md:grid-cols-3 gap-8">
 
-      <div class="service-card">
-        <div class="card-header">
-          <h3>02</h3>
-          <i class="fa-solid fa-database"></i>
-        </div>
-        <h4>Backend & Database Architecture</h4>
-        <p>I design secure APIs and optimized databases using enterprise-level patterns (DAO, DTO, MVC). My focus: performance, scalability, and clean architecture that can grow with your product.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="card-header">
-          <h3>03</h3>
-          <i class="fa-solid fa-sitemap"></i>
-        </div>
-        <h4>Technical Leadership & Project Delivery</h4>
-        <p>I guide full project lifecycles, mentor development teams, and apply Agile methodologies to deliver scalable, user-focused applications. My focus is aligning technical decisions with business goals while ensuring predictable, high-quality delivery.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="resume" id="resume">
-    <div class="container">
-      <h2 class="section-title">Resume</h2>
-
-      <div class="tabs">
-        <button class="tab-btn active" data-target="about">About</button>
-        <button class="tab-btn" data-target="experience">Experience</button>
-        <button class="tab-btn" data-target="education">Education</button>
-      </div>
-
-      <div id="about" class="tab-content active">
-        <div class="about-flex">
-
-          <div class="about-text">
-             <p>
-                 <strong>I’m Nabila "ELN,"</strong> I’m Nabila "ELN," a Software Engineer and Technical Specialist specializing in backend development, software quality, and predictable delivery. I build reliable, maintainable systems using Python, Java, and SQL , focused on correctness and long-term stability.<br><br>
-                 My approach uniquely blends robust MVC/DAO architecture with the discipline of requirements engineering. I emphasize translating stakeholder vision into clean logic design, enforcing data integrity , and mitigating risk through structured requirements (WBS, SRS)  and automated testing.<br><br>
-                 I deliver scalable architecture and code that is clear, trustworthy, and easily extensible , successfully bridging technical execution with predictable SDLC delivery  that aligns perfectly with user needs.
-             </p>
-          </div>
-        </div>
-      </div>
-
-      <div id="experience" class="tab-content">
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Full-Stack & Python Developer</h3>
-            <p class="company">Freelancer.com</p>
-            <p class="duration">Mar 2025 – Present • Remote</p>
-          </div>
-          <div class="timeline-item">
-            <h3>Full-Stack Developer</h3>
-            <p class="company">Upwork, Fiverr, PeoplePerHour</p>
-            <p class="duration">Mar 2020 – Nov 2023 • Remote</p>
-          </div>
-          <div class="timeline-item">
-            <h3>UI/UX Designer</h3>
-            <p class="company">Fiverr</p>
-            <p class="duration">2018 – Aug 2022</p>
-          </div>
-        </div>
-      </div>
-
-      <div id="education" class="tab-content">
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Computer Programming Diploma</h3>
-            <p class="company">Algonquin College, Ottawa</p>
-            <p class="duration">2024 – Dec 2025</p>
-          </div>
-          <div class="timeline-item">
-            <h3>Diploma in Supply Chain Management</h3>
-            <p class="company">Alison</p>
-            <p class="duration">Completed 2025</p>
-          </div>
-          <div class="timeline-item">
-            <h3>Diploma in Operations Management OPS</h3>
-            <p class="company">Alison</p>
-            <p class="duration">Completed 2021</p>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  </section>
-
-<section id="skills-section" class="skills-flip-section">
-    <h2 class="section-title">Skills</h2>
-
-    <div class="skills-card-container">
-
-        <div class="flip-card">
-            <div class="flip-front">
-                <i class="fa-solid fa-code"></i>
-                <h3>Technical Skills</h3>
+        <div class="flip-card relative h-[400px] cursor-pointer bg-[#0b0b0b] border border-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-accent/40 hover:border-accent/40">
+            
+            <div class="flip-front-fade flex flex-col items-center justify-center p-5 text-center">
+                <i class="fa-solid fa-code text-accent text-5xl mb-4"></i>
+                <h3 class="text-white text-xl font-mono tracking-wider">Technical Skills</h3>
             </div>
-            <div class="flip-back">
-                <ul>
-                    <li><i class="fab fa-java"></i> Java</li>
-                    <li><i class="fab fa-python"></i> Python</li>
-                    <li><i class="fab fa-js"></i> JavaScript</li>
-                    <li><i class="fab fa-php"></i> PHP</li>
-                    <li><i class="fas fa-database"></i> SQL</li>
-                    <li><i class="fas fa-server"></i> Jakarta EE</li> 
-                    <li><i class="fas fa-leaf"></i> Spring</li> 
-                    <li><i class="fab fa-node-js"></i> Node.js</li>
-                    <li><i class="fas fa-code"></i> Flask</li> 
-                    <li><i class="fab fa-react"></i> React</li>
-                    <li><i class="fab fa-html5"></i>HTML & <i class="fab fa-css3-alt"></i> CSS</li>
+            
+            <div class="flip-back-fade absolute inset-0 bg-[#0b0b0b] p-5 text-gray-300 overflow-y-auto">
+                <ul class="list-none p-0 text-left font-mono">
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fab fa-java text-accent"></i> Java</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fab fa-python text-accent"></i> Python</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fab fa-js text-accent"></i> JavaScript</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fab fa-php text-accent"></i> PHP</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-database text-accent"></i> SQL</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-server text-accent"></i> Jakarta EE</li> 
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-leaf text-accent"></i> Spring</li> 
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fab fa-node-js text-accent"></i> Node.js</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-code text-accent"></i> Flask</li> 
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fab fa-react text-accent"></i> React</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fab fa-html5 text-accent"></i>HTML & <i class="fab fa-css3-alt text-accent"></i> CSS</li>
                 </ul>
             </div>
         </div>
 
-        <div class="flip-card">
-            <div class="flip-front">
-                <i class="fa-solid fa-gears"></i>
-                <h3>Tools & Frameworks</h3>
+        <div class="flip-card relative h-[400px] cursor-pointer bg-[#0b0b0b] border border-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-accent/40 hover:border-accent/40">
+            
+            <div class="flip-front-fade flex flex-col items-center justify-center p-5 text-center">
+                <i class="fa-solid fa-gears text-accent text-5xl mb-4"></i>
+                <h3 class="text-white text-xl font-mono tracking-wider">Tools & Frameworks</h3>
             </div>
-            <div class="flip-back">
-                <ul>
-                    <li><i class="fab fa-docker"></i> Docker</li>
-                    <li><i class="fab fa-git"></i> Git</li>
-                    <li><i class="fab fa-github"></i> GitHub</li>
-                    <li><i class="fas fa-cogs"></i> Maven</li> 
-                    <li><i class="fab fa-linux"></i> Linux</li>
-                    <li><i class="fas fa-database"></i> MySQL / PostgreSQL</li>
-                    <li><i class="fas fa-database"></i> Oracle</li>
-                    <li><i class="fas fa-database"></i> Pymango</li>
-                    <li><i class="fas fa-database"></i> MongoDB</li>
-                    <li><i class="fas fa-table"></i> Pandas</li> 
-                    <li><i class="fas fa-chart-line"></i> Matplotlib</li>
+            
+            <div class="flip-back-fade absolute inset-0 bg-[#0b0b0b] p-5 text-gray-300 overflow-y-auto">
+                <ul class="list-none p-0 text-left font-mono">
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fab fa-docker text-accent"></i> Docker</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fab fa-git text-accent"></i> Git</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fab fa-github text-accent"></i> GitHub</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-cogs text-accent"></i> Maven</li> 
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fab fa-linux text-accent"></i> Linux</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-database text-accent"></i> MySQL / PostgreSQL</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-database text-accent"></i> Oracle</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-database text-accent"></i> Pymango</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-database text-accent"></i> MongoDB</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-table text-accent"></i> Pandas</li> 
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-chart-line text-accent"></i> Matplotlib</li>
                 </ul>
             </div>
         </div>
 
-        <div class="flip-card">
-            <div class="flip-front">
-                <i class="fa-solid fa-user-tie"></i>
-                <h3>Leadership & Business</h3>
+        <div class="flip-card relative h-[400px] cursor-pointer bg-[#0b0b0b] border border-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-accent/40 hover:border-accent/40">
+            
+            <div class="flip-front-fade flex flex-col items-center justify-center p-5 text-center">
+                <i class="fa-solid fa-user-tie text-accent text-5xl mb-4"></i>
+                <h3 class="text-white text-xl font-mono tracking-wider">Leadership & Business</h3>
             </div>
-            <div class="flip-back">
-                <ul>
-                    <li><i class="fas fa-users-viewfinder"></i> Agile & Scrum</li>
-                    <li><i class="fas fa-retweet"></i> Project Lifecycle</li>
-                    <li><i class="fas fa-drafting-compass"></i> Design Patterns</li>
-                    <li><i class="fas fa-handshake"></i> Mentoring</li>
-                    <li><i class="fas fa-comments"></i> Communication</li>
-                    <li><i class="fas fa-route"></i> Decision Making</li>
-                    <li><i class="fas fa-project-diagram"></i> Predictive PM (PMI)</li>
-                    <li><i class="fas fa-truck-fast"></i> Supply Chain</li>
-                    <li><i class="fas fa-bullhorn"></i> Digital Marketing</li>
-                    <li><i class="fas fa-sack-dollar"></i> Budgeting</li>
+            
+            <div class="flip-back-fade absolute inset-0 bg-[#0b0b0b] p-5 text-gray-300 overflow-y-auto">
+                <ul class="list-none p-0 text-left font-mono">
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-users-viewfinder text-accent"></i> Agile & Scrum</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-retweet text-accent"></i> Project Lifecycle</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-drafting-compass text-accent"></i> Design Patterns</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-handshake text-accent"></i> Mentoring</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-comments text-accent"></i> Communication</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-route text-accent"></i> Decision Making</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-project-diagram text-accent"></i> Predictive PM (PMI)</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-truck-fast text-accent"></i> Supply Chain</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-bullhorn text-accent"></i> Digital Marketing</li>
+                    <li class="flex items-center gap-2 mb-2 text-base"><i class="fas fa-sack-dollar text-accent"></i> Budgeting</li>
                 </ul>
             </div>
         </div>
@@ -250,116 +544,288 @@
     </div>
 </section>
 
+    <!-- PROJECTS -->
+    <section id="projects" class="max-w-6xl mx-auto px-6 md:px-10 mt-12">
+      <h2 class="text-3xl md:text-4xl font-mono text-accent text-center">Projects</h2>
 
-
-  <section class="projects-page" id="projects">
-    <h2 class="section-title">Projects</h2>
-
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-img">
-          <img src="images/ptfms.webp" alt="PTFMS Fleet Management System" />
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <!-- project card example (multiple in original Style.css) -->
+        <div class="project-card bg-[#0b0b0b] border border-gray-800 rounded-xl overflow-hidden">
+          <div class="project-img h-44 overflow-hidden">
+            <img src="images/ptfms.webp" alt="PTFMS" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold text-white">PTFMS — Fleet Management System</h3>
+            <p class="text-gray-400 text-sm mt-2">A Java web application for public-transport fleet operations, built with enterprise-grade architecture.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded-full bg-gray-800">Java</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-gray-800">JSP</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-gray-800">JDBC</span>
+            </div>
+          </div>
         </div>
-        <div class="project-content">
-          <h3 class="project-title">PTFMS — Fleet Management System</h3>
-          <p class="project-desc">A Java web application for public-transport fleet operations, built with enterprise-grade architecture.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">Servlets</span>
-            <span class="tech-tag">JSP</span>
-            <span class="tech-tag">JDBC</span>
-            <span class="tech-tag">Maven</span>
+
+        <div class="project-card bg-[#0b0b0b] border border-gray-800 rounded-xl overflow-hidden">
+          <div class="project-img h-44 overflow-hidden">
+            <img src="images/ecom.png" alt="E-Commerce" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold text-white">E-Commerce Platform</h3>
+            <p class="text-gray-400 text-sm mt-2">A modern e-commerce web app offering 100+ fragrances with live stock sync.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded-full bg-gray-800">React</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-gray-800">Node.js</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card bg-[#0b0b0b] border border-gray-800 rounded-xl overflow-hidden">
+          <div class="project-img h-44 overflow-hidden">
+            <img src="images/sniperbot.png" alt="SniperBot" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold text-white">SniperBot — Solana Trading Automation</h3>
+            <p class="text-gray-400 text-sm mt-2">A crypto trading bot built for Solana with automated trade execution and liquidity scanning.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="text-xs px-2 py-1 rounded-full bg-gray-800">Python</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-gray-800">Web3</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-img">
-          <img src="images/ecom.png" alt="Project Placeholder" />
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">E-Commerce Platform</h3>
-          <p class="project-desc">A modern e-commerce web app offering 100+ fragrances with live stock sync.</p>
-          <div class="project-tech">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">MongoDB</span>
-            <span class="tech-tag">Stripe API</span>
-          </div>
-        </div>
+      <div class="mt-8 text-center">
+        <a href="IT_Projects.html" class="inline-block border border-accent text-accent px-6 py-2 rounded-full">View All Projects</a>
       </div>
+    </section>
 
-      <div class="project-card">
-        <div class="project-img">
-          <img src="images/sniperbot.png" alt="Project Placeholder" />
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">SniperBot — Solana Trading Automation</h3>
-          <p class="project-desc">A crypto trading bot built for Solana with automated trade execution and liquidity scanning.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Web3</span>
-            <span class="tech-tag">Solana</span>
-            <span class="tech-tag">Rest API</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <button class="btn1" onclick="window.location.href='IT_Projects.html'">View All Projects</button>
-  </section>
-  
-  <section class="certifications-page" id="certifications">
-    <h2 class="section-title">Certifications</h2>
-    <p class="section-subtitle">
-      Professional recognition of <span>technical</span> and <span>business</span> excellence.
+    <!-- CERTIFICATIONS (compact) -->
+<section id="certifications" class="py-24 px-4 sm:px-10 lg:px-20 min-h-screen">
+    <h2 class="text-center font-mono text-4xl sm:text-5xl text-[#00ff9d] mb-3">Certifications</h2>
+    <p class="text-center font-mono text-base text-gray-400 mb-12">
+        Professional recognition of <span class="text-[#00ff9d]">technical</span> and <span class="text-[#00ff9d]">business</span> excellence.
     </p>
 
-    <div class="cert-filters">
-      <button class="cert-filter active" data-filter="development">IT</button>
-      <button class="cert-filter" data-filter="business">Business</button>
+    <div class="flex justify-center gap-4 mb-14 flex-wrap">
+        <button class="font-mono py-2.5 px-7 rounded-full cursor-pointer transition duration-300 bg-[#00ff9d] text-black font-bold shadow-lg shadow-emerald-500/30 text-sm" data-filter="development">IT</button>
+        <button class="font-mono py-2.5 px-7 rounded-full cursor-pointer transition duration-300 bg-transparent border border-gray-800 text-gray-400 hover:border-[#00ff9d] hover:text-[#00ff9d] text-sm" data-filter="business">Business</button>
     </div>
 
-    <div class="cert-grid" id="cert-grid">
-      <div class="cert-card" data-category="development"><i class="fa-brands fa-linkedin icon"></i><div class="text"><h3>Software Architecture: Patterns for Developers</h3><p>LinkedIn • Jul 2025</p></div></div>
-      <div class="cert-card" data-category="development"><i class="fa-brands fa-linkedin icon"></i><div class="text"><h3>Software Testing Foundations: Testing throughout the SDLC</h3><p>LinkedIn • Jul 2025</p></div></div>
-      <div class="cert-card" data-category="development"><i class="fa-brands fa-free-code-camp icon"></i><div class="text"><h3>Legacy JavaScript Algorithms and Data Structures</h3><p>freeCodeCamp • Apr 2025</p></div></div>
-      <div class="cert-card" data-category="development"><i class="fa-brands fa-free-code-camp icon"></i><div class="text"><h3>JavaScript Algorithms and Data Structures</h3><p>freeCodeCamp • Feb 2025</p></div></div>
-      <div class="cert-card" data-category="development"><i class="fa-brands fa-free-code-camp icon"></i><div class="text"><h3>Responsive Web Design</h3><p>freeCodeCamp • Dec 2024</p></div></div>
-      <div class="cert-card" data-category="development"><i class="fa-solid fa-code icon"></i><div class="text"><h3>Introduction To Python</h3><p>Sololearn • Jul 2023</p></div></div>
-      <div class="cert-card" data-category="development"><i class="fa-solid fa-code icon"></i><div class="text"><h3>Python Intermediate</h3><p>Sololearn • Jul 2023</p></div></div>
-      <div class="cert-card" data-category="development"><i class="fa-solid fa-code icon"></i><div class="text"><h3>PHP</h3><p>Sololearn • Jun 2023</p></div></div>
-      <!-- Hidden certificates -->
-      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-code icon"></i><div class="text"><h3>HTML</h3><p>MIMO • Apr 2023</p></div></div>
-      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-code icon"></i><div class="text"><h3>CSS</h3><p>MIMO • Apr 2023</p></div></div>
-      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-code icon"></i><div class="text"><h3>JavaScript</h3><p>MIMO • Jul 2023</p></div></div>
-      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-code icon"></i><div class="text"><h3>Web Development</h3><p>MIMO • Apr 2023</p></div></div>
-      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-database icon"></i><div class="text"><h3>SQL</h3><p>MIMO • Jul 2023</p></div></div>
-      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-database icon"></i><div class="text"><h3>SQL – Full Stack Development</h3><p>Sololearn • Feb 2022</p></div></div>
-      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-terminal icon"></i><div class="text"><h3>Intro to C Programming</h3><p>Sololearn • Apr 2023</p></div></div>
-      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-terminal icon"></i><div class="text"><h3>C Intermediate</h3><p>Sololearn • Apr 2023</p></div></div>
-      <div class="cert-card hidden-cert" data-category="development"><i class="fa-solid fa-robot icon"></i><div class="text"><h3>Elements of AI</h3><p>University of Helsinki • Apr 2023</p></div></div>
+    <div id="cert-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        
+        <div class="cert-card flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px]" data-category="development">
+            <i class="fa-brands fa-linkedin text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Software Architecture: Patterns for Developers</h3>
+                <p class="text-gray-400 text-sm">LinkedIn • Jul 2025</p>
+            </div>
+        </div>
+        <div class="cert-card flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px]" data-category="development">
+            <i class="fa-brands fa-linkedin text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Software Testing Foundations: Testing throughout the SDLC</h3>
+                <p class="text-gray-400 text-sm">LinkedIn • Jul 2025</p>
+            </div>
+        </div>
+        <div class="cert-card flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px]" data-category="development">
+            <i class="fa-brands fa-free-code-camp text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Legacy JavaScript Algorithms and Data Structures</h3>
+                <p class="text-gray-400 text-sm">freeCodeCamp • Apr 2025</p>
+            </div>
+        </div>
+        <div class="cert-card flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px]" data-category="development">
+            <i class="fa-brands fa-free-code-camp text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">JavaScript Algorithms and Data Structures</h3>
+                <p class="text-gray-400 text-sm">freeCodeCamp • Feb 2025</p>
+            </div>
+        </div>
+        <div class="cert-card flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px]" data-category="development">
+            <i class="fa-brands fa-free-code-camp text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Responsive Web Design</h3>
+                <p class="text-gray-400 text-sm">freeCodeCamp • Dec 2024</p>
+            </div>
+        </div>
+        <div class="cert-card flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px]" data-category="development">
+            <i class="fa-solid fa-code text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Introduction To Python</h3>
+                <p class="text-gray-400 text-sm">Sololearn • Jul 2023</p>
+            </div>
+        </div>
+        <div class="cert-card flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px]" data-category="development">
+            <i class="fa-solid fa-code text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Python Intermediate</h3>
+                <p class="text-gray-400 text-sm">Sololearn • Jul 2023</p>
+            </div>
+        </div>
+        <div class="cert-card flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px]" data-category="development">
+            <i class="fa-solid fa-code text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">PHP</h3>
+                <p class="text-gray-400 text-sm">Sololearn • Jun 2023</p>
+            </div>
+        </div>
+        
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="development">
+            <i class="fa-solid fa-code text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">HTML</h3>
+                <p class="text-gray-400 text-sm">MIMO • Apr 2023</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="development">
+            <i class="fa-solid fa-code text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">CSS</h3>
+                <p class="text-gray-400 text-sm">MIMO • Apr 2023</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="development">
+            <i class="fa-solid fa-code text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">JavaScript</h3>
+                <p class="text-gray-400 text-sm">MIMO • Jul 2023</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="development">
+            <i class="fa-solid fa-code text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Web Development</h3>
+                <p class="text-gray-400 text-sm">MIMO • Apr 2023</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="development">
+            <i class="fa-solid fa-database text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">SQL</h3>
+                <p class="text-gray-400 text-sm">MIMO • Jul 2023</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="development">
+            <i class="fa-solid fa-database text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">SQL – Full Stack Development</h3>
+                <p class="text-gray-400 text-sm">Sololearn • Feb 2022</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="development">
+            <i class="fa-solid fa-terminal text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Intro to C Programming</h3>
+                <p class="text-gray-400 text-sm">Sololearn • Apr 2023</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="development">
+            <i class="fa-solid fa-terminal text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">C Intermediate</h3>
+                <p class="text-gray-400 text-sm">Sololearn • Apr 2023</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="development">
+            <i class="fa-solid fa-robot text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Elements of AI</h3>
+                <p class="text-gray-400 text-sm">University of Helsinki • Apr 2023</p>
+            </div>
+        </div>
 
-      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-warehouse icon"></i><div class="text"><h3>Sales Force Management</h3><p>Alison</p></div></div>
-      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-warehouse icon"></i><div class="text"><h3>Warehouse Management</h3><p>Alison • May 2021</p></div></div>
-      <div class="cert-card hidden-cert" data-category="business"><i class="fa-brands fa-microsoft icon"></i><div class="text"><h3>Microsoft Office 365</h3><p>Microsoft • Dec 2021</p></div></div>
-      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-laptop icon"></i><div class="text"><h3>Digital Literacy</h3><p>Edraak • Dec 2021</p></div></div>
-      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-bullseye icon"></i><div class="text"><h3>Digital Marketing and Media Foundations</h3><p>Edraak • Aug 2022</p></div></div>
-      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-user-tie icon"></i><div class="text"><h3>Personal Branding</h3><p>Rwaq • Nov 2021</p></div></div>
-      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-award icon"></i><div class="text"><h3>Fundamentals of Predictive Project Management</h3><p>PMI • May 2025</p></div></div>
-      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-lightbulb icon"></i><div class="text"><h3>Problem Solving & Decision Making</h3><p>Edraak • Dec 2021</p></div></div>
-      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-people-arrows icon"></i><div class="text"><h3>Supervision Skills - Managing Employee Performance</h3><p>Alison • Aug 2020</p></div></div>
-      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-comments icon"></i><div class="text"><h3>Supervision - Effective Communication Skills</h3><p>Alison • Aug 2020</p></div></div>
-      <div class="cert-card hidden-cert" data-category="business"><i class="fa-solid fa-scale-balanced icon"></i><div class="text"><h3>Ontario Human Rights & AODA Compliance</h3><p>Ontario Human Rights Commission • Nov 2024</p></div></div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="business">
+            <i class="fa-solid fa-warehouse text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Sales Force Management</h3>
+                <p class="text-gray-400 text-sm">Alison</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="business">
+            <i class="fa-solid fa-warehouse text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Warehouse Management</h3>
+                <p class="text-gray-400 text-sm">Alison • May 2021</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="business">
+            <i class="fa-brands fa-microsoft text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Microsoft Office 365</h3>
+                <p class="text-gray-400 text-sm">Microsoft • Dec 2021</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="business">
+            <i class="fa-solid fa-laptop text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Digital Literacy</h3>
+                <p class="text-gray-400 text-sm">Edraak • Dec 2021</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="business">
+            <i class="fa-solid fa-bullseye text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Digital Marketing and Media Foundations</h3>
+                <p class="text-gray-400 text-sm">Edraak • Aug 2022</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="business">
+            <i class="fa-solid fa-user-tie text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Personal Branding</h3>
+                <p class="text-gray-400 text-sm">Rwaq • Nov 2021</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="business">
+            <i class="fa-solid fa-award text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Fundamentals of Predictive Project Management</h3>
+                <p class="text-gray-400 text-sm">PMI • May 2025</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="business">
+            <i class="fa-solid fa-lightbulb text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Problem Solving & Decision Making</h3>
+                <p class="text-gray-400 text-sm">Edraak • Dec 2021</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="business">
+            <i class="fa-solid fa-people-arrows text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Supervision Skills - Managing Employee Performance</h3>
+                <p class="text-gray-400 text-sm">Alison • Aug 2020</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="business">
+            <i class="fa-solid fa-comments text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Supervision - Effective Communication Skills</h3>
+                <p class="text-gray-400 text-sm">Alison • Aug 2020</p>
+            </div>
+        </div>
+        <div class="cert-card hidden-cert flex items-start gap-4 p-5 rounded-xl border border-gray-800 bg-gray-900/50 transition duration-300 hover:border-[#00ff9d] hover:shadow-xl hover:shadow-[#00ff9d]/20 hover:-translate-y-1 min-h-[100px] hidden" data-category="business">
+            <i class="fa-solid fa-scale-balanced text-2xl text-[#00ff9d] mt-0.5"></i>
+            <div>
+                <h3 class="text-white text-lg font-semibold mb-0.5">Ontario Human Rights & AODA Compliance</h3>
+                <p class="text-gray-400 text-sm">Ontario Human Rights Commission • Nov 2024</p>
+            </div>
+        </div>
     </div>
+    
+    <div class="text-center mt-12">
+        <button id="cert-toggle" class="block mx-auto py-3 px-8 rounded-full cursor-pointer transition duration-300 border border-[#00ff9d] text-[#00ff9d] font-medium text-base hover:bg-[#00ff9d] hover:text-black">
+            Show More
+        </button>
+    </div>
+</section>
 
-  </section>
+  </main>
 
-  <footer class="footer">
+  <footer class="bg-transparent text-center text-gray-500 py-8">
     <p>© 2025 Nabila M. "ELN" — All Rights Reserved.</p>
   </footer>
 
-<script src="JS/script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
