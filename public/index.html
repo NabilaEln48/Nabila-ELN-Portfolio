@@ -238,114 +238,123 @@
   </div>
 </section>
 
-    <!-- RESUME -->
-    <section id="resume" class="max-w-6xl mx-auto px-6 md:px-10 mt-40">
-  <h2 class="text-3xl md:text-5xl font-mono text-green-400 text-center font-bold mb-12">
-    Resume
-  </h2>
+<!-- RESUME SECTION -->
+<section id="resume" class="max-w-6xl mx-auto px-6 md:px-10 mt-40">
+<div class="flex justify-center mb-16">
+  <h2 class="text-3xl md:text-5xl font-mono text-green-400 font-bold whitespace-nowrap">Resume</h2>
+</div>
 
-  <div class="grid grid-cols-1 md:grid-cols-[250px_1px_1fr] gap-10">
-
-    <!-- LEFT: Picture + Buttons -->
+  <div class="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12">
+    
     <div class="flex flex-col items-center md:items-start">
-      
-      <!-- Profile Picture -->
-      <div class="relative w-36 h-36 mb-8 flex items-center justify-center">
-        <div class="absolute inset-0 rounded-full border-4 border-green-400"></div>
-        <img
-          src="images/LOGO.png"
-          alt="Nabila"
-          class="w-[92%] h-[92%] rounded-full object-cover"
-        >
-      </div>
+<div class="relative group mb-10 flex justify-center md:justify-start">
+  <div class="absolute inset-0 rounded-full bg-green-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+  
+  <div class="relative w-44 h-44 overflow-hidden rounded-full border border-green-400/30 shadow-[0_0_20px_rgba(74,222,128,0.2)] group-hover:shadow-[0_0_35px_rgba(74,222,128,0.4)] transition-all duration-500">
+    <img
+      src="images/LOGO.png"
+      alt="Nabila"
+      class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 hover:scale-[1.35]"
+    >
+  </div>
+</div>
 
-      <!-- Buttons -->
-      <div id="tab-controls-vertical" class="flex flex-col gap-3 w-full">
-        <button class="tab-btn bg-green-400 text-black font-semibold px-4 py-2 rounded-lg"
-                data-target="about">
-          About Me
+      <nav id="tab-controls-vertical" class="flex flex-col gap-2 w-full">
+        <button 
+          class="tab-btn active-tab group flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-300 text-left"
+          data-target="about">
+          <span class="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_#4ade80]"></span>
+          <span class="font-mono text-sm tracking-widest uppercase">About Me</span>
         </button>
 
-        <button class="tab-btn border border-gray-700 text-gray-300 hover:text-green-400 hover:border-green-400 px-4 py-2 rounded-lg"
-                data-target="experience">
-          Experience
+        <button 
+          class="tab-btn group flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-300 text-left border border-transparent hover:bg-gray-800/50"
+          data-target="experience">
+          <span class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-green-400 transition-colors"></span>
+          <span class="font-mono text-sm tracking-widest uppercase text-gray-400 group-hover:text-green-400">Experience</span>
         </button>
 
-        <button class="tab-btn border border-gray-700 text-gray-300 hover:text-green-400 hover:border-green-400 px-4 py-2 rounded-lg"
-                data-target="education">
-          Education
+        <button 
+          class="tab-btn group flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-300 text-left border border-transparent hover:bg-gray-800/50"
+          data-target="education">
+          <span class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-green-400 transition-colors"></span>
+          <span class="font-mono text-sm tracking-widest uppercase text-gray-400 group-hover:text-green-400">Education</span>
         </button>
-      </div>
-
+      </nav>
     </div>
 
-    <!-- MIDDLE: vertical line -->
-    <div class="hidden md:block border-r border-gray-800"></div>
-
-    <!-- RIGHT CONTENT -->
-    <div class="md:pl-10" id="tab-container">
+    <div class="relative bg-gray-900/40 border border-gray-800 p-8 rounded-xl backdrop-blur-sm" id="tab-container">
       
-      <!-- About Tab -->
-      <div id="about" class="tab-content">
-        <h3 class="text-3xl font-bold text-white mb-6 border-b border-gray-800 pb-2">About Me</h3>
-        <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">
-          <strong class="text-green-400">I’m Nabila “ELN”,</strong>
-          a Backend Developer specializing in Python and RESTful APIs, 
-          with a strong foundation in backend architecture, database design, and data-driven systems. 
-          Hands-on experience through academic and personal projects using 
-          Flask, Django, and FastAPI, with PostgreSQL, MySQL, and MongoDB. 
+      <div id="about" class="tab-content transition-opacity duration-500">
+        <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+          <span class="text-green-400">~/</span>Bio
+        </h3>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          <strong class="text-green-400 font-medium">I’m Nabila “ELN”,</strong> 
+          a Backend Developer specializing in Python and RESTful APIs. I focus on building 
+          robust backend architectures and data-driven systems. My toolkit includes 
+          <span class="text-white">Flask, Django, and FastAPI</span>, paired with 
+          <span class="text-white">PostgreSQL and MongoDB</span>.
         </p>
       </div>
 
-      <!-- OPTION A or B template goes here -->
-<!-- Experience - TIMELINE -->
-<div id="experience" class="tab-content hidden">
-  <h3 class="text-3xl font-bold text-white mb-6 border-b border-gray-800 pb-2">Experience</h3>
-
-  <ul class="space-y-8">
-    <li class="flex items-start">
-      <span class="text-green-400 text-3xl mr-4">•</span>
-      <div>
-        <h4 class="text-white text-xl font-semibold">Python Developer</h4>
-        <p class="text-green-400 text-sm">Freelancer • March 2023 – Present</p>
+      <div id="experience" class="tab-content hidden animate-fadeIn">
+        <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-2">
+          <span class="text-green-400">~/</span>Experience
+        </h3>
+        <div class="relative border-l-2 border-gray-800 ml-3">
+          <div class="mb-10 ml-8">
+            <span class="absolute -left-[9px] mt-1.5 w-4 h-4 rounded-full bg-green-400 border-4 border-gray-900"></span>
+            <h4 class="text-white text-xl font-bold">Python Developer</h4>
+            <p class="text-green-400 font-mono text-sm mb-2">Freelancer | March 2023 – Present</p>
+            <p class="text-gray-400">Building scalable API solutions and automating backend workflows for diverse client needs.</p>
+          </div>
+        </div>
       </div>
-    </li>
 
-<!-- Education - TIMELINE -->
-<div id="education" class="tab-content hidden">
-  <h3 class="text-3xl font-bold text-white mb-6 border-b border-gray-800 pb-2">Education</h3>
-
-  <ul class="space-y-8">
-    <li class="flex items-start">
-      <span class="text-green-400 text-3xl mr-4">•</span>
-      <div>
-        <h4 class="text-white text-xl font-semibold">Computer Programming Diploma</h4>
-        <p class="text-green-400 text-sm">Algonquin • Completed - December 2025</p>
+      <div id="education" class="tab-content hidden animate-fadeIn">
+        <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-2">
+          <span class="text-green-400">~/</span>Education
+        </h3>
+        <div class="space-y-10 relative border-l-2 border-gray-800 ml-3">
+          <div class="ml-8 relative">
+            <span class="absolute -left-[41px] mt-1.5 w-4 h-4 rounded-full bg-green-400 border-4 border-gray-900"></span>
+            <h4 class="text-white text-xl font-bold">Computer Programming Diploma</h4>
+            <p class="text-green-400 font-mono text-sm">Algonquin College | Dec 2025</p>
+          </div>
+          <div class="ml-8 relative">
+            <span class="absolute -left-[41px] mt-1.5 w-4 h-4 rounded-full bg-gray-700 border-4 border-gray-900"></span>
+            <h4 class="text-white text-xl font-bold">Supply Chain Diploma</h4>
+            <p class="text-green-400 font-mono text-sm">Alison | 2025</p>
+          </div>
+          <div class="ml-8 relative">
+            <span class="absolute -left-[41px] mt-1.5 w-4 h-4 rounded-full bg-gray-700 border-4 border-gray-900"></span>
+            <h4 class="text-white text-xl font-bold">Operations Management</h4>
+            <p class="text-green-400 font-mono text-sm">Alison | 2021</p>
+          </div>
+        </div>
       </div>
-    </li>
-
-    <li class="flex items-start">
-      <span class="text-green-400 text-3xl mr-4">•</span>
-      <div>
-        <h4 class="text-white text-xl font-semibold">Supply Chain Diploma</h4>
-        <p class="text-green-400 text-sm">Alison • 2025</p>
-      </div>
-    </li>
-
-    <li class="flex items-start">
-      <span class="text-green-400 text-3xl mr-4">•</span>
-      <div>
-        <h4 class="text-white text-xl font-semibold">Operations Management</h4>
-        <p class="text-green-400 text-sm">Alison • 2021</p>
-      </div>
-    </li>
-  </ul>
-</div>
 
     </div>
-
   </div>
 </section>
+
+<style>
+  .active-tab {
+    background-color: rgba(74, 222, 128, 0.1);
+    border-color: rgba(74, 222, 128, 0.4) !important;
+  }
+  .active-tab span:last-child {
+    color: #4ade80 !important;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+</style>
 
 
     <!-- SKILLS (flip cards) -->
