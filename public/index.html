@@ -109,44 +109,52 @@
 <!-- HERO SECTION -->
 <section id="hero" class="max-w-6xl mx-auto px-6 md:px-10 pt-6 md:pt-28 mb-16">
 
-  <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
+<div class="absolute top-0 left-1/4 w-64 h-64 bg-green-400/10 blur-[120px] -z-10"></div>
 
-    <div class="flex-1 text-center md:text-left pt-6">
-      <p class="text-white font-sans tracking-wider text-lg md:text-xl opacity-70 mb-1">
+  <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+
+    <div class="flex-1 text-center md:text-left order-2 md:order-1">
+
+      <p class="text-white/60 font-sans tracking-tight text-lg md:text-xl mb-2">
         Software Engineer
       </p>
 
-      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-        
-        <span class="inline-block">Hello I'm</span> <br>
-        
-        <span class="text-green-400 text-5xl md:text-6xl font-extrabold leading-tight block md:inline">
-          NABILA M. "ELN"
+      <h1 class="text-5xl md:text-7xl font-black text-white leading-[1.1]">
+        Hello, I'm <br>
+        <span class="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+          NABILA M.
         </span>
       </h1>
 
-      <p class="mt-3 text-white text-base md:text-lg leading-relaxed opacity-80 max-w-lg">
-        Powered by curiosity and coffee, occasionally arguing with my monitor about semicolons.
+      <p class="mt-6 text-white/70 text-base md:text-lg leading-relaxed max-w-xl font-light">
+        Powered by curiosity and coffee, occasionally arguing with my monitor about semicolons. 
+        I craft <span class="text-white font-medium text-emerald-100">scalable web solutions</span> using Java, Python, and modern JavaScript ecosystems.
       </p>
 
-      <div class="flex justify-center md:justify-start gap-5 mt-5">
-        <a href="#" class="text-white hover:text-green-400 text-xl opacity-70 hover:opacity-100 transition-opacity"><i class="fab fa-github"></i></a>
-        <a href="#" class="text-white hover:text-green-400 text-xl opacity-70 hover:opacity-100 transition-opacity"><i class="fab fa-linkedin"></i></a>
-        <a href="#" class="text-white hover:text-green-400 text-xl opacity-70 hover:opacity-100 transition-opacity"><i class="fa-solid fa-envelope"></i></a>
+      <div class="flex flex-col sm:flex-row items-center md:justify-start gap-6 mt-10">
+        <a href="#contact" class="px-8 py-3 bg-green-400 text-gray-900 font-bold rounded-lg hover:bg-green-300 transition-all transform hover:-translate-y-1 shadow-lg shadow-green-400/20">
+          Let's Connect
+        </a>
+        
+        <div class="flex gap-6 items-center">
+          <a href="#" class="text-white/50 hover:text-green-400 text-2xl transition-colors"><i class="fab fa-github"></i></a>
+          <a href="#" class="text-white/50 hover:text-green-400 text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-white/50 hover:text-green-400 text-2xl transition-colors"><i class="fa-solid fa-envelope"></i></a>
+        </div>
       </div>
-
     </div>
 
-    <div class="flex-1 flex justify-center md:justify-end mt-4 md:mt-0">
-      <div class="relative w-56 h-56 md:w-80 md:h-80 flex items-center justify-center">
-
-        <div class="absolute w-full h-full rounded-full border-4 border-green-400"></div>
-
-        <img
-          src="images/NabilaM.png"
-          class="w-[95%] h-[95%] rounded-full object-cover"
-          alt="Nabila portrait"
-        >
+    <div class="flex-1 flex justify-center md:justify-end order-1 md:order-2">
+      <div class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-tr from-green-400 to-emerald-600 rounded-full blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+        
+        <div class="relative w-64 h-64 md:w-96 md:h-96 rounded-full border-2 border-white/10 p-3 bg-gray-900">
+          <img
+            src="images/NabilaM.png"
+            class="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+            alt="Nabila portrait"
+          >
+        </div>
       </div>
     </div>
 
@@ -240,104 +248,132 @@
 
 <!-- RESUME SECTION -->
 <section id="resume" class="max-w-6xl mx-auto px-6 md:px-10 mt-40">
-<div class="flex justify-center mb-16">
-  <h2 class="text-3xl md:text-5xl font-mono text-green-400 font-bold whitespace-nowrap">Resume</h2>
-</div>
 
-  <div class="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12">
-    
-    <div class="flex flex-col items-center md:items-start">
-<div class="relative group mb-10 flex justify-center md:justify-start">
-  <div class="absolute inset-0 rounded-full bg-green-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-  
-  <div class="relative w-44 h-44 overflow-hidden rounded-full border border-green-400/30 shadow-[0_0_20px_rgba(74,222,128,0.2)] group-hover:shadow-[0_0_35px_rgba(74,222,128,0.4)] transition-all duration-500">
-    <img
-      src="images/LOGO.png"
-      alt="Nabila"
-      class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 hover:scale-[1.35]"
-    >
+  <!-- Title -->
+  <div class="flex justify-center mb-14">
+    <h2 class="text-3xl md:text-5xl font-mono text-green-400 font-bold">
+      Resume
+    </h2>
   </div>
-</div>
 
+  <div class="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-10">
+
+    <!-- LEFT COLUMN -->
+    <div class="flex flex-col items-center md:items-start">
+
+      <!-- Avatar -->
+      <div class="relative group mb-8 flex justify-center md:justify-start">
+        <div class="absolute inset-0 rounded-full bg-green-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+        <div class="relative w-40 h-40 overflow-hidden rounded-full border border-green-400/30 shadow-[0_0_20px_rgba(74,222,128,0.2)] group-hover:shadow-[0_0_30px_rgba(74,222,128,0.35)] transition-all duration-500">
+          <img
+            src="images/LOGO.png"
+            alt="Nabila"
+            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 hover:scale-[1.3]"
+          >
+        </div>
+      </div>
+
+      <!-- Tabs -->
       <nav id="tab-controls-vertical" class="flex flex-col gap-2 w-full">
-        <button 
-          class="tab-btn active-tab group flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-300 text-left"
+
+        <button
+          class="tab-btn active-tab group flex items-center gap-3 px-4 py-2.5 rounded-md transition-all duration-300 text-left"
           data-target="about">
           <span class="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_#4ade80]"></span>
-          <span class="font-mono text-sm tracking-widest uppercase">About Me</span>
+          <span class="font-mono text-sm tracking-widest uppercase text-green-400">
+            About Me
+          </span>
         </button>
 
-        <button 
-          class="tab-btn group flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-300 text-left border border-transparent hover:bg-gray-800/50"
-          data-target="experience">
+        <button
+          class="tab-btn group flex items-center gap-3 px-4 py-2.5 rounded-md transition-all duration-300 text-left border border-transparent hover:bg-gray-800/30"
+          data-target="resume-content">
           <span class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-green-400 transition-colors"></span>
-          <span class="font-mono text-sm tracking-widest uppercase text-gray-400 group-hover:text-green-400">Experience</span>
+          <span class="font-mono text-sm tracking-widest uppercase text-gray-400 group-hover:text-green-400">Experience & Education</span>
         </button>
 
-        <button 
-          class="tab-btn group flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-300 text-left border border-transparent hover:bg-gray-800/50"
-          data-target="education">
-          <span class="w-2 h-2 rounded-full bg-gray-600 group-hover:bg-green-400 transition-colors"></span>
-          <span class="font-mono text-sm tracking-widest uppercase text-gray-400 group-hover:text-green-400">Education</span>
-        </button>
       </nav>
     </div>
 
-    <div class="relative bg-gray-900/40 border border-gray-800 p-8 rounded-xl backdrop-blur-sm" id="tab-container">
-      
+    <!-- RIGHT COLUMN -->
+    <div
+      id="tab-container"
+      class="relative border border-gray-800 p-7 rounded-xl bg-transparent"
+    >
+
+      <!-- ABOUT -->
       <div id="about" class="tab-content transition-opacity duration-500">
-        <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+        <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
           <span class="text-green-400">~/</span>Bio
         </h3>
-        <p class="text-gray-400 text-lg leading-relaxed">
-          <strong class="text-green-400 font-medium">I’m Nabila “ELN”,</strong> 
-          a Backend Developer specializing in Python and RESTful APIs. I focus on building 
-          robust backend architectures and data-driven systems. My toolkit includes 
-          <span class="text-white">Flask, Django, and FastAPI</span>, paired with 
-          <span class="text-white">PostgreSQL and MongoDB</span>.
+
+        <p class="text-gray-400 text-base leading-relaxed">
+          <strong class="text-green-400 font-medium">I’m ELN,</strong>
+          a full-stack developer with hands-on experience building web applications from front-end to back-end.
+          My work focuses on writing clean, maintainable code and creating reliable, user-friendly systems.
+          <br> <br>
+          I have experience working with databases, APIs, and modern development tools, and I enjoy turning ideas into functional, well-structured applications.
+          I continuously improve my skills through real projects and practical problem-solving.
         </p>
       </div>
 
-      <div id="experience" class="tab-content hidden animate-fadeIn">
-        <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-2">
-          <span class="text-green-400">~/</span>Experience
-        </h3>
-        <div class="relative border-l-2 border-gray-800 ml-3">
-          <div class="mb-10 ml-8">
-            <span class="absolute -left-[9px] mt-1.5 w-4 h-4 rounded-full bg-green-400 border-4 border-gray-900"></span>
-            <h4 class="text-white text-xl font-bold">Python Developer</h4>
-            <p class="text-green-400 font-mono text-sm mb-2">Freelancer | March 2023 – Present</p>
-            <p class="text-gray-400">Building scalable API solutions and automating backend workflows for diverse client needs.</p>
-          </div>
-        </div>
-      </div>
+      <!-- RESUME CONTENT -->
+      <div id="resume-content" class="tab-content hidden animate-fadeIn space-y-10">
 
-      <div id="education" class="tab-content hidden animate-fadeIn">
-        <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-2">
-          <span class="text-green-400">~/</span>Education
-        </h3>
-        <div class="space-y-10 relative border-l-2 border-gray-800 ml-3">
-          <div class="ml-8 relative">
-            <span class="absolute -left-[41px] mt-1.5 w-4 h-4 rounded-full bg-green-400 border-4 border-gray-900"></span>
-            <h4 class="text-white text-xl font-bold">Computer Programming Diploma</h4>
-            <p class="text-green-400 font-mono text-sm">Algonquin College | Dec 2025</p>
+        <!-- EXPERIENCE -->
+        <section>
+          <h3 class="text-2xl font-semibold text-white mb-6 flex items-center gap-2">
+            <span class="text-green-400">~/</span>Experience
+          </h3>
+
+          <div class="relative border-l-2 border-gray-800 ml-3">
+            <div class="ml-8 relative pb-6">
+              <span class="absolute -left-[41px] mt-1.5 w-3.5 h-3.5 rounded-full bg-green-400 border-4 border-gray-900"></span>
+
+              <h4 class="text-white text-lg font-semibold">
+                Python Developer
+              </h4>
+
+              <p class="text-green-400 font-mono text-sm mb-1">
+                Freelancer | March 2023 – Present
+              </p>
+
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Building scalable APIs and automating backend workflows
+                for diverse client requirements.
+              </p>
+            </div>
           </div>
-          <div class="ml-8 relative">
-            <span class="absolute -left-[41px] mt-1.5 w-4 h-4 rounded-full bg-gray-700 border-4 border-gray-900"></span>
-            <h4 class="text-white text-xl font-bold">Supply Chain Diploma</h4>
-            <p class="text-green-400 font-mono text-sm">Alison | 2025</p>
+        </section>
+
+        <!-- EDUCATION -->
+        <section>
+          <h3 class="text-2xl font-semibold text-white mb-6 flex items-center gap-2">
+            <span class="text-green-400">~/</span>Education
+          </h3>
+
+          <div class="relative border-l-2 border-gray-800 ml-3">
+            <div class="ml-8 relative">
+              <span class="absolute -left-[41px] mt-1.5 w-3.5 h-3.5 rounded-full bg-green-400 border-4 border-gray-900"></span>
+
+              <h4 class="text-white text-lg font-semibold">
+                Computer Programming Diploma
+              </h4>
+
+              <p class="text-green-400 font-mono text-sm">
+                Algonquin College | Completed in Dec 2025
+              </p>
+            </div>
           </div>
-          <div class="ml-8 relative">
-            <span class="absolute -left-[41px] mt-1.5 w-4 h-4 rounded-full bg-gray-700 border-4 border-gray-900"></span>
-            <h4 class="text-white text-xl font-bold">Operations Management</h4>
-            <p class="text-green-400 font-mono text-sm">Alison | 2021</p>
-          </div>
-        </div>
+        </section>
+
       </div>
 
     </div>
   </div>
 </section>
+
 
 <style>
   .active-tab {
