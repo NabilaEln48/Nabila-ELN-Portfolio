@@ -119,102 +119,87 @@
     </style>
 </head>
 <body class="text-gray-300">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-opacity-95 bg-gray-900 backdrop-blur-sm z-50 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <div class="text-lg md:text-xl font-bold text-white">ELN</div>
-                
-                <!-- Desktop Navigation -->
+<nav class="fixed top-0 w-full bg-transparent backdrop-blur-sm z-50">
+    <div class="max-w-7xl mx-auto px-6 py-6">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center gap-8">
+                <div class="text-lg md:text-xl font-bold text-white tracking-tight">ELN</div>
                 <div class="hidden md:flex gap-6">
-                    <a href="#home" class="nav-link text-gray-300 hover:text-teal-400 text-sm">Home</a>
-                    <a href="#about" class="nav-link text-gray-300 hover:text-teal-400 text-sm">About</a>
-                    <a href="#projects" class="nav-link text-gray-300 hover:text-teal-400 text-sm">Projects</a>
-                    <a href="#contact" class="nav-link text-gray-300 hover:text-teal-400 text-sm">Contact</a>
-                </div>
-                
-                <!-- Desktop Social Icons -->
-                <div class="hidden md:flex gap-3">
-                    <a href="mailto:nabilaelnm@gmail.com" class="text-gray-300 hover:text-teal-400 transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                        </svg>
-                    </a>
-                    <a href="https://github.com/NabilaEln48" class="text-gray-300 hover:text-teal-400 transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/nabilaeln48/" class="text-gray-300 hover:text-teal-400 transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                    </a>
-                </div>
-
-                <!-- Mobile Hamburger -->
-                <button class="md:hidden hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu fixed top-0 right-0 w-64 h-full bg-gray-900 shadow-2xl md:hidden z-50" id="mobile-menu">
-            <div class="flex flex-col p-6 space-y-6 mt-16">
-                <a href="#home" class="mobile-menu-link text-gray-300 hover:text-teal-400 text-xl">Home</a>
-                <a href="#about" class="mobile-menu-link text-gray-300 hover:text-teal-400 text-xl">About</a>
-                <a href="#projects" class="mobile-menu-link text-gray-300 hover:text-teal-400 text-xl">Projects</a>
-                <a href="#contact" class="mobile-menu-link text-gray-300 hover:text-teal-400 text-xl">Contact</a>
-                
-                <div class="flex gap-4 pt-4 border-t border-gray-700">
-                    <a href="mailto:nabilaelnm@gmail.com" class="text-gray-300 hover:text-teal-400 transition">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                        </svg>
-                    </a>
-                    <a href="https://github.com/NabilaEln48" class="text-gray-300 hover:text-teal-400 transition">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/nabilaeln48/" class="text-gray-300 hover:text-teal-400 transition">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                    </a>
+                    <a href="#home" class="nav-link text-white hover:text-teal-400 text-sm font-semibold transition">Home</a>
+                    <a href="#about" class="nav-link text-white hover:text-teal-400 text-sm font-semibold transition">About</a>
+                    <a href="#projects" class="nav-link text-white hover:text-teal-400 text-sm font-semibold transition">Projects</a>
+                    <a href="#contact" class="nav-link text-white hover:text-teal-400 text-sm font-semibold transition">Contact</a>
                 </div>
             </div>
+
+            <div class="hidden md:flex items-center gap-5">
+                <a href="mailto:nabilaelnm@gmail.com" class="text-white hover:text-teal-400 transition">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                </a>
+                <a href="https://github.com/NabilaEln48" class="text-white hover:text-teal-400 transition">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+
+            <button class="md:hidden flex flex-col gap-1.5 z-[60]" id="hamburger">
+                <span class="w-6 h-0.5 bg-white transition-all duration-300 line1"></span>
+                <span class="w-6 h-0.5 bg-white transition-all duration-300 line2"></span>
+                <span class="w-6 h-0.5 bg-white transition-all duration-300 line3"></span>
+            </button>
         </div>
-    </nav>
+    </div>
+
+    <div class="mobile-menu fixed top-0 right-0 w-64 h-full bg-gray-900 shadow-2xl translate-x-full transition-transform duration-300 ease-in-out md:hidden z-50" id="mobile-menu">
+        <div class="flex flex-col p-6 space-y-6 mt-20">
+            <a href="#home" class="mobile-link text-gray-300 hover:text-teal-400 text-xl">Home</a>
+            <a href="#about" class="mobile-link text-gray-300 hover:text-teal-400 text-xl">About</a>
+            <a href="#projects" class="mobile-link text-gray-300 hover:text-teal-400 text-xl">Projects</a>
+            <a href="#contact" class="mobile-link text-gray-300 hover:text-teal-400 text-xl">Contact</a>
+        </div>
+    </div>
+</nav>
 
     <!-- Home Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 w-full">
-            <div id="avatar-container" class="flex-shrink-0 order-1 md:order-1"></div>
-            <div class="flex-1 order-2 md:order-2 text-center md:text-left">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    Hello, I'm <span class="text-teal-400">ELN</span><span class="cursor-blink text-teal-400">|</span>
-                </h1>
-                <p class="text-base md:text-xl text-gray-400 mb-8 leading-relaxed max-w-2xl">
-                    Powered by curiosity and coffee, occasionally arguing with my monitor about semicolons. 
-                    I build <span class="text-white font-semibold">scalable backend systems</span> using 
-                    Python, Java, and modern web technologies.
-                </p>
-                <button class="border-2 border-teal-400 text-teal-400 px-6 md:px-8 py-3 rounded hover:bg-teal-400 hover:text-gray-900 transition flex items-center gap-2 mx-auto md:mx-0">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                    </svg>
-                    Let's Connect
-                </button>
-            </div>
-        </div>
-    </section>
+    <section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden opacity-0 transition-opacity duration-1000" onload="this.classList.remove('opacity-0')">
+    <div class="relative z-10 max-w-7xl mx-auto flex flex-col items-center justify-center gap-8 w-full text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Hello, <span id="typewriter" class="text-teal-400"></span><span class="cursor-blink text-teal-400">|</span>
+        </h1>
+        
+        <p class="text-base md:text-xl text-gray-400 mb-8 leading-relaxed max-w-2xl mx-auto animate-fade-in">
+            Powered by curiosity and coffee, occasionally arguing with my monitor about semicolons. 
+            I build <span class="text-white font-semibold">scalable backend systems</span> using 
+            Python, Java, and modern web technologies.
+        </p>
+        
+        <button class="border-2 border-teal-400 text-teal-400 px-6 md:px-8 py-3 rounded hover:bg-teal-400 hover:text-gray-900 transition flex items-center gap-2 mx-auto animate-bounce-subtle">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            Let's Connect
+        </button>
+    </div>
+</section>
+<style>
+    /* Blinking Cursor Animation */
+    .cursor-blink {
+        animation: blink 0.8s infinite;
+    }
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+
+    /* Subtle Fade In for Paragraph */
+    .animate-fade-in {
+        animation: fadeIn 2s ease-in forwards;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
 
     <!-- About Section -->
     <section id="about" class="min-h-screen flex items-center justify-center px-6 py-20">
@@ -223,25 +208,21 @@
             <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
                 <div class="flex-1 order-2 md:order-1">
                     <p class="text-base md:text-lg text-gray-400 mb-6">
-                        <span class="text-white font-semibold">I'm Nabila "ELN"</span> — a Software Engineer who loves 
-                        clean code, clean UI, and just the right amount of chaos. I turn complex problems into intuitive, 
-                        user-friendly experiences—blending solid backend logic with polished front-end design.
+                        <span class="text-white font-semibold">I'm Nabila "ELN"</span> a Software Engineer who loves clean code, clean UI, and just the right amount of chaos. 
+                        I specialize in Backend Architecture, turning complex data problems into high-performance, user-friendly solutions. 
+                        With a focus on Python (FastAPI/Flask), I design everything from asynchronous data pipelines to secure, 
+                        role-based access systems—blending solid backend logic with polished front-end experiences.
                     </p>
                     <p class="text-base md:text-lg text-gray-400 mb-6">
-                        I'm a <span class="text-white font-semibold">backend developer</span> specializing in 
-                        <span class="text-teal-400 font-semibold">Python</span> and database systems. I build scalable APIs, 
-                        implement secure authentication, and design efficient database architectures.
-                    </p>
-                    <p class="text-base md:text-lg text-gray-400 mb-6">
-                        I completed my <span class="text-white font-semibold">Computer Programming Diploma</span> at 
-                        <span class="text-teal-400 font-semibold">Algonquin College</span> in December 2025. Previously worked 
-                        as an Interpreter at <span class="text-teal-400 font-semibold">CanTalk (Canada) Inc.</span>
+                        Before becoming an engineer, I worked as a<span class="text-white font-semibold"> professional Interpreter. </span>
+                        This taught me how to bridge gaps between complex systems—a skill 
+                        I now use to translate business requirements into clean, maintainable code.
                     </p>
                     <p class="text-base md:text-lg text-gray-400 mb-8">Here are some technologies I have been working with:</p>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="space-y-2">
                             <div class="flex items-center gap-2 text-teal-400">
-                                <span>▸</span> Python (Expert)
+                                <span>▸</span> Python
                             </div>
                             <div class="flex items-center gap-2 text-teal-400">
                                 <span>▸</span> FastAPI
@@ -264,13 +245,13 @@
                                 <span>▸</span> Docker
                             </div>
                             <div class="flex items-center gap-2 text-teal-400">
-                                <span>▸</span> Redis
+                                <span>▸</span> Linux
                             </div>
                         </div>
                     </div>
                     <p class="text-base md:text-lg text-gray-400 mt-8">
                         When I'm not coding, you'll probably find me drawing, skateboarding, surfing, 
-                        or telling myself to take a break (and then not taking it).
+                        or telling myself to take a break "then not taking it".
                     </p>
                 </div>
                 <div class="flex-shrink-0 order-1 md:order-2 w-full md:w-auto">
@@ -475,8 +456,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 md:py-12 text-center border-t border-gray-800">
-        <p class="text-sm md:text-base text-gray-400">© 2026 NABILA M. "ELN" — Software Developer</p>
+    <footer class="py-4 text-center border-t border-gray-800">
+    <p class="text-sm text-gray-400">Built and designed by ELN <br>© All rights reserved.</p>
     </footer>
 
     <script>
@@ -505,30 +486,24 @@
                 mobileMenu.classList.remove('open');
             }
         });
-        // Generate pixelated avatar
-        const avatarContainer = document.getElementById('avatar-container');
-        const rows = 30;
-        const cols = 20;
-        
-        for (let i = 0; i < rows; i++) {
-            const row = document.createElement('div');
-            row.style.display = 'flex';
-            for (let j = 0; j < cols; j++) {
-                const pixel = document.createElement('div');
-                pixel.className = 'avatar-pixel';
-                pixel.style.animationDelay = `${Math.random() * 2}s`;
-                
-                // Create a simple silhouette shape
-                if ((i > 5 && i < 12 && j > 6 && j < 14) || // head
-                    (i >= 12 && i < 28 && j > 4 && j < 16)) { // body
-                    pixel.style.opacity = '0.8';
-                }
-                
-                row.appendChild(pixel);
-            }
-            avatarContainer.appendChild(row);
-        }
+        // Typewriter Effect Logic
+    const text = "ELN Here!";
+    const speed = 100; // milliseconds
+    let i = 0;
 
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("typewriter").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    // Trigger animations on load
+    window.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('home').classList.remove('opacity-0');
+        typeWriter();
+    });
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
