@@ -480,7 +480,7 @@
           <!-- EXPERIENCE -->
           <section>
             <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-2">
-              <span class="text-emerald-400">~/</span>Experience
+              <span class="text-emerald-400">~/</span>Additional Experience
             </h3>
 
             <div class="relative border-l-2 border-white/10 ml-3">
@@ -488,15 +488,11 @@
                 <span class="absolute -left-[41px] mt-1.5 w-3.5 h-3.5 rounded-full bg-cyan-500 border-4 border-[#0a0f1c] shadow-lg shadow-cyan-400/50"></span>
 
                 <h4 class="text-white text-xl font-bold mb-2">
-                  Independent Backend Developer
+                  Interpreter
                 </h4>
 
                 <p class="text-cyan-400 font-mono text-sm mb-3">
-                  UPWORK | 2020 – Present
-                </p>
-
-                <p class="text-gray-400 text-base leading-relaxed">
-                  Specialized in Python backend development, building RESTful APIs, implementing database solutions, and creating automation tools. Focus on FastAPI, Flask, PostgreSQL, and MongoDB.
+                  CanTalk | Nov 2024 – Mar 2025
                 </p>
               </div>
             </div>
@@ -708,29 +704,6 @@
 
   </div>
 </section>
-<script>
-  let currentSlide = 0;
-  const track = document.getElementById('featured-track');
-  const slides = document.querySelectorAll('.featured-slide');
-  const totalSlides = slides.length;
-
-  function updateSlider() {
-    track.style.transform = `translateX(-${currentSlide * 100}%)`;
-  }
-
-  document.getElementById('next-featured').addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateSlider();
-  });
-
-  document.getElementById('prev-featured').addEventListener('click', () => {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    updateSlider();
-  });
-</script>
-
-
-
 
 
   <!-- SKILLS SECTION -->
@@ -794,189 +767,6 @@
 
     </div>
   </section>
-
-  <!-- CERTIFICATIONS SECTION (REDESIGNED) -->
-  <section id="certifications" class="py-32 px-6 md:px-10">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <p class="text-sm font-mono text-gray-500 uppercase tracking-wider mb-3">Continuous Learning</p>
-        <h2 class="text-4xl md:text-5xl font-black mb-4">
-          <span class="text-gradient">Certifications</span>
-        </h2>
-        <p class="text-gray-400 text-lg">Professional recognition of technical excellence</p>
-      </div>
-
-      <!-- Filter Buttons -->
-      <div class="flex justify-center gap-4 mb-12 flex-wrap">
-        <button class="cert-filter-btn active px-6 py-3 rounded-full font-mono text-sm bg-cyan-500 text-white transition-all" data-filter="development">
-          Development
-        </button>
-        <button class="cert-filter-btn px-6 py-3 rounded-full font-mono text-sm glass text-gray-400 hover:text-white transition-all" data-filter="business">
-          Business
-        </button>
-      </div>
-
-      <!-- Certification Carousel -->
-      <div class="relative">
-        <div class="cert-carousel pb-6">
-          
-          <!-- Development Certs -->
-          <div class="cert-slide cert-card-development" data-category="development">
-            <div class="cert-card-container h-full">
-              <div class="cert-card-inner glass rounded-2xl p-8 border border-gray-800 h-full">
-                <div class="flex items-start gap-4 mb-6">
-                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-cyan-500/30 flex-shrink-0">
-                    <i class="fa-brands fa-linkedin text-2xl text-cyan-400"></i>
-                  </div>
-                  <div class="flex-1">
-                    <h3 class="text-white text-xl font-bold mb-2">Software Architecture: Patterns for Developers</h3>
-                    <p class="text-gray-400 font-mono text-sm">LinkedIn Learning</p>
-                    <p class="text-cyan-400 font-mono text-xs mt-1">Jul 2025</p>
-                  </div>
-                </div>
-                <p class="text-gray-500 text-sm">
-                  Comprehensive study of software architecture patterns, design principles, and best practices for building scalable applications.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="cert-slide cert-card-development" data-category="development">
-            <div class="cert-card-container h-full">
-              <div class="cert-card-inner glass rounded-2xl p-8 border border-gray-800 h-full">
-                <div class="flex items-start gap-4 mb-6">
-                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-cyan-500/30 flex-shrink-0">
-                    <i class="fa-brands fa-linkedin text-2xl text-cyan-400"></i>
-                  </div>
-                  <div class="flex-1">
-                    <h3 class="text-white text-xl font-bold mb-2">Software Testing Foundations</h3>
-                    <p class="text-gray-400 font-mono text-sm">LinkedIn Learning</p>
-                    <p class="text-cyan-400 font-mono text-xs mt-1">Jul 2025</p>
-                  </div>
-                </div>
-                <p class="text-gray-500 text-sm">
-                  Testing methodologies throughout the software development lifecycle, including unit testing, integration testing, and QA practices.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="cert-slide cert-card-development" data-category="development">
-            <div class="cert-card-container h-full">
-              <div class="cert-card-inner glass rounded-2xl p-8 border border-gray-800 h-full">
-                <div class="flex items-start gap-4 mb-6">
-                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 flex items-center justify-center border border-emerald-500/30 flex-shrink-0">
-                    <i class="fa-brands fa-free-code-camp text-2xl text-emerald-400"></i>
-                  </div>
-                  <div class="flex-1">
-                    <h3 class="text-white text-xl font-bold mb-2">JavaScript Algorithms and Data Structures</h3>
-                    <p class="text-gray-400 font-mono text-sm">freeCodeCamp</p>
-                    <p class="text-emerald-400 font-mono text-xs mt-1">Feb 2025</p>
-                  </div>
-                </div>
-                <p class="text-gray-500 text-sm">
-                  Comprehensive certification covering algorithms, data structures, functional programming, and ES6+ JavaScript features.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="cert-slide cert-card-development" data-category="development">
-            <div class="cert-card-container h-full">
-              <div class="cert-card-inner glass rounded-2xl p-8 border border-gray-800 h-full">
-                <div class="flex items-start gap-4 mb-6">
-                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-cyan-500/30 flex-shrink-0">
-                    <i class="fa-solid fa-code text-2xl text-cyan-400"></i>
-                  </div>
-                  <div class="flex-1">
-                    <h3 class="text-white text-xl font-bold mb-2">Python Programming</h3>
-                    <p class="text-gray-400 font-mono text-sm">Sololearn</p>
-                    <p class="text-cyan-400 font-mono text-xs mt-1">Jul 2023</p>
-                  </div>
-                </div>
-                <p class="text-gray-500 text-sm">
-                  Core and intermediate Python programming, covering OOP, data structures, file handling, and advanced Python concepts.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Business Certs -->
-          <div class="cert-slide cert-card-business hidden" data-category="business">
-            <div class="cert-card-container h-full">
-              <div class="cert-card-inner glass rounded-2xl p-8 border border-gray-800 h-full">
-                <div class="flex items-start gap-4 mb-6">
-                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 flex items-center justify-center border border-blue-500/30 flex-shrink-0">
-                    <i class="fa-solid fa-award text-2xl text-blue-400"></i>
-                  </div>
-                  <div class="flex-1">
-                    <h3 class="text-white text-xl font-bold mb-2">Fundamentals of Project Management</h3>
-                    <p class="text-gray-400 font-mono text-sm">PMI</p>
-                    <p class="text-blue-400 font-mono text-xs mt-1">May 2025</p>
-                  </div>
-                </div>
-                <p class="text-gray-500 text-sm">
-                  Predictive project management fundamentals, including planning, execution, monitoring, and project lifecycle management.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="cert-slide cert-card-business hidden" data-category="business">
-            <div class="cert-card-container h-full">
-              <div class="cert-card-inner glass rounded-2xl p-8 border border-gray-800 h-full">
-                <div class="flex items-start gap-4 mb-6">
-                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 flex items-center justify-center border border-emerald-500/30 flex-shrink-0">
-                    <i class="fa-solid fa-warehouse text-2xl text-emerald-400"></i>
-                  </div>
-                  <div class="flex-1">
-                    <h3 class="text-white text-xl font-bold mb-2">Supply Chain Management Diploma</h3>
-                    <p class="text-gray-400 font-mono text-sm">Alison</p>
-                    <p class="text-emerald-400 font-mono text-xs mt-1">2024</p>
-                  </div>
-                </div>
-                <p class="text-gray-500 text-sm">
-                  Comprehensive supply chain management covering logistics, procurement, inventory management, and optimization strategies.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="cert-slide cert-card-business hidden" data-category="business">
-            <div class="cert-card-container h-full">
-              <div class="cert-card-inner glass rounded-2xl p-8 border border-gray-800 h-full">
-                <div class="flex items-start gap-4 mb-6">
-                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 flex items-center justify-center border border-blue-500/30 flex-shrink-0">
-                    <i class="fa-solid fa-bullseye text-2xl text-blue-400"></i>
-                  </div>
-                  <div class="flex-1">
-                    <h3 class="text-white text-xl font-bold mb-2">Digital Marketing Foundations</h3>
-                    <p class="text-gray-400 font-mono text-sm">Edraak</p>
-                    <p class="text-blue-400 font-mono text-xs mt-1">Aug 2022</p>
-                  </div>
-                </div>
-                <p class="text-gray-500 text-sm">
-                  Digital marketing strategies, social media marketing, SEO basics, and content marketing principles.
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Scroll Buttons -->
-        <button id="cert-scroll-left" class="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/20 transition-all -ml-6 z-10">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button id="cert-scroll-right" class="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/20 transition-all -mr-6 z-10">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-
 
 
   <!-- CONTACT SECTION -->
@@ -1230,4 +1020,23 @@
         submitBtn.innerHTML = originalText;
       }, 3000);
     });
+
+     let currentSlide = 0;
+  const track = document.getElementById('featured-track');
+  const slides = document.querySelectorAll('.featured-slide');
+  const totalSlides = slides.length;
+
+  function updateSlider() {
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  document.getElementById('next-featured').addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlider();
+  });
+
+  document.getElementById('prev-featured').addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlider();
+  });
   </script>
