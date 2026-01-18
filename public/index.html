@@ -6,42 +6,29 @@
     <title>ELN - Software Engineer Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+/* =========================
+   GLOBAL BASE
+========================= */
 body {
-    /* Kept your background */
     background: linear-gradient(to bottom, #0f0c29, #302b63);
     background-attachment: fixed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-    /* FIX: Set global text color to white/off-white for readability */
-    color: #e2e8f0; 
+    color: #e2e8f0;
     margin: 0;
     line-height: 1.6;
 }
 
-/* FIX: Ensure Headings are bright and distinct */
 h1, h2, h3 {
     color: #ffffff;
     letter-spacing: 0.5px;
 }
 
-.avatar-pixel {
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    margin: 1px;
-    background: #4fd1c5; /* Cyan accent */
-    opacity: 0;
-    animation: pixelFade 3s ease-in-out infinite;
-}
-
-@keyframes pixelFade {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
-}
-
+/* =========================
+   CURSOR / TYPEWRITER
+========================= */
 .cursor-blink {
-    animation: blink 1s infinite;
-    color: #4fd1c5; /* Match accent color */
+    animation: blink 0.9s infinite;
+    color: #4fd1c5;
 }
 
 @keyframes blink {
@@ -49,15 +36,32 @@ h1, h2, h3 {
     50%, 100% { opacity: 0; }
 }
 
+/* =========================
+   FADE-IN SECTIONS
+========================= */
+.section-fade {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   NAV LINKS
+========================= */
 .nav-link {
     position: relative;
-    transition: color 0.3s;
-    color: #cbd5e0; /* Subtle light gray */
+    color: #cbd5e0;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .nav-link:hover {
-    color: #ffffff; /* Bright white on hover */
+    color: #ffffff;
 }
 
 .nav-link::after {
@@ -75,10 +79,12 @@ h1, h2, h3 {
     width: 100%;
 }
 
+/* =========================
+   PROJECT CARDS
+========================= */
 .project-card {
-    /* FIX: Modern Glassmorphism effect */
-    background: rgba(255, 255, 255, 0.05); /* Very light transparent white */
-    backdrop-filter: blur(10px); /* Blurs background behind card */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     padding: 20px;
@@ -87,60 +93,32 @@ h1, h2, h3 {
 
 .project-card:hover {
     background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(79, 209, 197, 0.5); /* Cyan glow on hover */
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(79, 209, 197, 0.5);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-/* FIX: Card Text specifically */
 .project-card p {
-    color: #a0aec0; /* Softer gray for descriptions */
+    color: #a0aec0;
 }
 
-.section-fade {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s;
+/* =========================
+   MOBILE MENU
+========================= */
+#mobile-dropdown {
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.section-fade.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* =========================
+   SCROLL OFFSET
+========================= */
+section {
+    scroll-margin-top: 100px;
 }
 
-/* Mobile Menu Styles */
-.mobile-menu {
-    background: #1a1645; /* Solid dark color for mobile overlay */
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-}
-
-.mobile-menu.open {
-    transform: translateX(0);
-}
-
-/* Hamburger Animation */
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: #4fd1c5;
-    margin: 5px 0;
-    transition: all 0.3s;
-}
-
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 8px);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
-}
-
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
     .avatar-pixel {
         width: 3px;
@@ -148,105 +126,107 @@ h1, h2, h3 {
         margin: 0.5px;
     }
 }
-    </style>
+</style>
+
 </head>
 <body class="text-gray-300">
-<nav class="fixed top-0 w-full bg-transparent backdrop-blur-sm z-50">
-    <div class="max-w-7xl mx-auto px-6 py-6">
-        <div class="flex justify-between items-center">
-            <div class="flex items-center gap-8">
-                <div class="text-lg md:text-xl font-bold text-white tracking-tight">ELN</div>
-                <div class="hidden md:flex gap-6">
-                    <a href="#home" class="nav-link text-white hover:text-teal-400 text-sm font-semibold transition">Home</a>
-                    <a href="#about" class="nav-link text-white hover:text-teal-400 text-sm font-semibold transition">About</a>
-                    <a href="#projects" class="nav-link text-white hover:text-teal-400 text-sm font-semibold transition">Projects</a>
-                    <a href="#contact" class="nav-link text-white hover:text-teal-400 text-sm font-semibold transition">Contact</a>
-                </div>
-            </div>
-
-            <div class="hidden md:flex items-center gap-5">
-                <a href="mailto:nabilaelnm@gmail.com" class="text-white hover:text-teal-400 transition">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
-                </a>
-                <a href="https://github.com/NabilaEln48" class="text-white hover:text-teal-400 transition">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </a>
-            </div>
-
-            <button class="md:hidden flex flex-col gap-1.5 z-[60]" id="hamburger">
-                <span class="w-6 h-0.5 bg-white transition-all duration-300 line1"></span>
-                <span class="w-6 h-0.5 bg-white transition-all duration-300 line2"></span>
-                <span class="w-6 h-0.5 bg-white transition-all duration-300 line3"></span>
-            </button>
-        </div>
-    </div>
-
-    <div class="mobile-menu fixed top-0 right-0 w-64 h-full bg-gray-900 shadow-2xl translate-x-full transition-transform duration-300 ease-in-out md:hidden z-50" id="mobile-menu">
-        <div class="flex flex-col p-6 space-y-6 mt-20">
-            <a href="#home" class="mobile-link text-gray-300 hover:text-teal-400 text-xl">Home</a>
-            <a href="#about" class="mobile-link text-gray-300 hover:text-teal-400 text-xl">About</a>
-            <a href="#projects" class="mobile-link text-gray-300 hover:text-teal-400 text-xl">Projects</a>
-            <a href="#contact" class="mobile-link text-gray-300 hover:text-teal-400 text-xl">Contact</a>
-        </div>
-    </div>
-</nav>
-
-    <!-- Home Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
-    
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[120px] pointer-events-none"></div>
-
-    <div class="relative z-10 max-w-5xl mx-auto w-full">
-        <div class="bg-white/5 backdrop-blur-lg border border-white/10 p-8 md:p-16 rounded-3xl shadow-2xl text-center">
-            
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-white">
-                Hello, <span id="typewriter" class="text-teal-400"></span><span class="cursor-blink text-teal-400">|</span>
-            </h1>
-            
-            <p class="text-lg md:text-2xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
-                Powered by curiosity and coffee. I architect 
-                <span class="text-teal-400 font-mono">scalable backend systems</span> 
-                and craft digital experiences with Python, Java, and modern tech.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#contact" class="group relative px-8 py-4 bg-teal-400 text-gray-900 font-bold rounded-xl transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(79,209,197,0.4)] flex items-center gap-2">
-                    <svg class="w-5 h-5 transition-transform group-hover:rotate-12" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                    </svg>
-                    Let's Connect
-                </a>
-
-                <a href="#projects" class="px-8 py-4 border border-white/20 text-white font-medium rounded-xl hover:bg-white/10 transition-all">
-                    View My Work
-                </a>
-            </div>
-        </div>
-
-        
-    </div>
-</section>
 <style>
-    /* Blinking Cursor Animation */
-    .cursor-blink {
-        animation: blink 0.8s infinite;
-    }
-    @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
+    /* Fixes sections being hidden under the fixed header when clicking links */
+    section {
+        scroll-margin-top: 100px;
     }
 
-    /* Subtle Fade In for Paragraph */
-    .animate-fade-in {
-        animation: fadeIn 2s ease-in forwards;
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+    /* Smooth transition for the mobile dropdown */
+    #mobile-dropdown.active {
+        display: block !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
     }
 </style>
 
+<header class="fixed top-0 left-0 w-full z-[100]">
+    <nav class="max-w-7xl mx-auto px-6 py-6 relative">
+        <div class="flex justify-between items-center bg-[#0f172a]/80 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-4 shadow-2xl relative z-[110]">
+            
+            <div class="flex items-center">
+                <a href="#home" class="text-2xl font-black text-white tracking-tighter hover:text-teal-400 transition-colors">
+                    ELN<span class="text-teal-400">.</span>
+                </a>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#home" class="text-xs font-mono uppercase tracking-widest text-slate-400 hover:text-teal-400 transition-colors">Home</a>
+                <a href="#about" class="text-xs font-mono uppercase tracking-widest text-slate-400 hover:text-teal-400 transition-colors">About</a>
+                <a href="#projects" class="text-xs font-mono uppercase tracking-widest text-slate-400 hover:text-teal-400 transition-colors">Projects</a>
+                <a href="#journey" class="text-xs font-mono uppercase tracking-widest text-slate-400 hover:text-teal-400 transition-colors">Journey</a>
+                <a href="#testimonials" class="text-xs font-mono uppercase tracking-widest text-slate-400 hover:text-teal-400 transition-colors">Testimonials</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden sm:block px-5 py-2 bg-teal-400 text-slate-950 text-[10px] font-black uppercase tracking-widest rounded-lg hover:bg-white transition-all">
+                    Hire Me
+                </a>
+                <button id="menu-toggle" class="lg:hidden text-white p-2 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-dropdown" class="absolute top-[80%] left-8 right-8 mt-2 hidden opacity-0 translate-y-[-20px] transition-all duration-300 ease-out lg:hidden z-[105]">
+            <div class="bg-[#1e293b]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl flex flex-col gap-4">
+                <a href="#home" class="mobile-link text-lg font-bold text-white">Home</a>
+                <a href="#about" class="mobile-link text-lg font-bold text-white">About</a>
+                <a href="#projects" class="mobile-link text-lg font-bold text-white">Projects</a>
+                <a href="#journey" class="mobile-link text-lg font-bold text-white">Journey</a>
+                <a href="#testimonials" class="mobile-link text-lg font-bold text-white">Testimonials</a>
+                <div class="h-[1px] bg-white/10 my-1"></div>
+                <a href="#contact" class="mobile-link text-lg font-bold text-teal-400">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+    <!-- Home Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto w-full">
+        <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-center">
+            
+            <div class="lg:col-span-7 p-8 md:p-16 text-left">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-white">
+                    Hello, <br>
+                    <span id="typewriter" class="text-teal-400"></span><span class="cursor-blink text-teal-400">|</span>
+                </h1>
+                
+                <p class="text-base md:text-lg text-slate-300 mb-10 leading-relaxed max-w-xl">
+                    Powered by curiosity, guided by coffee, and haunted by code. <br>
+                    I architect <span class="text-teal-400 font-mono">scalable backend systems</span> 
+                    and craft digital experiences with Python, Java, and modern tech.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center gap-4">
+                    <a href="#contact" class="group px-8 py-4 bg-teal-400 text-gray-900 font-bold rounded-xl transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(79,209,197,0.4)] flex items-center gap-2">
+                        Let's Connect
+                    </a>
+                    <a href="#projects" class="px-8 py-4 border border-white/20 text-white font-medium rounded-xl hover:bg-white/10 transition-all">
+                        View My Work
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 h-[400px] lg:h-[500px] relative overflow-hidden flex items-center justify-center bg-teal-400/5 lg:border-l border-white/10">
+                
+                <div class="w-full h-full transform scale-50 md:scale-75 lg:scale-95 flex items-center justify-center">
+                    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js"></script>
+                    <spline-viewer url="https://prod.spline.design/fpUQcz0NS5xkmXRN/scene.splinecode" class="w-full h-full"></spline-viewer>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
     <!-- About Section -->
     <section id="about" class="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
     
@@ -526,72 +506,87 @@ h1, h2, h3 {
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+/* =========================
+   MOBILE MENU (SAFE)
+========================= */
+const menuToggle = document.getElementById('menu-toggle');
+const mobileDropdown = document.getElementById('mobile-dropdown');
+const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('open');
+if (menuToggle && mobileDropdown) {
+    menuToggle.addEventListener('click', () => {
+        mobileDropdown.classList.toggle('hidden');
+        setTimeout(() => {
+            mobileDropdown.classList.toggle('opacity-100');
+            mobileDropdown.classList.toggle('translate-y-0');
+        }, 10);
+    });
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileDropdown.classList.add('hidden');
+            mobileDropdown.classList.remove('opacity-100', 'translate-y-0');
         });
+    });
+}
 
-        // Close mobile menu when clicking on a link
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('open');
-            });
-        });
+/* =========================
+   TYPEWRITER EFFECT
+========================= */
+const typeText = "ELN Here!";
+const typeSpeed = 90;
+let typeIndex = 0;
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target) && mobileMenu.classList.contains('open')) {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('open');
+function typeWriter() {
+    const target = document.getElementById("typewriter");
+    if (!target) return;
+
+    if (typeIndex < typeText.length) {
+        target.textContent += typeText.charAt(typeIndex);
+        typeIndex++;
+        setTimeout(typeWriter, typeSpeed);
+    }
+}
+
+/* =========================
+   FADE-IN ON SCROLL
+========================= */
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
-        // Typewriter Effect Logic
-    const text = "ELN Here!";
-    const speed = 100; // milliseconds
-    let i = 0;
+    },
+    { threshold: 0.15 }
+);
 
-    function typeWriter() {
-        if (i < text.length) {
-            document.getElementById("typewriter").innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
+document.querySelectorAll('.section-fade').forEach(section => {
+    observer.observe(section);
+});
+
+/* =========================
+   SMOOTH SCROLL
+========================= */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-    }
-
-    // Trigger animations on load
-    window.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('home').classList.remove('opacity-0');
-        typeWriter();
     });
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
+});
 
-        // Intersection Observer for fade-in animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
+/* =========================
+   INIT
+========================= */
+window.addEventListener('DOMContentLoaded', () => {
+    typeWriter();
+});
+</script>
 
-        document.querySelectorAll('.section-fade').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
