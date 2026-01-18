@@ -248,259 +248,277 @@ h1, h2, h3 {
 </style>
 
     <!-- About Section -->
-    <section id="about" class="min-h-screen flex items-center justify-center px-6 py-20">
-        <div class="max-w-7xl mx-auto section-fade">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12">/ about me</h2>
-            <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
-                <div class="flex-1 order-2 md:order-1">
-                    <p class="text-base md:text-lg text-gray-400 mb-6">
-                        <span class="text-white font-semibold">I'm Nabila "ELN"</span> a Software Engineer who loves clean code, clean UI, and just the right amount of chaos. 
-                        I specialize in Backend Architecture, turning complex data problems into high-performance, user-friendly solutions. 
-                        With a focus on Python (FastAPI/Flask), I design everything from asynchronous data pipelines to secure, 
-                        role-based access systems—blending solid backend logic with polished front-end experiences.
-                    </p>
-                    <p class="text-base md:text-lg text-gray-400 mb-6">
-                        Before becoming an engineer, I worked as a<span class="text-white font-semibold"> professional Interpreter. </span>
-                        This taught me how to bridge gaps between complex systems—a skill 
-                        I now use to translate business requirements into clean, maintainable code.
-                    </p>
-                    <p class="text-base md:text-lg text-gray-400 mb-8">Here are some technologies I have been working with:</p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="space-y-2">
-                            <div class="flex items-center gap-2 text-teal-400">
-                                <span>▸</span> Python
-                            </div>
-                            <div class="flex items-center gap-2 text-teal-400">
-                                <span>▸</span> FastAPI
-                            </div>
-                            <div class="flex items-center gap-2 text-teal-400">
-                                <span>▸</span> Flask
-                            </div>
-                            <div class="flex items-center gap-2 text-teal-400">
-                                <span>▸</span> Java
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="flex items-center gap-2 text-teal-400">
-                                <span>▸</span> PostgreSQL
-                            </div>
-                            <div class="flex items-center gap-2 text-teal-400">
-                                <span>▸</span> MongoDB
-                            </div>
-                            <div class="flex items-center gap-2 text-teal-400">
-                                <span>▸</span> Docker
-                            </div>
-                            <div class="flex items-center gap-2 text-teal-400">
-                                <span>▸</span> Linux
-                            </div>
-                        </div>
+    <section id="about" class="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
+    
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto section-fade">
+        <h2 class="text-3xl md:text-5xl font-bold mb-12 flex items-center gap-4 text-white">
+            <span class="text-teal-400 font-mono text-2xl md:text-3xl">01.</span> About Me
+            <div class="h-[1px] bg-white/20 flex-grow"></div>
+        </h2>
+
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+            
+            <div class="flex-1 order-2 lg:order-1 bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl shadow-xl">
+                <p class="text-base md:text-lg text-slate-300 mb-6">
+                    I'm <span class="text-teal-400 font-semibold">Nabila "ELN"</span>, a Software Engineer who loves clean code, clean UI, and just the right amount of chaos. 
+                    I specialize in <span class="text-white border-b border-teal-400/50">Backend Architecture</span>, turning complex data problems into high-performance solutions.
+                </p>
+                
+                <p class="text-base md:text-lg text-slate-300 mb-6 italic border-l-4 border-teal-400 pl-4 bg-teal-400/5 py-2">
+                    "Before becoming an engineer, I worked as a professional Interpreter. This taught me how to bridge gaps—a skill I now use to translate business requirements into clean code."
+                </p>
+
+                <p class="text-sm font-bold uppercase tracking-widest text-teal-400 mb-4">Tech Stack</p>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    <div class="flex items-center gap-2 text-slate-300 text-sm bg-white/5 border border-white/5 px-3 py-2 rounded-lg hover:border-teal-400/50 transition-colors">
+                        <span class="text-teal-400">▸</span> Python
                     </div>
-                    <p class="text-base md:text-lg text-gray-400 mt-8">
-                        When I'm not coding, you'll probably find me drawing, skateboarding, surfing, 
-                        or telling myself to take a break "then not taking it".
-                    </p>
+                    <div class="flex items-center gap-2 text-slate-300 text-sm bg-white/5 border border-white/5 px-3 py-2 rounded-lg hover:border-teal-400/50 transition-colors">
+                        <span class="text-teal-400">▸</span> FastAPI
+                    </div>
+                    <div class="flex items-center gap-2 text-slate-300 text-sm bg-white/5 border border-white/5 px-3 py-2 rounded-lg hover:border-teal-400/50 transition-colors">
+                        <span class="text-teal-400">▸</span> Java
+                    </div>
+                    <div class="flex items-center gap-2 text-slate-300 text-sm bg-white/5 border border-white/5 px-3 py-2 rounded-lg hover:border-teal-400/50 transition-colors">
+                        <span class="text-teal-400">▸</span> PostgreSQL
+                    </div>
+                    <div class="flex items-center gap-2 text-slate-300 text-sm bg-white/5 border border-white/5 px-3 py-2 rounded-lg hover:border-teal-400/50 transition-colors">
+                        <span class="text-teal-400">▸</span> Docker
+                    </div>
+                    <div class="flex items-center gap-2 text-slate-300 text-sm bg-white/5 border border-white/5 px-3 py-2 rounded-lg hover:border-teal-400/50 transition-colors">
+                        <span class="text-teal-400">▸</span> Linux
+                    </div>
                 </div>
-                <div class="flex-shrink-0 order-1 md:order-2 w-full md:w-auto">
-    <div class="w-64 h-64 md:w-80 md:h-96 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full md:rounded-lg overflow-hidden mx-auto">
-        <img src="images/NabilaM.png" 
-             alt="Profile" class="w-full h-full object-cover">
-    </div>
-</div>
+
+                <p class="text-base text-slate-400 mt-8 text-sm italic">
+                    Off-duty: Drawing, playing video games, skateboarding, or surfing.
+                </p>
+            </div>
+
+            <div class="relative group order-1 lg:order-2">
+                <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-teal-400 rounded-2xl transition-all group-hover:-bottom-2 group-hover:-right-2"></div>
+                
+                <div class="relative w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-2xl grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl">
+                    <img src="images/NabilaM.png" alt="Profile" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-teal-400/20 group-hover:bg-transparent transition-colors"></div>
                 </div>
             </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Projects Section -->
-    <section id="projects" class="min-h-screen px-6 py-20">
-        <div class="max-w-7xl mx-auto section-fade">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12 md:mb-16">/ featured projects</h2>
-            <p class="text-lg md:text-xl text-gray-400 mb-8 md:mb-12">Architecting high-performance backends and secure data pipelines</p>
+    <section id="projects" class="relative min-h-screen px-6 py-20 overflow-hidden">
+    <div class="absolute top-1/4 -left-20 w-[300px] h-[300px] bg-teal-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto section-fade">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 flex items-center gap-4 text-white">
+            <span class="text-teal-400 font-mono text-2xl md:text-3xl">02.</span> Featured Projects
+            <div class="h-[1px] bg-white/20 flex-grow"></div>
+        </h2>
+        <p class="text-lg text-slate-400 mb-12 max-w-2xl">
+            Architecting high-performance backends and secure data pipelines.
+        </p>
+        
+        <div class="group relative mb-12">
+            <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#0f172a]/80 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden">
+                <div class="lg:col-span-7 h-64 lg:h-full overflow-hidden">
+                    <img src="images/jobapptracker.png" alt="Job Tracker" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+                <div class="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center">
+                    <span class="text-xs font-bold tracking-widest uppercase text-teal-400 mb-2">Automation & NoSQL</span>
+                    <h3 class="text-3xl font-bold text-white mb-4">Job Application Tracker</h3>
+                    <p class="text-slate-300 mb-6">Built a system to extract job details from email archives (MBOX). Implemented an asynchronous FastAPI and MongoDB backend for high-speed processing.</p>
+                    <div class="flex gap-4 font-mono text-sm text-teal-400 mb-6">
+                        <span>#FastAPI</span> <span>#MongoDB</span> <span>#Python</span>
+                    </div>
+                    <a href="https://github.com/NabilaEln48" class="text-white hover:text-teal-400 transition flex items-center gap-2">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <!-- Featured Project -->
-            <div class="mb-16 project-card rounded-lg p-8">
-                <div class="relative h-96 mb-6 rounded overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <img src="images/jobapptracker.png" alt="Job Application Tracker" class="w-full h-full object-cover"/>
-                    </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 to-transparent p-8">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-teal-400 text-sm">Automation & NoSQL</span>
-                        </div>
-                        <h3 class="text-4xl font-bold text-white mb-2">Job Application Tracker</h3>
-                        <p class="text-gray-300 mb-2">
-                            Built a system to extract job details from email archives (MBOX). Asynchronous FastAPI 
-                            and MongoDB backend for high-speed processing.
-                        </p>
-                        <div class="flex gap-3 mb-4">
-                            <span class="text-teal-400 text-sm">FastAPI</span>
-                            <span class="text-gray-500">•</span>
-                            <span class="text-teal-400 text-sm">MongoDB</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <a href="https://github.com/NabilaEln48" class="text-white hover:text-teal-400 transition">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                        </div>
+            <div class="group bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:-translate-y-2 hover:border-teal-400/50 transition-all">
+                <div class="flex justify-between mb-6">
+                    <svg class="w-10 h-10 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+                    <a href="https://github.com/NabilaEln48" class="text-slate-400 hover:text-teal-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">Data Analytics Backend</h3>
+                <p class="text-slate-400 text-sm mb-6">Automated pipeline for API ingestion and PostgreSQL optimization. Uses Pandas for data validation.</p>
+                <div class="flex gap-3 text-xs font-mono text-teal-400/80">
+                    <span>FastAPI</span> <span>PostgreSQL</span> <span>Pandas</span>
+                </div>
+            </div>
+
+            <div class="group bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:-translate-y-2 hover:border-teal-400/50 transition-all">
+                <div class="flex justify-between mb-6">
+                    <svg class="w-10 h-10 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    <a href="https://github.com/NabilaEln48/Secure-Document-Management-API" class="text-slate-400 hover:text-teal-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">Secure Document System</h3>
+                <p class="text-slate-400 text-sm mb-6">JWT authentication and RBAC for sensitive file handling. Implemented state-machine logic for lifecycles.</p>
+                <div class="flex gap-3 text-xs font-mono text-teal-400/80">
+                    <span>FastAPI</span> <span>RBAC</span> <span>JWT</span>
+                </div>
+            </div>
+
+            <div class="group bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:-translate-y-2 hover:border-teal-400/50 transition-all">
+                <div class="flex justify-between mb-6">
+                    <svg class="w-10 h-10 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                    <a href="https://github.com/NabilaEln48/Public-Transit-Fleet-Management-System" class="text-slate-400 hover:text-teal-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">PTFMS Fleet Management</h3>
+                <p class="text-slate-400 text-sm mb-6">Enterprise transit system managing GPS telemetry via multi-layered Java architecture.</p>
+                <div class="flex gap-3 text-xs font-mono text-teal-400/80">
+                    <span>Java EE</span> <span>MySQL</span>
+                </div>
+            </div>
+
+            <div class="group bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:-translate-y-2 hover:border-teal-400/50 transition-all">
+                <div class="flex justify-between mb-6">
+                    <svg class="w-10 h-10 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    <a href="https://github.com/NabilaEln48/BookRegistryApp" class="text-slate-400 hover:text-teal-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">Book Registry System</h3>
+                <p class="text-slate-400 text-sm mb-6">Inventory management featuring comprehensive CRUD operations and MVC architecture.</p>
+                <div class="flex gap-3 text-xs font-mono text-teal-400/80">
+                    <span>Java</span> <span>MVC</span>
+                </div>
+            </div>
+
+            <div class="group bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:-translate-y-2 hover:border-teal-400/50 transition-all">
+                <div class="flex justify-between mb-6">
+                    <svg class="w-10 h-10 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    <a href="https://github.com/NabilaEln48/ARISE_FullStack" class="text-slate-400 hover:text-teal-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">E-commerce Platform</h3>
+                <p class="text-slate-400 text-sm mb-6">Storefront with NoSQL schema for variations and real-time inventory updates.</p>
+                <div class="flex gap-3 text-xs font-mono text-teal-400/80">
+                    <span>Python</span> <span>MongoDB</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Journey Section -->
+<section id="journey" class="py-20 px-6 relative overflow-hidden">
+    <div class="absolute top-1/2 right-0 w-64 h-64 bg-teal-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-bold mb-16 flex items-center gap-4 text-white">
+            <span class="text-teal-400 font-mono text-2xl md:text-3xl">03.</span> The Journey
+            <div class="h-[1px] bg-white/20 flex-grow"></div>
+        </h2>
+
+        <div class="relative border-l-2 border-white/10 ml-4 md:ml-8 space-y-12">
+            
+            <div class="relative pl-8 group">
+                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-teal-400 shadow-[0_0_15px_rgba(45,212,191,0.6)] group-hover:scale-125 transition-transform"></div>
+                
+                <p class="text-teal-400 font-mono text-sm mb-1 uppercase tracking-widest">2024 - 2025</p>
+                <h3 class="text-xl font-bold text-white">Software Developer | Backend</h3>
+                <p class="text-slate-300 font-medium mb-2">Algonquin College Graduate</p>
+                <p class="text-slate-400 leading-relaxed">
+                    Recently completed a Diploma in Computer Programming[cite: 34]. Transitioned full-time into building robust, API-driven systems with a focus on clean code and practical problem-solving[cite: 5, 7].
+                </p>
+            </div>
+
+            <div class="relative pl-8 group">
+                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white/20 group-hover:bg-teal-400/50 transition-colors"></div>
+                
+                <p class="text-slate-500 font-mono text-sm mb-1 uppercase tracking-widest">Nov 2024 — Mar 2025</p>
+                <h3 class="text-xl font-bold text-slate-300">Professional Interpreter</h3>
+                <p class="text-slate-400 font-medium mb-2">CanTalk</p>
+                <p class="text-slate-500 leading-relaxed">
+                    Facilitated real-time interpretation in high-stakes professional settings[cite: 32]. This experience sharpened my attention to detail and ability to translate complex logic—skills that now ensure accuracy and confidentiality in my backend architecture[cite: 6, 32].
+                </p>
+            </div>
+
+            <div class="relative pl-8 group">
+                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white/10"></div>
+                <p class="text-slate-600 font-mono text-sm mb-1 uppercase tracking-widest">Foundation</p>
+                <h3 class="text-xl font-bold text-slate-500">Full-Stack Certifications</h3>
+                <p class="text-slate-600 leading-relaxed">
+                    Mastered core languages including Python and SQL through specialized certifications, laying the groundwork for high-performance data processing.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Testimonial Section -->
+<section id="testimonials" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-bold mb-16 flex items-center gap-4 text-white">
+            <span class="text-teal-400 font-mono text-2xl md:text-3xl">04.</span> Recommendations
+            <div class="h-[1px] bg-white/20 flex-grow"></div>
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl relative">
+                <p class="text-lg text-slate-200 italic mb-8">
+                    "Having Nabila as our lead developer and designer was one of the best decisions we made for our startup's launch. She delivered an exceptionally robust full-stack solution, seamlessly integrating payment processing and notification services."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center font-bold text-white">MA</div>
+                    <div>
+                        <h4 class="text-white font-bold">Malak AC</h4>
+                        <p class="text-teal-400 text-sm font-mono">Startup Manager @ SMMA AGA</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Project Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="project-card rounded-lg p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <svg class="w-12 h-12 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
-                        </svg>
-                        <a href="https://github.com/NabilaEln48" class="text-gray-400 hover:text-teal-400 cursor-pointer">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Data Analytics Backend</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Automated pipeline for API ingestion and PostgreSQL optimization. Uses Pandas for validation 
-                        and deduplication of analytical datasets.
-                    </p>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="text-teal-400 text-xs">FastAPI</span>
-                        <span class="text-teal-400 text-xs">PostgreSQL</span>
-                        <span class="text-teal-400 text-xs">Pandas</span>
-                    </div>
-                </div>
-
-                <div class="project-card rounded-lg p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <svg class="w-12 h-12 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                        </svg>
-                        <a href="https://github.com/NabilaEln48/Secure-Document-Management-API" class="text-gray-400 hover:text-teal-400 cursor-pointer">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Secure Document System</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        JWT authentication and RBAC for sensitive file handling. Implemented state-machine logic 
-                        for document lifecycle.
-                    </p>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="text-teal-400 text-xs">FastAPI</span>
-                        <span class="text-teal-400 text-xs">RBAC</span>
-                        <span class="text-teal-400 text-xs">JWT</span>
-                    </div>
-                </div>
-
-                <div class="project-card rounded-lg p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <svg class="w-12 h-12 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                        </svg>
-                        <a href="https://github.com/NabilaEln48/Public-Transit-Fleet-Management-System" class="text-gray-400 hover:text-teal-400 cursor-pointer">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">PTFMS — Fleet Tracking</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Enterprise public transport system managing fleet operations and GPS telemetry via 
-                        multi-layered Java architecture.
-                    </p>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="text-teal-400 text-xs">Java EE</span>
-                        <span class="text-teal-400 text-xs">MySQL</span>
-                    </div>
-                </div>
-
-                <div class="project-card rounded-lg p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <svg class="w-12 h-12 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                        </svg>
-                        <a href="https://github.com/NabilaEln48/BookRegistryApp" class="text-gray-400 hover:text-teal-400 cursor-pointer">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Book Registry System</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        High-performance registry application for inventory management featuring comprehensive 
-                        CRUD operations.
-                    </p>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="text-teal-400 text-xs">Java</span>
-                        <span class="text-teal-400 text-xs">MVC</span>
-                    </div>
-                </div>
-
-                <div class="project-card rounded-lg p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <svg class="w-12 h-12 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-                        </svg>
-                        <a href="https://github.com/NabilaEln48/ARISE_FullStack" class="text-gray-400 hover:text-teal-400 cursor-pointer">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">E-commerce Platform</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Dynamic web storefront with a flexible NoSQL schema for product variations and real-time 
-                        inventory updates.
-                    </p>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="text-teal-400 text-xs">Python</span>
-                        <span class="text-teal-400 text-xs">MongoDB</span>
+            <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl relative">
+                <p class="text-lg text-slate-200 italic mb-8">
+                    "Nabila always impressed me with her strong development skills and creativity. She often delivered her parts ahead of schedule with excellent attention to detail and vision for how projects can grow."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center font-bold text-white">JF</div>
+                    <div>
+                        <h4 class="text-white font-bold">Jhoel Forero</h4>
+                        <p class="text-teal-400 text-sm font-mono">Front-end & Full-Stack Developer</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
 
     <!-- Contact Section -->
-    <section id="contact" class="min-h-screen flex items-center justify-center px-6 py-20">
-        <div class="max-w-4xl mx-auto text-center section-fade">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 md:mb-8">/ let's connect</h2>
-            <p class="text-lg md:text-xl text-gray-400 mb-8 md:mb-12">
-                Available for backend development and database architecture consulting.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 md:mb-12">
-                <a href="mailto:nabilaelnm@gmail.com" class="project-card rounded-lg p-6 hover:scale-105 transition-transform">
-                    <svg class="w-10 h-10 md:w-12 md:h-12 text-teal-400 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                    </svg>
-                    <h3 class="text-lg md:text-xl font-bold text-white mb-2">Email</h3>
-                    <p class="text-gray-400 text-xs md:text-sm break-all">nabilaelnm@gmail.com</p>
-                </a>
-
-                <a href="https://www.linkedin.com/in/nabilaeln48/" class="project-card rounded-lg p-6 hover:scale-105 transition-transform">
-                    <svg class="w-10 h-10 md:w-12 md:h-12 text-teal-400 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                    <h3 class="text-lg md:text-xl font-bold text-white mb-2">LinkedIn</h3>
-                    <p class="text-gray-400 text-xs md:text-sm">@nabilaeln48</p>
-                </a>
-
-                <a href="https://github.com/NabilaEln48" class="project-card rounded-lg p-6 hover:scale-105 transition-transform">
-                    <svg class="w-10 h-10 md:w-12 md:h-12 text-teal-400 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    <h3 class="text-lg md:text-xl font-bold text-white mb-2">GitHub</h3>
-                    <p class="text-gray-400 text-xs md:text-sm">@NabilaEln48</p>
-                </a>
-            </div>
-
-            <p class="text-gray-500 text-xs md:text-sm">Usually responds within 24 hours</p>
+    <section id="contact" class="relative py-20 px-6 overflow-hidden">
+    <div class="max-w-4xl mx-auto bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-12 text-center relative overflow-hidden">
+        <div class="absolute -top-24 -left-24 w-64 h-64 bg-teal-500/20 rounded-full blur-[80px]"></div>
+        
+        <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-6">Let's Build Something.</h2>
+        <p class="text-xl text-slate-300 mb-10 max-w-xl mx-auto">
+            Whether you have a question or just want to discuss backend architecture, my inbox is always open.
+        </p>
+        
+        <a href="mailto:your-email@example.com" class="inline-block px-10 py-4 bg-teal-400 text-gray-900 font-bold rounded-xl hover:scale-105 hover:shadow-[0_0_30px_rgba(79,209,197,0.4)] transition-all">
+            Say Hello
+        </a>
+        
+        <div class="mt-12 flex justify-center gap-8 text-slate-400">
+            <a href="https://github.com/NabilaEln48" class="hover:text-teal-400 transition-colors font-mono">GitHub</a>
+            <a href="#" class="hover:text-teal-400 transition-colors font-mono">LinkedIn</a>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="py-4 text-center border-t border-gray-800">
