@@ -189,44 +189,43 @@ section {
 
     <!-- Home Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
+    
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-    <div class="relative z-10 max-w-6xl mx-auto w-full">
-        <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-center">
+    <div class="relative z-10 max-w-5xl mx-auto w-full">
+        <div class="bg-white/5 backdrop-blur-lg border border-white/10 p-8 md:p-16 rounded-3xl shadow-2xl text-center">
             
-            <div class="lg:col-span-7 p-8 md:p-16 text-left">
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-white">
-                    Hello, <br>
-                    <span id="typewriter" class="text-teal-400"></span><span class="cursor-blink text-teal-400">|</span>
-                </h1>
-                
-                <p class="text-base md:text-lg text-slate-300 mb-10 leading-relaxed max-w-xl">
-                    Powered by curiosity, guided by coffee, and haunted by code. <br>
-                    I architect <span class="text-teal-400 font-mono">scalable backend systems</span> 
-                    and craft digital experiences with Python, Java, and modern tech.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row items-center gap-4">
-                    <a href="#contact" class="group px-8 py-4 bg-teal-400 text-gray-900 font-bold rounded-xl transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(79,209,197,0.4)] flex items-center gap-2">
-                        Let's Connect
-                    </a>
-                    <a href="#projects" class="px-8 py-4 border border-white/20 text-white font-medium rounded-xl hover:bg-white/10 transition-all">
-                        View My Work
-                    </a>
-                </div>
-            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-white">
+                Hello, <span id="typewriter" class="text-teal-400"></span><span class="cursor-blink text-teal-400">|</span>
+            </h1>
+            
+            <p class="text-lg md:text-2xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+                Powered by curiosity, guided by coffee, and haunted by code. <br> I architect 
+                <span class="text-teal-400 font-mono">scalable backend systems</span> 
+                and craft digital experiences with Python, Java, and modern tech.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contact" class="group relative px-8 py-4 bg-teal-400 text-gray-900 font-bold rounded-xl transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(79,209,197,0.4)] flex items-center gap-2">
+                    <svg class="w-5 h-5 transition-transform group-hover:rotate-12" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                    </svg>
+                    Let's Connect
+                </a>
 
-            <div class="lg:col-span-5 h-[400px] lg:h-[500px] relative overflow-hidden flex items-center justify-center bg-teal-400/5 lg:border-l border-white/10">
-                
-                <div class="w-full h-full transform scale-50 md:scale-75 lg:scale-95 flex items-center justify-center">
-                    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js"></script>
-                    <spline-viewer url="https://prod.spline.design/fpUQcz0NS5xkmXRN/scene.splinecode" class="w-full h-full"></spline-viewer>
-                </div>
-
+                <a href="#projects" class="px-8 py-4 border border-white/20 text-white font-medium rounded-xl hover:bg-white/10 transition-all">
+                    View My Work
+                </a>
             </div>
         </div>
+
+        
     </div>
 </section>
+
+
+
     <!-- About Section -->
     <section id="about" class="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
     
