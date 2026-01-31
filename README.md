@@ -35,16 +35,4 @@ No frameworks, no build tools, no external dependencies.
 └── README.md
 
 
-## Getting Started
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-
-2. Open the project:
-
-   npx serve .
-
-3. Run From "Go Live" to run the server.
-
 ## © ELN — All rights reserved.
