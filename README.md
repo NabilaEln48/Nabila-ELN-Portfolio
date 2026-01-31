@@ -1,98 +1,66 @@
-ELN – Software Engineer Portfolio 
+# ELN – Software Engineer Portfolio
 
-A modern, responsive personal portfolio website built to showcase backend-focused software engineering work, professional journey, and featured projects.
-Designed with performance, clarity, and subtle motion in mind.
+A modern, responsive personal portfolio website built to showcase my work as a backend-focused Software Engineer.  
+The site highlights featured projects, technical skills, professional journey, and contact information with a clean, animated UI.
 
-✨ Features
+## Features
 
-Modern UI/UX
+- Fully responsive layout (desktop & mobile)
+- Fixed navigation bar with smooth scrolling
+- Mobile dropdown menu
+- Typewriter animation on the hero section
+- Fade-in animations on scroll using Intersection Observer
+- Glassmorphism UI with gradients and subtle motion
+- Project showcase with GitHub links
+- Timeline-style career journey
+- Testimonials and contact section
 
-Glassmorphism cards & gradients
+## Tech Stack
 
-Smooth hover states and micro-interactions
+- HTML5
+- Tailwind CSS (CDN)
+- Vanilla JavaScript
+- CSS animations & transitions
 
-Fully responsive (desktop → mobile)
+No frameworks, no build tools, no external dependencies.
 
-Interactive Elements
+## Project Structure
 
-Typewriter hero animation
-
-Fade-in sections on scroll (Intersection Observer)
-
-Smooth anchor scrolling
-
-Mobile dropdown navigation
-
-Content Sections
-
-Hero / Introduction
-
-About Me & Tech Stack
-
-Featured Projects
-
-Career Journey Timeline
-
-Testimonials
-
-Contact & Social Links
-
-🛠 Tech Stack
-
-HTML5
-
-Tailwind CSS (via CDN)
-
-Vanilla JavaScript
-
-CSS Animations & Transitions
-
-No frameworks. No build tools. No dependencies to install.
-
-📁 Project Structure
 /
-├── index.html          # Main portfolio page
+├── index.html
 ├── images/
-│   ├── NabilaM.png     # Profile image
-│   ├── jobapptracker.png
-│   └── other assets
+│ ├── NabilaM.png
+│ ├── jobapptracker.png
+│ └── other assets
 └── README.md
 
-🚀 Getting Started
 
-Clone the repository
+## Getting Started
 
-git clone https://github.com/your-username/your-repo-name.git
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+Open the project:
 
+Open index.html directly in your browser
+or
 
-Open the site
-
-Simply open index.html in your browser
-OR
-
-Serve it locally:
+Serve locally:
 
 npx serve .
 
+Customization
 
-That’s it — no setup required.
-
-🎨 Customization Guide
-
-Name / Branding
-
-Update text in the Hero and About sections
-
-Typewriter Text
+Hero Typewriter Text
 
 const typeText = "ELN Here!";
 
 
+Profile Image
+Replace images/NabilaM.png
+
 Projects
-
-Replace images in /images
-
-Update project cards in the Projects section
+Update project cards and images inside the Projects section
 
 Contact Email
 
@@ -100,30 +68,20 @@ Contact Email
 
 
 Social Links
+Update GitHub and LinkedIn URLs in the Contact section
 
-Update GitHub & LinkedIn URLs in the Contact section
-
-📱 Responsive Design
+Responsive Design
 
 Desktop navigation with fixed header
 
-Mobile dropdown menu with animated transitions
+Mobile dropdown menu with animation
 
-Scroll offset handling for anchor links
+Scroll offset handling to prevent section overlap
 
-🧠 Design Philosophy
+Purpose
 
-Clean code. Clean UI. Just enough chaos.
+This portfolio was designed to present a backend-engineering identity with a strong emphasis on clean architecture, performance, and clarity, while maintaining a polished frontend experience.
 
-This portfolio emphasizes:
-
-Readability over clutter
-
-Motion with purpose
-
-Backend-first identity with frontend polish
-
-📄 License
+License
 
 © ELN — All rights reserved.
-Feel free to use this as inspiration, but please do not copy branding or content verbatim.
