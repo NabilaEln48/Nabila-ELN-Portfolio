@@ -43,10 +43,8 @@ No frameworks, no build tools, no external dependencies.
 
 2. Open the project:
 
-Open index.html directly in your browser or Serve locally:
-
    npx serve .
 
-
+3. Run From "Go Live" to run the server.
 
 ## © ELN — All rights reserved.
