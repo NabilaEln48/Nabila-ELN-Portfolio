@@ -1,239 +1,696 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELN - Software Developer Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-/* =========================
-   GLOBAL BASE
-========================= */
-body {
-    background: linear-gradient(to bottom, #0f0c29, #302b63);
-    background-attachment: fixed;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #e2e8f0;
-    margin: 0;
-    line-height: 1.6;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="icon" type="image/x-icon" href="/image/LOGO.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>ELN PORTFOLIO</title>
+  
+  <style>
+    /* Custom CSS for features not easily achievable with Tailwind */
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+    
+    :root {
+      --bg-color: #000000;
+      --text-color: #ccd6f6;
+      --accent-color: #00b3e0;
+      --secondary-accent: #002449;
+      --card-bg: #0b0a10;
+      --glow-color: rgb(0, 242, 255);
+      --shadow-color: rgba(0, 0, 0, 0.2);
+      --gradient-text: linear-gradient(to right, #00d5ff, #00bfa6);
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .gradient-text {
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-link {
+      color: var(--accent-color);
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text-color);
+    }
+
+    .social-links a {
+      color: var(--accent-color) !important;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--glow-color);
+      color: var(--text-color) !important;
+    }
+@media (max-width: 768px) {
+  #header {
+    width: 100%;
+    height: 70px; /* Fixed height for mobile header */
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: rgba(0, 0, 0, 0.9); /* Solid background for visibility */
+    backdrop-filter: blur(10px);
+  }
+
+  /* Hide desktop nav on mobile by default */
+  .nav-menu {
+    display: none; 
+  }
+
+  /* State when menu is open */
+  .nav-menu.mobile-active {
+    display: flex !important;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: #0b0a10;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .menu-toggle {
+    display: block !important;
+    cursor: pointer;
+  }
+}
+    @keyframes loadbar {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+
+    .progress-bar {
+      animation: loadbar 12s forwards;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    .title-display {
+      animation: fadeInOut 3s ease-in-out infinite;
+    }
+
+    .logo-glow {
+      filter: drop-shadow(0 0 8px var(--accent-color));
+    }
+
+    /* Infinite scroll animation for skills */
+    @keyframes scroll-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-h1, h2, h3 {
-    color: #ffffff;
-    letter-spacing: 0.5px;
+.animate-scroll-infinite-fast {
+  animation: scroll-infinite 5s linear infinite;
 }
 
-/* =========================
-   CURSOR / TYPEWRITER
-========================= */
-.cursor-blink {
-    animation: blink 0.9s infinite;
-    color: #4fd1c5;
+
+    .skills-scroll:hover .train-track {
+      animation-play-state: paused;
+    }
+
+
+/* Fix Project Cursor & Interaction */
+.projectSwiper {
+  cursor: grab;
+}
+.projectSwiper:active {
+  cursor: grabbing;
+}
+/* Ensure navigation buttons are clickable */
+.swiper-button-next, .swiper-button-prev {
+  cursor: pointer !important;
+  z-index: 1010;
 }
 
-@keyframes blink {
-    0%, 49% { opacity: 1; }
-    50%, 100% { opacity: 0; }
+
+
+/* Glass card */
+.tools-glass {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid var(--secondary-accent);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
 }
 
-/* =========================
-   FADE-IN SECTIONS
-========================= */
-.section-fade {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+/* Grid layout */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
-.section-fade.visible {
-    opacity: 1;
+/* Icons */
+.tool-icon {
+  font-size: 42px;
+  color: var(--text-color);
+  opacity: 0.85;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Slightly different timing for natural motion */
+.tool-icon:nth-child(2) { animation-delay: 1s; }
+.tool-icon:nth-child(3) { animation-delay: 2s; }
+.tool-icon:nth-child(4) { animation-delay: 0.5s; }
+.tool-icon:nth-child(5) { animation-delay: 1.5s; }
+.tool-icon:nth-child(6) { animation-delay: 2.5s; }
+
+/* Float animation */
+@keyframes float {
+  0%, 100% {
     transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
-/* =========================
-   NAV LINKS
-========================= */
+/* Hover polish */
+.tool-icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  transition: all 0.25s ease;
+}
+
+
+
+
+    /* Service card hover effects */
+    .service-card:hover .card-front {
+      opacity: 0;
+    }
+
+    .service-card:hover .card-hover {
+      opacity: 1;
+    }
+
+    /* Desktop Header Styles */
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none !important;
+      }
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      #header {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px;
+      }
+
+      #navbar.mobile-hidden {
+        display: none !important;
+      }
+
+      #navbar.mobile-visible {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--bg-color);
+        padding: 20px;
+        z-index: 999;
+      }
+
+      .social-links.mobile-hidden {
+        display: none !important;
+      }
+
+      .social-links.mobile-visible {
+        display: flex !important;
+        flex-direction: row;
+        gap: 15px;
+      }
+
+      #main {
+        margin-left: 0;
+      }
+    }
+
+    /* Active Navigation Link Indicator */
+.nav-link.active {
+    color: #2dd4bf !important;
+}
+
 .nav-link {
     position: relative;
-    color: #cbd5e0;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.nav-link:hover {
-    color: #ffffff;
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #4fd1c5;
-    transition: width 0.3s;
+    bottom: -5px;
+    left: 50%;
+    width: 0%;
+    height: 1px;
+    background: #2dd4bf;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
     width: 100%;
 }
 
-/* =========================
-   PROJECT CARDS
-========================= */
-.project-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 20px;
-    transition: all 0.3s ease;
+/* Header Scroll Class */
+#header.scrolled {
+    height: 60px;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding-top: 0;
+    padding-bottom: 0;
 }
+  </style>
 
-.project-card:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(79, 209, 197, 0.5);
-    transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-}
-
-.project-card p {
-    color: #a0aec0;
-}
-
-/* =========================
-   MOBILE MENU
-========================= */
-#mobile-dropdown {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* =========================
-   SCROLL OFFSET
-========================= */
-section {
-    scroll-margin-top: 100px;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-    .avatar-pixel {
-        width: 3px;
-        height: 3px;
-        margin: 0.5px;
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'theme-bg': 'var(--bg-color)',
+            'theme-text': 'var(--text-color)',
+            'theme-accent': 'var(--accent-color)',
+            'theme-card': 'var(--card-bg)',
+          },
+          fontFamily: {
+            'poppins': ['Poppins', 'sans-serif'],
+            'mono': ['Courier New', 'monospace'],
+            'orbitron': ['Orbitron', 'sans-serif'],
+          }
+        }
+      }
     }
-}
-</style>
-
+  </script>
 </head>
-<body class="text-gray-300">
-<style>
-    /* Fixes sections being hidden under the fixed header when clicking links */
-    section {
-        scroll-margin-top: 100px;
-    }
 
-    /* Smooth transition for the mobile dropdown */
-    #mobile-dropdown.active {
-        display: block !important;
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-    }
-</style>
-
-<header class="fixed top-0 left-0 w-full z-[100]">
-    <nav class="max-w-7xl mx-auto px-6 py-6 relative">
-        <div class="flex justify-between items-center bg-[#0f172a]/80 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-4 shadow-2xl relative z-[110]">
-            
-            <div class="flex items-center">
-                <a href="#home" class="text-2xl font-black text-white tracking-tighter hover:text-teal-400 transition-colors">
-                    ELN<span class="text-teal-400">.</span>
-                </a>
-            </div>
-
-            <div class="hidden lg:flex items-center gap-8">
-                <a href="#home" class="text-xs font-mono uppercase tracking-widest text-slate-400 hover:text-teal-400 transition-colors">Home</a>
-                <a href="#about" class="text-xs font-mono uppercase tracking-widest text-slate-400 hover:text-teal-400 transition-colors">About</a>
-                <a href="#projects" class="text-xs font-mono uppercase tracking-widest text-slate-400 hover:text-teal-400 transition-colors">Projects</a>
-                <a href="#journey" class="text-xs font-mono uppercase tracking-widest text-slate-400 hover:text-teal-400 transition-colors">Journey</a>
-                <a href="#testimonials" class="text-xs font-mono uppercase tracking-widest text-slate-400 hover:text-teal-400 transition-colors">Testimonials</a>
-            </div>
-
-            <div class="flex items-center gap-4">
-                <a href="#contact" class="hidden sm:block px-5 py-2 bg-teal-400 text-slate-950 text-[10px] font-black uppercase tracking-widest rounded-lg hover:bg-white transition-all">
-                    Hire Me
-                </a>
-                <button id="menu-toggle" class="lg:hidden text-white p-2 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
-        </div>
-
-        <div id="mobile-dropdown" class="absolute top-[80%] left-8 right-8 mt-2 hidden opacity-0 translate-y-[-20px] transition-all duration-300 ease-out lg:hidden z-[105]">
-            <div class="bg-[#1e293b]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl flex flex-col gap-4">
-                <a href="#home" class="mobile-link text-lg font-bold text-white">Home</a>
-                <a href="#about" class="mobile-link text-lg font-bold text-white">About</a>
-                <a href="#projects" class="mobile-link text-lg font-bold text-white">Projects</a>
-                <a href="#journey" class="mobile-link text-lg font-bold text-white">Journey</a>
-                <a href="#testimonials" class="mobile-link text-lg font-bold text-white">Testimonials</a>
-                <div class="h-[1px] bg-white/10 my-1"></div>
-                <a href="#contact" class="mobile-link text-lg font-bold text-teal-400">Contact Me</a>
-            </div>
-        </div>
-    </nav>
-</header>
-
-
-    <!-- Home Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
+<body class="font-poppins m-0 p-0">
+  
+  <!-- Intro Loader -->
+  <div id="intro-loader" class="fixed top-0 left-0 w-full h-full bg-black flex flex-col items-center justify-center z-[9999] font-orbitron">
+    <img src="/public/images/LOGO.webp" alt="Logo" class="w-[120px] h-[120px] object-contain mb-8 logo-glow" />
     
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="w-[200px] h-[6px] bg-white overflow-hidden rounded-md mb-[30px]">
+      <div class="progress-bar h-full w-0 bg-gradient-to-r from-[#00ccff] to-[#64ffda]"></div>
+    </div>
+    
+    <div class="title-display text-[1.3rem] opacity-0 bg-gradient-to-r from-[#00ccff] to-[#64ffda] bg-clip-text text-transparent" id="title-text">
+      Softwrare Engineer
+    </div>
+    
+    <p id="skip-text" class="text-white cursor-pointer mt-5 text-base text-center">
+      <strong>Skip Intro</strong>
+    </p>
+  </div>
 
-    <div class="relative z-10 max-w-5xl mx-auto w-full">
-        <div class="bg-white/5 backdrop-blur-lg border border-white/10 p-8 md:p-16 rounded-3xl shadow-2xl text-center">
-            
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-white">
-                Hello, <span id="typewriter" class="text-teal-400"></span><span class="cursor-blink text-teal-400">|</span>
-            </h1>
-            
-            <p class="text-lg md:text-2xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto">
-                Powered by curiosity, guided by coffee, and haunted by code. <br> I architect 
-                <span class="text-teal-400 font-mono">scalable backend systems</span> 
-                and craft digital experiences with Python, Java, and modern tech.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#contact" class="group relative px-8 py-4 bg-teal-400 text-gray-900 font-bold rounded-xl transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(79,209,197,0.4)] flex items-center gap-2">
-                    <svg class="w-5 h-5 transition-transform group-hover:rotate-12" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                    </svg>
-                    Let's Connect
-                </a>
+  <!-- Main Site -->
+  <div id="main-site" class="hidden">
 
-                <a href="#projects" class="px-8 py-4 border border-white/20 text-white font-medium rounded-xl hover:bg-white/10 transition-all">
-                    View My Work
-                </a>
+<header id="header" class="fixed top-0 left-0 w-full h-[70px] z-[1000] px-6 lg:px-12 flex items-center justify-between transition-all duration-300 border-b border-white/5 bg-black/20 backdrop-blur-md">
+
+    <div class="logo-wrapper flex items-center">
+        <img src="/public/images/LOGO.webp" alt="Logo" class="w-10 h-10 rounded-full object-cover border border-teal-400/30 hover:border-teal-400 transition-all cursor-pointer hover:scale-110" />
+    </div>
+
+    <nav id="navbar" class="hidden lg:block">
+        <ul class="flex items-center gap-10">
+            <li><a href="#hero" class="nav-link font-orbitron text-xs tracking-[0.2em] uppercase text-slate-400 hover:text-teal-400 transition-all" title="Home">Home</a></li>
+            <li><a href="#about" class="nav-link font-orbitron text-xs tracking-[0.2em] uppercase text-slate-400 hover:text-teal-400 transition-all" title="About">About</a></li>
+            <li><a href="#expertise" class="nav-link font-orbitron text-xs tracking-[0.2em] uppercase text-slate-400 hover:text-teal-400 transition-all" title="Skills">Skills</a></li>
+            <li><a href="#WORK" class="nav-link font-orbitron text-xs tracking-[0.2em] uppercase text-slate-400 hover:text-teal-400 transition-all" title="Projects">WORK</a></li>
+            <li><a href="IT_Projects.html" class="nav-link font-orbitron text-xs tracking-[0.2em] uppercase text-slate-400 hover:text-teal-400 transition-all" title="Blog">ALL PROJECT</a></li>
+            <li><a href="gallery.html" class="nav-link font-orbitron text-xs tracking-[0.2em] uppercase text-slate-400 hover:text-teal-400 transition-all" title="Blog">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="flex items-center gap-6">
+        <div class="hidden lg:flex items-center gap-5 text-slate-400 border-r border-white/10 pr-6 mr-1">
+            <a href="https://github.com/NabilaEln48" target="_blank" class="hover:text-teal-400 transition-colors"><i class="bx bxl-github text-xl"></i></a>
+            <a href="https://www.linkedin.com/in/nabilaeln48/" target="_blank" class="hover:text-teal-400 transition-colors"><i class="bx bxl-linkedin text-xl"></i></a>
+        </div>
+        
+        <a href="mailto:nabilaelnm@gmail.com" class="hidden md:block px-5 py-2 border border-teal-400/50 text-teal-400 text-xs font-orbitron rounded-full hover:bg-teal-400 hover:text-black hover:shadow-[0_0_15px_rgba(45,212,191,0.4)] transition-all">
+            Contact
+        </a>
+
+        <button id="menu-toggle" class="lg:hidden text-white text-3xl focus:outline-none">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-x hidden" id="close-icon"></i>
+        </button>
+    </div>
+
+    <div id="mobile-dropdown" class="absolute top-[70px] left-0 w-full hidden flex-col bg-black/95 backdrop-blur-2xl border-b border-white/10 p-10 shadow-2xl lg:hidden transform transition-all duration-300">
+        <div class="flex flex-col gap-8 items-center">
+            <a href="#hero" class="mobile-link font-orbitron text-sm tracking-widest text-white hover:text-teal-400">Home</a>
+            <a href="#about" class="mobile-link font-orbitron text-sm tracking-widest text-white hover:text-teal-400">About</a>
+            <a href="#services" class="mobile-link font-orbitron text-sm tracking-widest text-white hover:text-teal-400">Services</a>
+            <a href="#WORK" class="mobile-link font-orbitron text-sm tracking-widest text-white hover:text-teal-400">Projects</a>
+            <div class="h-[1px] w-20 bg-teal-400/30"></div>
+            <a href="mailto:nabilaelnm@gmail.com" class="text-teal-400 font-bold uppercase tracking-widest">Hire Me</a>
+        </div>
+    </div>
+</header>
+ <!-- Main Content -->
+<main id="main" class="ml-20">     
+<section id="hero" class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-[70px]">
+  
+  <div class="absolute top-[-15%] left-1/2 -translate-x-1/2 w-[140%] h-[600px] border-b-[2px] border-purple-500/40 rounded-[100%] blur-[1px] shadow-[0_20px_60px_rgba(139,92,246,0.3)] pointer-events-none"></div>
+
+  <div class="flex flex-col lg:flex-row items-center justify-between px-6 md:px-16 py-12 lg:py-0 z-10 flex-grow">
+    
+    <div class="hero-text flex-1 max-w-2xl text-center lg:text-left mt-10 lg:mt-0">
+      <p class="subtitle text-teal-400 text-lg mb-4 tracking-[0.3em] font-orbitron uppercase">Software Engineer</p>
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white font-orbitron">
+        Hello I'm<br><span class="gradient-text">NABILA M. "ELN"</span>
+      </h1>
+      <p class="desc text-lg md:text-xl text-slate-300 opacity-80 mb-8 max-w-lg mx-auto lg:mx-0">
+        Powered by curiosity, guided by coffee, and haunted by code.
+      </p>
+      
+      <div class="socials flex justify-center lg:justify-start gap-6 text-2xl">
+        <a href="https://github.com/NabilaEln48" target="_blank" class="transition-all duration-300 hover:text-teal-400 hover:scale-125 text-white">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/nabilaeln48/" target="_blank" class="transition-all duration-300 hover:text-teal-400 hover:scale-125 text-white">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:nabilaelnm@gmail.com" class="transition-all duration-300 hover:text-teal-400 hover:scale-125 text-white">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+    
+    <div class="hero-image flex-1 flex items-center justify-center relative mt-16 lg:mt-0">
+      <div class="glow-ring absolute w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full border border-teal-500/20 opacity-30 animate-pulse"></div>
+      <div class="glow-ring absolute w-[350px] h-[350px] md:w-[450px] md:h-[450px] rounded-full border border-purple-500/10 opacity-20 animate-reverse-spin"></div>
+      
+      <img src="/public/images/NabilaM.png" alt="Nabila portrait" 
+           class="relative z-10 w-[280px] h-[280px] md:w-[380px] md:h-[380px] rounded-full object-cover shadow-[0_0_50px_rgba(45,212,191,0.2)] border-2 border-white/10">
+    </div>
+  </div>
+
+  <div id="skills" class="w-full py-10 z-10 mt-auto bg-black/40 backdrop-blur-sm border-t border-white/5">
+    <div class="container mx-auto px-4">
+      <div class="skills-scroll w-full overflow-hidden relative">
+        <div class="train-track flex gap-12 animate-scroll-infinite-fast whitespace-nowrap grayscale hover:grayscale-0 transition-all duration-700">
+          
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-java-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>Java</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-python-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>Python</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-c-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>C</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-php-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>PHP</p>
+          </div>
+
+          <div class="skill-card min-w-[220px] text-center hover:scale-105 transition">
+            <div class="flex justify-center gap-3 mb-4 text-[60px]">
+              <i class="devicon-html5-plain"></i>
+              <i class="devicon-css3-plain"></i>
+              <i class="devicon-javascript-plain"></i>
             </div>
+            <p>HTML / CSS / JS</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-tailwindcss-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>Tailwind CSS</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-react-original text-[70px] mx-auto mb-4 block"></i>
+            <p>React (Basic)</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-nodejs-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>Node.js</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-fastapi-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>FastAPI</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-docker-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>Docker</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-postgresql-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>PostgreSQL</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-mysql-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>MySQL</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-mongodb-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>MongoDB</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-git-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>Git</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-github-original text-[70px] mx-auto mb-4 block"></i>
+            <p>GitHub</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-postman-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>Postman</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-playwright-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>Playwright</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-ubuntu-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>Ubuntu</p>
+          </div>
+
+          <div class="skill-card min-w-[180px] text-center hover:scale-105 transition">
+            <i class="devicon-figma-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>Figma → UI</p>
+          </div>
+
+          <div class="skill-card min-w-[260px] text-center hover:scale-105 transition">
+            <i class="devicon-language-plain text-[70px] mx-auto mb-4 block"></i>
+            <p>English · French · Arabic</p>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Expertise Section -->
+<section id="expertise" class="py-16 px-4 font-sans transition-colors duration-300"style="background: var(--bg-color); color: var(--text-color);">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-5xl font-bold mb-12 flex items-center gap-4 text-white">
+            <span class="text-teal-400 font-mono text-2xl md:text-3xl">01.</span> My Expertise
+            <div class="h-[1px] bg-white/20 flex-grow"></div>
+        </h2>
+
+    <!-- Top Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+
+<!-- Tools Section -->
+<div
+  class="tools-glass rounded-2xl p-10 flex flex-col items-center text-center"
+>
+  <h3 class="text-lg font-semibold mb-6 text-[var(--text-color)]">
+    Tools I Work With
+  </h3>
+
+  <div class="tools-grid">
+    <i class="devicon-github-original tool-icon"></i>
+    <i class="devicon-postman-plain tool-icon"></i>
+    <i class="devicon-figma-plain tool-icon"></i>
+    <i class="devicon-vscode-plain tool-icon"></i>
+    <i class="devicon-notion-plain tool-icon"></i>
+    <i class="devicon-chrome-plain tool-icon"></i>
+  </div>
+
+  <p class="text-sm mt-6 opacity-70 max-w-xs">
+    Where productivity meets passion — tools that support my daily flow.
+  </p>
+</div>
+
+
+
+
+      <!-- API Skill Card -->
+      <div
+        class="rounded-2xl p-8 shadow-sm"
+        style="background: var(--card-bg); border: 1px solid var(--secondary-accent);"
+      >
+        <div class="space-y-3 mb-8">
+          <div class="h-3 w-full rounded-full" style="background: var(--accent-color);"></div>
+          <div class="h-3 w-[85%] rounded-full bg-blue-400"></div>
+          <div class="h-3 w-[95%] rounded-full bg-green-400"></div>
+          <div class="h-3 w-[70%] rounded-full bg-yellow-400"></div>
+          <div class="h-3 w-[60%] rounded-full bg-purple-400"></div>
+          <div class="h-3 w-[75%] rounded-full bg-pink-400"></div>
         </div>
 
-        
+        <span class="text-xs uppercase font-mono opacity-50">API</span>
+        <h3 class="text-xl font-bold mt-2">
+          very comfortable working with API'S
+        </h3>
+        <p class="text-sm mt-3 opacity-70">
+          Comfortable working with APIs and have built several projects leveraging their
+          capabilities for seamless integration.
+        </p>
+      </div>
+
+      <!-- Storytelling -->
+      <div
+        class="rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-lg text-white"
+        style="background: linear-gradient(135deg, var(--accent-color), #7c3aed, #dc2626);"
+      >
+        <h3 class="text-2xl font-bold leading-tight">
+          The Art of Digital Storytelling
+        </h3>
+        <p class="text-sm mt-4 leading-relaxed opacity-90">
+          I craft immersive web journeys inspired by award-winning design. Using smooth
+          motion and stunning visuals, I tell your brand's story to captivate your audience.
+        </p>
+      </div>
+
     </div>
+
+    <!-- Bottom Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+
+      <!-- Security / Dev Card -->
+      <div
+        class="md:col-span-3 rounded-2xl overflow-hidden flex flex-col md:flex-row text-white shadow-md"
+        style="background: linear-gradient(90deg, #ec4899, #f97316);"
+      >
+        <div class="p-8 md:w-1/2 flex items-center">
+          <p class="text-xl font-semibold leading-snug">
+            I specialize in finding overlooked vulnerabilities, using my full stack web
+            development experience and the right tools to identify where others may struggle.
+          </p>
+        </div>
+
+        <div class="md:w-1/2 bg-black/30 p-4 backdrop-blur-sm">
+          <div
+            class="rounded-lg h-full w-full border border-white/20 text-[10px] font-mono p-3 text-gray-300"
+            style="background: #111;"
+          >
+            <div class="flex gap-2 border-b border-white/10 pb-2 mb-2">
+              <span class="text-blue-400">Dashboard</span>
+              <span class="text-orange-400 font-bold underline">Proxy</span>
+            </div>
+            <div class="bg-white/5 p-1 rounded">Live passive crawl [active]</div>
+            <div class="mt-2 text-green-400">&gt; Scanning headers...</div>
+            <div class="mt-1 text-red-400">&gt; 12 issues found</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div
+        class="md:col-span-2 rounded-2xl p-8 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-sm"
+        style="background: var(--card-bg); border: 1px solid var(--secondary-accent);"
+      >
+        <div class="absolute inset-0 opacity-15 pointer-events-none">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-64 h-64 border rounded-full"
+                 style="border-color: var(--text-color);"></div>
+          </div>
+        </div>
+
+        <h3 class="text-xl font-bold mb-6 relative z-10">
+          Do you want to start a project together?
+        </h3>
+
+        <button
+          class="group flex items-center gap-3 px-6 py-3 rounded-full relative z-10 transition-all"
+          style="background: var(--secondary-accent); color: var(--text-color);"
+        >
+          <svg class="group-hover:scale-110 transition-transform"
+               xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+          </svg>
+          <span class="font-medium">Copy my email address</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 
 
-    <!-- About Section -->
+
+   <!-- About Section -->
     <section id="about" class="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
     
     <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto section-fade">
         <h2 class="text-3xl md:text-5xl font-bold mb-12 flex items-center gap-4 text-white">
-            <span class="text-teal-400 font-mono text-2xl md:text-3xl">01.</span> About Me
+            <span class="text-teal-400 font-mono text-2xl md:text-3xl">02.</span> About Me
             <div class="h-[1px] bg-white/20 flex-grow"></div>
         </h2>
 
@@ -245,32 +702,6 @@ section {
                     I have experience working with databases, APIs, and modern development tools, and I enjoy turning ideas into functional, well-structured applications. 
                     I continuously improve my skills through real projects and practical problem-solving.
                 </p>
-                <p class="text-base md:text-lg text-slate-300 mb-6 italic border-l-4 border-teal-400 pl-4 bg-teal-400/5 py-2">
-                    "Before becoming an engineer, I worked as a professional Interpreter. This taught me how to bridge gaps—a skill I now use to translate business requirements into clean code."
-                </p>
-
-                <p class="text-sm font-bold uppercase tracking-widest text-teal-400 mb-4">Tech Stack</p>
-                
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    <div class="flex items-center gap-2 text-slate-300 text-sm bg-white/5 border border-white/5 px-3 py-2 rounded-lg hover:border-teal-400/50 transition-colors">
-                        <span class="text-teal-400">▸</span> Python
-                    </div>
-                    <div class="flex items-center gap-2 text-slate-300 text-sm bg-white/5 border border-white/5 px-3 py-2 rounded-lg hover:border-teal-400/50 transition-colors">
-                        <span class="text-teal-400">▸</span> FastAPI
-                    </div>
-                    <div class="flex items-center gap-2 text-slate-300 text-sm bg-white/5 border border-white/5 px-3 py-2 rounded-lg hover:border-teal-400/50 transition-colors">
-                        <span class="text-teal-400">▸</span> Java
-                    </div>
-                    <div class="flex items-center gap-2 text-slate-300 text-sm bg-white/5 border border-white/5 px-3 py-2 rounded-lg hover:border-teal-400/50 transition-colors">
-                        <span class="text-teal-400">▸</span> PostgreSQL
-                    </div>
-                    <div class="flex items-center gap-2 text-slate-300 text-sm bg-white/5 border border-white/5 px-3 py-2 rounded-lg hover:border-teal-400/50 transition-colors">
-                        <span class="text-teal-400">▸</span> Docker
-                    </div>
-                    <div class="flex items-center gap-2 text-slate-300 text-sm bg-white/5 border border-white/5 px-3 py-2 rounded-lg hover:border-teal-400/50 transition-colors">
-                        <span class="text-teal-400">▸</span> Linux
-                    </div>
-                </div>
 
                 <p class="text-base text-slate-400 mt-8 text-sm italic">
                     Off-duty: Drawing, playing video games, skateboarding, or surfing.
@@ -281,7 +712,7 @@ section {
                 <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-teal-400 rounded-2xl transition-all "></div>
                 
                 <div class="relative w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-2xl ">
-                    <img src="images/NabilaM.png" alt="Profile" class="w-full h-full object-cover">
+                    <img src="/public/images/NabilaM.png" alt="Profile" class="w-full h-full object-cover">
                 </div>
             </div>
 
@@ -289,244 +720,73 @@ section {
     </div>
 </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="relative min-h-screen px-6 py-20 overflow-hidden">
-    <div class="absolute top-1/4 -left-20 w-[300px] h-[300px] bg-teal-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-    <div class="max-w-7xl mx-auto section-fade">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6 flex items-center gap-4 text-white">
-            <span class="text-teal-400 font-mono text-2xl md:text-3xl">02.</span> Featured Projects
-            <div class="h-[1px] bg-white/20 flex-grow"></div>
-        </h2>
-        <p class="text-lg text-slate-400 mb-12 max-w-2xl">
-            Architecting high-performance backends and secure data pipelines.
-        </p>
+      
+
+ <!-- Projects Section -->
+<section id="WORK" class="relative min-h-screen px-6 py-20 overflow-hidden">
+  <div class="absolute top-1/4 -left-20 w-[300px] h-[300px] bg-teal-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto section-fade">
+    <h2 class="text-3xl md:text-5xl font-bold mb-12 flex items-center gap-4 text-white">
+      <span class="text-teal-400 font-mono text-2xl md:text-3xl">04.</span> WORK
+      <div class="h-[1px] bg-white/20 flex-grow"></div>
+    </h2>
+    
+    <!-- Swiper Container -->
+    <div class="swiper projectSwiper mb-16">
+      <div class="swiper-wrapper">
         
-        <div class="group relative mb-12">
+        <!-- Slide 1 - Job Tracker -->
+        <div class="swiper-slide">
+          <div class="group relative">
             <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
             <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#0f172a]/80 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden">
-                <div class="lg:col-span-7 h-64 lg:h-full overflow-hidden">
-                    <img src="images/jobapptracker.png" alt="Job Tracker" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+              <div class="lg:col-span-7 h-64 lg:h-full overflow-hidden">
+                <img src="/public/images/jobapptracker.png" alt="Job Tracker" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+              </div>
+              <div class="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center">
+                <span class="text-xs font-bold tracking-widest uppercase text-teal-400 mb-2">Automation & NoSQL</span>
+                <h3 class="text-3xl font-bold text-white mb-4">Job Application Tracker</h3>
+                <p class="text-slate-300 mb-6">Built a system to extract job details from email archives (MBOX). Implemented an asynchronous FastAPI and MongoDB backend for high-speed processing.</p>
+                <div class="flex gap-4 font-mono text-sm text-teal-400 mb-6">
+                  <span>#FastAPI</span> <span>#MongoDB</span> <span>#Python</span>
                 </div>
-                <div class="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center">
-                    <span class="text-xs font-bold tracking-widest uppercase text-teal-400 mb-2">Automation & NoSQL</span>
-                    <h3 class="text-3xl font-bold text-white mb-4">Job Application Tracker</h3>
-                    <p class="text-slate-300 mb-6">Built a system to extract job details from email archives (MBOX). Implemented an asynchronous FastAPI and MongoDB backend for high-speed processing.</p>
-                    <div class="flex gap-4 font-mono text-sm text-teal-400 mb-6">
-                        <span>#FastAPI</span> <span>#MongoDB</span> <span>#Python</span>
-                    </div>
-                    <a href="https://github.com/NabilaEln48" class="text-white hover:text-teal-400 transition flex items-center gap-2">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        Source Code
-                    </a>
-                </div>
+                <a href="https://github.com/NabilaEln48" class="text-white hover:text-teal-400 transition flex items-center gap-2">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  Source Code
+                </a>
+              </div>
             </div>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <div class="group bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:-translate-y-2 hover:border-teal-400/50 transition-all">
-                <div class="flex justify-between mb-6">
-                    <svg class="w-10 h-10 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-                    <a href="https://github.com/NabilaEln48" class="text-slate-400 hover:text-teal-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">Data Analytics Backend</h3>
-                <p class="text-slate-400 text-sm mb-6">Automated pipeline for API ingestion and PostgreSQL optimization. Uses Pandas for data validation.</p>
-                <div class="flex gap-3 text-xs font-mono text-teal-400/80">
-                    <span>FastAPI</span> <span>PostgreSQL</span> <span>Pandas</span>
-                </div>
-            </div>
+      </div>
+    
 
-            <div class="group bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:-translate-y-2 hover:border-teal-400/50 transition-all">
-                <div class="flex justify-between mb-6">
-                    <svg class="w-10 h-10 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                    <a href="https://github.com/NabilaEln48/Secure-Document-Management-API" class="text-slate-400 hover:text-teal-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">Secure Document System</h3>
-                <p class="text-slate-400 text-sm mb-6">JWT authentication and RBAC for sensitive file handling. Implemented state-machine logic for lifecycles.</p>
-                <div class="flex gap-3 text-xs font-mono text-teal-400/80">
-                    <span>FastAPI</span> <span>RBAC</span> <span>JWT</span>
-                </div>
-            </div>
-
-            <div class="group bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:-translate-y-2 hover:border-teal-400/50 transition-all">
-                <div class="flex justify-between mb-6">
-                    <svg class="w-10 h-10 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
-                    <a href="https://github.com/NabilaEln48/Public-Transit-Fleet-Management-System" class="text-slate-400 hover:text-teal-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">PTFMS Fleet Management</h3>
-                <p class="text-slate-400 text-sm mb-6">Enterprise transit system managing GPS telemetry via multi-layered Java architecture.</p>
-                <div class="flex gap-3 text-xs font-mono text-teal-400/80">
-                    <span>Java EE</span> <span>MySQL</span>
-                </div>
-            </div>
-
-            <div class="group bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:-translate-y-2 hover:border-teal-400/50 transition-all">
-                <div class="flex justify-between mb-6">
-                    <svg class="w-10 h-10 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                    <a href="https://github.com/NabilaEln48/BookRegistryApp" class="text-slate-400 hover:text-teal-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">Book Registry System</h3>
-                <p class="text-slate-400 text-sm mb-6">Inventory management featuring comprehensive CRUD operations and MVC architecture.</p>
-                <div class="flex gap-3 text-xs font-mono text-teal-400/80">
-                    <span>Java</span> <span>MVC</span>
-                </div>
-            </div>
-
-            <div class="group bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:-translate-y-2 hover:border-teal-400/50 transition-all">
-                <div class="flex justify-between mb-6">
-                    <svg class="w-10 h-10 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                    <a href="https://github.com/NabilaEln48/ARISE_FullStack" class="text-slate-400 hover:text-teal-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">E-commerce Platform</h3>
-                <p class="text-slate-400 text-sm mb-6">Storefront with NoSQL schema for variations and real-time inventory updates.</p>
-                <div class="flex gap-3 text-xs font-mono text-teal-400/80">
-                    <span>Python</span> <span>MongoDB</span>
-                </div>
-            </div>
-
-        </div>
     </div>
+<!-- CTA Button -->
+<div class="text-center mt-16">
+  <a href="/public/IT_Projects.html" 
+     class="group relative inline-flex items-center gap-3 px-10 py-4 border-2 border-teal-400 text-teal-400 font-bold rounded-full transition-all duration-300 hover:bg-teal-400 hover:text-black hover:shadow-[0_0_25px_rgba(45,212,191,0.5)] active:scale-95">
+    
+    <span class="font-orbitron tracking-widest text-sm uppercase">
+      View All Projects
+    </span>
+    
+    <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-2"></i>
+  </a>
+</div>
+
+  </div>
 </section>
 
-<!-- Journey Section -->
-<section id="journey" class="py-20 px-6 relative overflow-hidden">
-    <div class="absolute top-1/2 right-0 w-64 h-64 bg-teal-500/5 rounded-full blur-[100px] pointer-events-none"></div>
-
-    <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-5xl font-bold mb-16 flex items-center gap-4 text-white">
-            <span class="text-teal-400 font-mono text-2xl md:text-3xl">03.</span> The Journey
-            <div class="h-[1px] bg-white/20 flex-grow"></div>
-        </h2>
-
-        <div class="relative border-l-2 border-white/10 ml-4 md:ml-8 space-y-12">
-            
-            <div class="relative pl-8 group">
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-teal-400 shadow-[0_0_15px_rgba(45,212,191,0.6)] group-hover:scale-125 transition-transform"></div>
-                
-                <p class="text-teal-400 font-mono text-sm mb-1 uppercase tracking-widest">2024 - 2025</p>
-                <h3 class="text-xl font-bold text-white">Software Developer | Backend</h3>
-                <p class="text-slate-300 font-medium mb-2">Algonquin College Graduate</p>
-                <p class="text-slate-400 leading-relaxed">
-                    Recently completed a Diploma in Computer Programming. Transitioned full-time into building robust, API-driven systems with a focus on clean code and practical problem-solving.
-                </p>
-            </div>
-            <div class="relative pl-8 group">
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white/20 group-hover:bg-teal-400/50 transition-colors"></div>
-                 <p class="text-slate-500 font-mono text-sm mb-1 uppercase tracking-widest">Sep 2025 – Dec 2025</p>
-                 <h3 class="text-xl font-bold text-slate-300">Frontend Developer & Technical Lead</h3>
-                 <p class="text-slate-400 font-medium mb-2">Hawkey EDS — Client Project</p>
-                 <p class="text-slate-400 leading-relaxed">
-                 Led front-end development of a customer service portal. 
-                 Collaborated within a 5-member team to deliver full-stack features integrated with backend services 
-                 and AWS infrastructure, while coordinating technical decisions and aligning solutions directly 
-                 with business and stakeholder requirements.
-                 </p>
-            </div>
-
-            <div class="relative pl-8 group">
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white/20 group-hover:bg-teal-400/50 transition-colors"></div>
-                
-                <p class="text-slate-500 font-mono text-sm mb-1 uppercase tracking-widest">Nov 2024 — Mar 2025</p>
-                <h3 class="text-xl font-bold text-slate-300">Professional Interpreter</h3>
-                <p class="text-slate-400 font-medium mb-2">CanTalk</p>
-                <p class="text-slate-500 leading-relaxed">
-                    Facilitated real-time interpretation in high-stakes professional settings. This experience sharpened my attention to detail and ability to translate complex logic—skills that now ensure accuracy and confidentiality in my backend architecture.
-                </p>
-            </div>
-
-            
-            <div class="relative pl-8 group">
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white/20 group-hover:bg-teal-400/50 transition-colors"></div>
-                
-                <p class="text-slate-500 font-mono text-sm mb-1 uppercase tracking-widest">2019 — 2023</p>
-                <h3 class="text-xl font-bold text-slate-300">Software Developer – Frontend</h3>
-                <p class="text-slate-400 font-medium mb-2">Independent Software Developer / Consultant</p>
-            </div>
-
-            <div class="relative pl-8 group">
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white/10"></div>
-                <p class="text-slate-600 font-mono text-sm mb-1 uppercase tracking-widest">Foundation</p>
-                <h3 class="text-xl font-bold text-slate-500">Full-Stack Certifications</h3>
-                <p class="text-slate-600 leading-relaxed">
-                    Mastered core languages including Python and SQL through specialized certifications, laying the groundwork for high-performance data processing.
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-
-<section id="testimonials" class="py-20 px-6">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-5xl font-bold mb-16 flex items-center gap-4 text-white">
-            <span class="text-teal-400 font-mono text-2xl md:text-3xl">04.</span> Recommendations
-            <div class="h-[1px] bg-white/20 flex-grow"></div>
-        </h2>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl relative">
-                <p class="text-lg text-slate-200 italic mb-8">
-                    "Nabila is a highly reliable software developer with strong backend skills in Python and FastAPI. We worked together on technical projects where she consistently delivered clean, well-structured code and took ownership of features from design to deployment. She is particularly strong in API development, databases, and system design, and she approaches problems logically and efficiently. Beyond technical ability, she communicates clearly, collaborates well, and works independently with minimal supervision. I would confidently recommend her for any backend or data-focused role."
-                </p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center font-bold text-white">EL</div>
-                    <div>
-                        <h4 class="text-white font-bold">Elyass L.</h4>
-                        <p class="text-teal-400 text-sm font-mono">Automotive Mechanic | Vehicle Diagnostics & Programming Student</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl relative">
-                <p class="text-lg text-slate-200 italic mb-8">
-                    "I’ve had the pleasure of working with Nabila on several projects, and she always impressed me with her strong front-end and back-end development skills, creativity, and professionalism. Her great eye for design and innovative ideas consistently improved our projects, and she often delivered her parts ahead of schedule with excellent attention to detail. Nabila also brings creative ideas for future features, showing real vision for how projects can grow. I wish you the best of luck, Nabila, and I look forward to collaborating with you on more projects in the future."
-                </p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center font-bold text-white">JF</div>
-                    <div>
-                        <h4 class="text-white font-bold">Jhoel Forero</h4>
-                        <p class="text-teal-400 text-sm font-mono">Front-end & Full-Stack Developer</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl relative">
-                <p class="text-lg text-slate-200 italic mb-8">
-                    "I worked with Nabila on multiple projects where she handled Back-end tasks with high precision. She has a strong understanding of system architecture, APIs, and clean code practices. Nabila is excellent at debugging, optimizing performance, and delivering scalable solutions. She communicates clearly and collaborates smoothly in cross-functional teams."
-                </p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center font-bold text-white">AN</div>
-                    <div>
-                        <h4 class="text-white font-bold">Abdelmoughite Naqab</h4>
-                        <p class="text-teal-400 text-sm font-mono text-[10px] md:text-sm">Front-end Developer | VFX Designer | Adobe 3D & Blender</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl relative">
-                <p class="text-lg text-slate-200 italic mb-8">
-                    "Having Nabila M. as our lead developer and designer was one of the best decisions we made for our startup's launch. Her technical skills are top-tier. She created a highly intuitive UI/UX and delivered an exceptionally robust full-stack solution, seamlessly integrating complex features like our payment processing system and all essential notification services.She is incredibly proactive, communicative, and reliable, consistently delivering milestones ahead of schedule. We are currently planning our next phase of features and look forward to continuing our working relationship with Nabila M. indefinitely."
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center font-bold text-white">MA</div>
-                    <div>
-                        <h4 class="text-white font-bold">Malak AC</h4>
-                        <p class="text-teal-400 text-sm font-mono">Startup Manager @ SMMA AGA</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 
     <!-- Contact Section -->
     <section id="contact" class="relative py-20 px-6 overflow-hidden">
     <div class="max-w-4xl mx-auto bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-12 text-center relative overflow-hidden">
         <div class="absolute -top-24 -left-24 w-64 h-64 bg-teal-500/20 rounded-full blur-[80px]"></div>
-        
         <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-6">Let's Build Something.</h2>
         <p class="text-xl text-slate-300 mb-10 max-w-xl mx-auto">
             Whether you have a question or just want to discuss backend architecture, my inbox is always open.
@@ -545,91 +805,147 @@ section {
 
     <!-- Footer -->
     <footer class="py-4 text-center border-t border-gray-800">
-    <p class="text-sm text-gray-400">Built and designed by ELN <br>© All rights reserved.</p>
+    <p class="text-sm text-gray-400">Built and designed by ELN © All rights reserved.</p>
     </footer>
 
-    <script>
-/* =========================
-   MOBILE MENU (SAFE)
-========================= */
-const menuToggle = document.getElementById('menu-toggle');
-const mobileDropdown = document.getElementById('mobile-dropdown');
-const mobileLinks = document.querySelectorAll('.mobile-link');
+    </main>
+  </div>
 
-if (menuToggle && mobileDropdown) {
-    menuToggle.addEventListener('click', () => {
-        mobileDropdown.classList.toggle('hidden');
-        setTimeout(() => {
-            mobileDropdown.classList.toggle('opacity-100');
-            mobileDropdown.classList.toggle('translate-y-0');
-        }, 10);
-    });
+  <script>
+  // 1. SELECTORS
+  const introLoader = document.getElementById('intro-loader');
+  const mainSite = document.getElementById('main-site');
+  const skipText = document.getElementById('skip-text');
+  const menuToggle = document.getElementById('menu-toggle');
+  const navbar = document.getElementById('navbar');
+  const menuIcon = document.querySelector('.menu-icon');
+  const closeIcon = document.querySelector('.close-icon');
+  const navLinks = document.querySelectorAll('.nav-link'); // Declared once only
+  const sections = document.querySelectorAll('section[id]');
 
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileDropdown.classList.add('hidden');
-            mobileDropdown.classList.remove('opacity-100', 'translate-y-0');
-        });
-    });
+// 2. INTRO LOADER LOGIC
+const titles = [
+  "Software Engineer",
+  "Front-End Developer",
+  "Back-End Python Developer",
+  "Data Analyst"
+];
+
+let currentIdx = 0;
+const titleElement = document.getElementById('title-text');
+const progressBar = document.querySelector('.progress-bar');
+
+function rotateTitles() {
+  if (!titleElement) return;
+  
+  // Fade out
+  titleElement.style.opacity = '0';
+  
+  setTimeout(() => {
+    titleElement.textContent = titles[currentIdx];
+    // Fade in
+    titleElement.style.opacity = '1';
+    currentIdx = (currentIdx + 1) % titles.length;
+  }, 500);
 }
 
-/* =========================
-   TYPEWRITER EFFECT
-========================= */
-const typeText = "ELN Here!";
-const typeSpeed = 90;
-let typeIndex = 0;
-
-function typeWriter() {
-    const target = document.getElementById("typewriter");
-    if (!target) return;
-
-    if (typeIndex < typeText.length) {
-        target.textContent += typeText.charAt(typeIndex);
-        typeIndex++;
-        setTimeout(typeWriter, typeSpeed);
-    }
+// Start animations
+if (titleElement) {
+  titleElement.style.transition = "opacity 0.5s ease";
+  rotateTitles(); // Show first title immediately
+  setInterval(rotateTitles, 2500); // Rotate every 2.5s
 }
 
-/* =========================
-   FADE-IN ON SCROLL
-========================= */
-const observer = new IntersectionObserver(
-    entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    },
-    { threshold: 0.15 }
-);
+// Animate Progress Bar over 12 seconds
+if (progressBar) {
+  progressBar.style.transition = "width 12s linear";
+  setTimeout(() => {
+    progressBar.style.width = "100%";
+  }, 100);
+}
 
-document.querySelectorAll('.section-fade').forEach(section => {
-    observer.observe(section);
-});
+function hideIntro() {
+  if (introLoader) introLoader.style.display = 'none';
+  if (mainSite) mainSite.style.display = 'block';
+}
 
-/* =========================
-   SMOOTH SCROLL
-========================= */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+// Auto-hide after 12 seconds
+setTimeout(hideIntro, 12000);
+
+if (skipText) {
+  skipText.addEventListener('click', hideIntro);
+}
+
+  // 3. MOBILE MENU LOGIC
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.getElementById('header');
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileDropdown = document.getElementById('mobile-dropdown');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    // 1. Header scroll effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
         }
     });
+
+    // 2. Mobile Menu Toggle
+    menuToggle.addEventListener('click', () => {
+        const isHidden = mobileDropdown.classList.contains('hidden');
+        if (isHidden) {
+            mobileDropdown.classList.remove('hidden');
+            menuIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+        } else {
+            mobileDropdown.classList.add('hidden');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        }
+    });
+
+    // 3. Close mobile menu on link click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileDropdown.classList.add('hidden');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        });
+    });
 });
 
-/* =========================
-   INIT
-========================= */
-window.addEventListener('DOMContentLoaded', () => {
-    typeWriter();
-});
+  // 4. ACTIVE NAV LINK ON SCROLL
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (window.pageYOffset >= sectionTop - 100) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // 5. INITIALIZE SWIPER
+  // Swiper creates the "grab" cursor automatically on the container
+  const swiper = new Swiper('.projectSwiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    grabCursor: true, 
+  });
 </script>
-
 </body>
 </html>
